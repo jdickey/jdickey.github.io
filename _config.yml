@@ -1,0 +1,43 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+title: Six Impossible Things Before Bundling
+subtitle: Software and life. If you think software *is* life, seek professional help.
+
+future: true # per https://jekyllrb.com/docs/upgrading/2-to-3/#all-my-posts-are-gone-whered-they-go
+paginate: 20 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+highlighter: pygments
+markdown: kramdown
+disqus: jdickeyghpages
+# google_analytics: dbyll
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: untitled.set :title, 'Hello, again!'
+
+description: Nothing can possibly go wrong. Nothing can possi... *snap*
+author:
+  name: Jeff Dickey
+  email: jdickey@seven-sigma.com
+  github: jdickey
+  twitter: jeff_dickey
+  # pinterest: asd123
+  linkedin: jdickey
+  bio: Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.
+  email_md5: d6d968e5de074e1aeef2ed6b9cc336f9
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+# set it as url of an image
+# sidebar_background_image: https://www.dropbox.com/s/g9h23zrycedxtk5/sky.png?raw=1
+
+BASE_PATH:
+
+gems:
+  - jekyll-paginate
