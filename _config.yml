@@ -6,7 +6,7 @@ subtitle: Software and life. If you think software *is* life, seek professional 
 future: true # per https://jekyllrb.com/docs/upgrading/2-to-3/#all-my-posts-are-gone-whered-they-go
 paginate: 20 # pagination based on number of posts
 paginate_path: "page:num"
-exclude: ["README.md"] # files to exclude
+exclude: ["README.md", "tmp"] # files to exclude
 highlighter: rouge
 markdown: kramdown
 disqus: jdickeyghpages

@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+# Clean out
+mkdir -p tmp/gemsets
+touch tmp/gemsets/dummy
+rm -rf Gemfile.lock .rbenv-gemsets tmp/gemsets/*
+rbenv gemset init ./tmp/gemsets/full
+gem install jekyll -v 3.4.3
+gem install jekyll-paginate -v 1.1.0
+gem install pygments.rb -v 1.1.1
+rbenv rehash
+bundle install --local
+rbenv rehash

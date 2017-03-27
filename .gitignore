@@ -2,3 +2,6 @@ _site
 .sass-cache
 .bundle
 o-rdoc
+.ruby-version
+tmp
+.rbenv-gemsets
