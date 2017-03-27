@@ -1,8 +1,5 @@
 # jdickey.github.io
 
-----
-
-
 Theme based on [`dbyll`](http://dbtek.github.io/dbyll/) by [İsmail Demirbilek](https://github.com/dbtek). See the theme-project link for details.
 
 # Setup
