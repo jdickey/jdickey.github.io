@@ -8,6 +8,7 @@ gem install jekyll -v 3.5.1
 gem install jekyll-docs -v 3.5.1
 gem install jekyll-paginate -v 1.1.0
 gem install pygments.rb -v 1.1.2
+gem install github-pages -v 146
 rbenv rehash
 bundle install --local
 rbenv rehash
