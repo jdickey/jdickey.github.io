@@ -2,7 +2,7 @@
 layout: post
 title: "Enthusiastically Poking at Hanami"
 description: "Finally! A Ruby Web framework people can use with a straight face!"
-tags: [tools, framework, web development, object oriented programming, oop, domain-driven design, clean architecture]
+tags: [tools, framework, web development, object oriented programming, oop, domain-driven design, clean architecture, hanami]
 categories: [development, practices]
 comments: true
 fullview: false
