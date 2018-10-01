@@ -41,3 +41,6 @@ BASE_PATH:
 
 gems:
   - jekyll-paginate
+
+plugins:
+  - jemoji
