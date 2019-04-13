@@ -3,9 +3,11 @@
 mkdir -p tmp/gemsets
 touch tmp/gemsets/dummy
 rm -rf Gemfile.lock .rbenv-gemsets tmp/gemsets/*
-rbenv gemset init ./tmp/gemsets/full
+rbenv gemset init ./tmp/gemsets
+echo ./tmp/gemsets > .rbenv-gemsets
+rbenv rehash
 # gem install pygments.rb:1.2.1
-gem install github-pages:192 jekyll-docs:3.7.3
+gem install github-pages:197 jekyll-docs:3.8.5
 rbenv rehash
 bundle install --local
 rbenv rehash
