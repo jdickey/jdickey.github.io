@@ -1,0 +1,19 @@
+<p>Like a lot of people, I’m really excited by <em>the promise of</em> <a href="https://www.docker.com/">Docker</a>. A reproducible, reliable environment that banishes “it works on <em>my</em> machine” from any team’s vocabulary? What’s not to like?</p>
+
+<p>Well, if you’re a less-than-Core-Team expert in Rails and all the details of how to provision/configure a Rails app and its entourage for production, you may find yourself beaten about the head by the learning curves, definitely plural.</p>
+
+<ol>
+  <li>The write-ups I’ve seen over the last week that describe working deployments are pretty universally describing running Rails on <a href="https://www.phusionpassenger.com/">Phusion Passenger</a> and <a href="http://nginx.org/"><code class="highlighter-rouge">nginx</code></a>. If you haven’t yet mastered those tools, then you have some learning to do.</li>
+  <li>As previously with Heroku, those write-ups are nearly unanimous in describing either PostgreSQL for a SQL-based database and/or MongoDB as a NoSQL alternative. Using something else — MySQL, maybe? You have some learning to do.</li>
+  <li>Every single Mac we have has a copy of VMWare Fusion on it because, after evaluating it and the competition (<a href="http://www.parallels.com/products/desktop/">Parllels Desktop</a>, <a href="https://www.virtualbox.org/">Oracle VirtualBox</a>) two years ago, Fusion was the hands-down winner for “if it runs on bare metal, it can run in a VM with decent performance”. Since then, of course, the dev/ops world, including Docker (and Vagrant and Chef and Puppet and legion other projects, have standardised on VirtualBox. Which means that each and every one of our Macs is going to have to be cleaned off, reformatted and reinstalled, since I’ve learnt never ever <em>ever</em> to mix bits of Fusion and bits of VirtualBox on the same Mac that I hope to continue using reliably. (We’re just at that sour spot where we’re not <em>quite</em> big enough to have any sort of centralised system management.)</li>
+  <li>The tooling and documentation (particularly third-party tutorials) for Docker itself are, unsurprisingly, in a <em>very</em> early state. (When <a href="http://oreilly.com/">O’Reilly</a>, <a href="http://www.informit.com/">InformIT/Pearson</a>, and <a href="http://manning.com/">Manning</a> each have no books, even early releases, on their websites, you know random blogs are your best bet.) You have some learning to do, and you’re going to have to <em>work</em> at it.</li>
+  <li>Obviously, all the only-on-development tools and hacks you’ve been using up to now, such as Sqlite databases and running <code class="highlighter-rouge">rails server</code> are going to go away, since you’re <em>replicating a production-capable environment</em> — that’s the whole <em>point</em>.</li>
+</ol>
+
+<p>All this together, along with some outside influences, has led me to, <em>very</em> reluctantly, delay my learning and exploration of Docker until we get past the current crush at work, complete the relocation of our development operations, and staff up sufficiently that <em>this</em> single point is no longer the critical path for <em>everything</em>.</p>
+
+<hr />
+
+<p>Entropy, at least in the software world, is <em>not</em> a constant, but it’s constantly <em>increasing</em>. I’ve been saying for 30 years that “70% of what you need to know as a developer will be out-of-date before your milk is; the rest will never be out of date”. What that fails to take into account is that the <em>sum total</em> of “what you need to know” at any given time is increasing, as is the rate of increase itself.</p>
+
+<p>Anyone else remember that old Waylon Jennings song, <a href="https://www.youtube.com/watch?v=Dgh6fDayDTI"><em>Mama, Don’t Let Your Babies Grow Up to be Coders</em></a>?</p>

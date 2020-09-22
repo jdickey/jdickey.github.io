@@ -1,0 +1,37 @@
+<p>I routinely have open at least one of two Git GUI interfaces; <a href="https://mac.github.com">GitHub for Mac</a> (aka GH:Mac) and [Atlassian SourceTree]http://www.sourcetreeapp.com). They each have their uses; GitHub for Mac is drop-dead simple, deliberately eschewing the level of detailed features of SourceTree. (For example, I don’t think it’s possible to cherry-pick commits using GH:Mac; in SourceTree, it’s very straightforward.)</p>
+
+<p>Another <em>major</em> gotcha (gitcha?) in GH:Mac is when you’ve added an updated file to staging, and then made further changes to that same file.  Let’s say you wind up with something like this:</p>
+
+<h4 id="in-the-terminal-window">In the Terminal window:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git status
+On branch issue-89
+Changes to be committed:
+  (use "git reset HEAD &amp;lt;file&amp;gt;..." to unstage)
+
+    new file:   app/services/post_update_validator.rb
+    new file:   spec/services/post_update_validator_spec.rb
+
+Changes not staged for commit:
+  (use "git add &amp;lt;file&amp;gt;..." to update what will be committed)
+  (use "git checkout -- &amp;lt;file&amp;gt;..." to discard changes in working directory)
+
+    modified:   app/services/post_update_validator.rb
+    modified:   spec/services/post_update_validator_spec.rb
+
+$
+</code></pre></div></div>
+
+<h4 id="in-github-for-mac">In GitHub for Mac</h4>
+
+<p><img src="https://31.media.tumblr.com/7e17c44dc6b0a9507c20b48bbb682284/tumblr_inline_nb9i9fMsgS1rdht63.png" alt="GitHub for Mac screenshot" style="width: 100%;" /></p>
+
+<p>Note that the new files, as staged, are shown, but the changes since staging are not.</p>
+
+<h4 id="in-sourcetree">In SourceTree</h4>
+
+<p><img src="https://31.media.tumblr.com/ce936bd6bd3d5320157980455dc7e86e/tumblr_inline_nb9il68a9l1rdht63.png" alt="SourceTree for Mac screenshot" style="width: 100%;" /></p>
+
+<p>Each of the two files is listed twice, as was the case at the command line. With GH:Mac, if I were to make the displayed commit, I would <em>then</em> be shown the unstaged versions of the files. Likely not what I want.</p>
+
+<p>YHBW.</p>

@@ -1,0 +1,47 @@
+<p>Change is good. Change is a sign of life. Change that <em>moves you towards your goal</em> is a Good Thing™.</p>
+
+<p>Change that makes you run around the same circle over and over again is <em>not</em> such a Good Thing.</p>
+
+<p>OpenSSL has had security Issues for quite some time. Recently, like in the last year or so, it’s been getting updated more regularly as problems get addressed.</p>
+
+<p>“Good”, you say. “Secure data is what the Internet relies on, isn’t it?” Well, no; not exactly. And closer to home, every Ruby developer dreads seeing that message from their package manager of choice saying “Your <code class="highlighter-rouge">openssl</code> version has been updated”.</p>
+
+<p>Because, if you’re using a version manager like <a href="http://rvm.io/">RVM</a> or <a href="https://github.com/sstephenson/rbenv"><code class="highlighter-rouge">rbenv</code></a>, that means you get to go reinstall <em>every</em> Ruby version you need to run on your system.</p>
+
+<p>Here’s basically what I do. I’m using <code class="highlighter-rouge">rbenv</code> with a current production Ruby of 2.1.4 on a Mac; your setup will differ based on how different <em>your</em> system is. (Translation: Don’t come crying to me if this doesn’t work for you. You’re smart enough to <em>use</em> Ruby; you’re smart enough to <em>fix</em> it, with a little help from <a href="https://duckduckgo.com">DuckDuckGo</a>):</p>
+
+<p><strong>Step 1:</strong> Run <code class="highlighter-rouge">rbenv versions</code>. This presently gives me output of</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  system
+  2.0.0-p481
+* 2.1.4 (set by /usr/local/rbenv/version)
+  2.2.0-preview1
+</code></pre></div></div>
+
+<p><strong>Step 2:</strong> Nuke from orbit. (Note that I’m running on OS X 10.8.5… yeah, yeah…)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rbenv global system
+$ rbenv rehash
+$ ruby --version
+ruby 1.8.7 (2012-02-08 patchlevel 358) [universal-darwin12.0]
+$ rm -rf $RBENV_ROOT/versions/*
+</code></pre></div></div>
+
+<p><strong>Step 3:</strong> Reinstall “main” Ruby version and systemwide Gems. The `say “All done” is so Daniel tells me when it’s done, so I can go do other things and come back.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rbenv install 2.1.4 &amp;&amp; say "All done"
+$ rbenv global 2.1.4
+$ gem install rails rspec simplecov pry-{bloodline,doc,docmore,byebug,stack_explorer,rescue,theme,pretty-numeric,highlight,editline,git} awesome_print bond jist jeweler lotusrb lotus-{model,helpers} padrino padrino-{assets,flash} rubycritic &amp;&amp; say "all done"
+$ rbenv rehash
+$ gem cleanup
+</code></pre></div></div>
+
+<p><strong>Step 4:</strong> Lather; rinse; repeat for every other Ruby version needed on the system. Remember that <code class="highlighter-rouge">openssl</code> is <em>statically</em> linked into Ruby <em>and</em> it has to match the current (latest security-update-driven) version on the system.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rbenv global system &amp;&amp; rbenv rehash
+# ...
+$ gem cleanup
+$ rbenv global 2.1.4 &amp;&amp; rbenv rehash
+</code></pre></div></div>
+
+<p>Now you can get started on what you set out to do this morning… after tea break.</p>

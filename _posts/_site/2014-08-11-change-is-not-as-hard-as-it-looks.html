@@ -1,0 +1,24 @@
+<p>(But it tries, at least on first appearances.)</p>
+
+<p>As you may know, I’m working on consolidating my various blogging-ish sites into a single, combined, Github Pages site. This involves moving some 200 posts from my <a href="https://archlever.blogspot.com/">current blog</a> and my old, nearly-defunct <a href="https://jdickey.blogspot.com/">personal blog</a> to GH Pages (which is based on <a href="http://jekyllrb.com">Jekyll</a>).</p>
+
+<p>Fortunately, Blogger/Google give you a proof-against-<em>most</em>-idiots <a href="https://support.google.com/blogger/answer/97416">process</a> to export <em>everything</em> about your blog — posts, comments, templates, and several kitchen sinks, all rolled up into one <em>ginormous</em> XML file. (My raw export data was ~5,260 lines; pretty-formatted (as in “legibly formatted”), it’s 16,239 lines long. Well, I <em>did</em> start blogging in 2003.</p>
+
+<p>I am <em>not</em> hand-splitting that up into individual <code>_posts</code> files.. That’s what software is for. Right?</p>
+
+<p><strong>Step 1.</strong> Google <a href="https://www.google.com/search?q=convert+blogger+to+github+pages"><em>convert blogger to github pages</em></a>. That led me to <a href="https://gist.github.com/kennym/1115810">this Gist</a> which will pull your posts’ RSS feed and spit out appropriately-formatted Jekyll/Markdown files, suitable for publishing in GH Pages.</p>
+
+<p>For your 25 most recent posts. <a href="https://archlever.blogspot.com/"><em>Archimedes’ Lever</em></a> has roughly seven times that. Oops.</p>
+
+<p><strong>Step 2:</strong> More Google-fu. Learn that we can solve the ‘25 posts’ problem by adding <code class="highlighter-rouge">?max-posts=500</code> to the feed URL. Run the script and see all the pretty files, <em>almost</em> ready to publish on Github Pages.</p>
+
+<p>The operative word there is “<em>almost</em>”. There are two problems immediately apparent:</p>
+
+<ol>
+  <li>The files contain the original HTML markup; no Markdown conversion has been applied. This should have been expected, and really shouldn’t be a problem, but still. More important is</li>
+  <li>Those tags-turned-categories are not separated in any way; the original tags <em>“best practices”, “competence”, “development”, “ruby”, “ruby on rails”, “startup”, “teams”</em> get written to the <code class="highlighter-rouge">categories</code> field as “best practices competence development ruby ruby on rails startup teams”. <em>Definitely</em> not what we want.</li>
+</ol>
+
+<p>But we’re closer. Now all I need is a program to <em>either</em> read a list of all tags from a different file, and then search each post’s <code class="highlighter-rouge">categories</code> string for each match, longest match first; <em>or</em> read the Blogger/Google export file to build a list of categories for each post (since they’re properly quoted there), figure out which file in <code class="highlighter-rouge">_posts</code> matches each post in the export file, and blast in the <code class="highlighter-rouge">categories</code> as a proper YAML array.</p>
+
+<p>We’re a <em>lot</em> closer. Stay tuned.</p>

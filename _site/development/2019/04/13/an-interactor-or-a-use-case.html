@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>An Interactor or a Use Case?</title>
+	
+	<meta name="description" content="A discussion of a simple feature that can be implemented in a Hanami interactor, and why you might want to think differently">
+	
+	<meta name="author" content="Jeff Dickey">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/jdickey">
+				<i class="fa fa-github"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=35" class="img-circle" />
+				Six Impossible Things Before Bundling
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">Six Impossible Things Before Bundling</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/jdickey">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/jdickey">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>An Interactor or a Use Case? </h1>
+</div>
+	
+<article>
+
+	<div class="col-sm-10">
+	 <span class="post-date">
+	   
+	   April 
+	   13th,
+	   
+	   2019
+	 </span>
+	  <div class="article_body">
+	  <p>To give some context, I’m still fairly new to Hanami (very small apps in limited use thus far) but, after <em>years</em> of evolving my architectural thinking to (initially independently) approximate “Uncle” Bob Martin’s <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a> first in Rails, then Sinatra, followed by <a href="https://roda.jeremyevans.net/">Roda</a>, I’ve been completely sold on <a href="https://www.hanamirb.org/">Hanami</a> for over a year now.</p>
+
+<p>I’d previously worked with interactors before seeing Hanami’s implementation, most notably and repeatedly Aaron Lasseigne’s (initially OrgSync’s) <a href="https://github.com/AaronLasseigne/active_interaction">ActiveInteraction</a>, but they always felt a bit “weird” in Rails; you’re building and enforcing boundaries in a system expressly designed to obliterate them in the belief that doing so enhances developer happiness and (initial) productivity. It’s much less of an issue with other frameworks, particularly Hanami, which for the most part (as noted above) encourages Clean Architecture.</p>
+
+<p>It’s easy to get sloppy, though, writing <a href="https://www.rubydoc.info/gems/hanami-utils/Hanami/Interactor/Interface">Hanami interactors</a>. Like most functional(-inspired) tools, the main entrypoint is a <code class="language-plaintext highlighter-rouge">#call</code> method, which can be skipped entirely if an optional private <code class="language-plaintext highlighter-rouge">#valid?</code> method returns <code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+<h2 id="description-of-the-example">Description of the Example</h2>
+
+<p>Let’s look at a (rather simplified) example. For an app I’m working on, I implemented a <code class="language-plaintext highlighter-rouge">Web::Controller::Session</code> module with three <a href="https://guides.hanamirb.org/actions/overview/">controller-action classes</a> to serve endpoints: <code class="language-plaintext highlighter-rouge">Session::New</code> presents a bog-standard login form (unless there already is a current user) which <code class="language-plaintext highlighter-rouge">Session::Create</code> uses to authenticate a user (which our app calls a “Member”). <code class="language-plaintext highlighter-rouge">Session::Delete</code>, obviously enough, is used to sign out the current user. Using the <a href="https://github.com/jdickey/crypt_ident">CryptIdent</a> authentication library (which, as its author, I have a rather biased opinion of), I wrote code for these actions.</p>
+
+<p>Here, we’ll look at the evolution of the <code class="language-plaintext highlighter-rouge">Session::Create</code> controller action and the domain logic it exercises, to illustrate how one might use interactors for such a task, and why one might reach for an alternative instead.</p>
+
+<h2 id="baseline-zero-all-logic-in-controller-action">Baseline Zero: All Logic in Controller Action</h2>
+
+<p>Here’s the code for the first whack of the <code class="language-plaintext highlighter-rouge">Session::Create</code> controller action:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+
+<span class="k">module</span> <span class="nn">Web</span>
+  <span class="k">module</span> <span class="nn">Controllers</span>
+    <span class="k">module</span> <span class="nn">Session</span>
+      <span class="k">class</span> <span class="nc">Create</span>
+        <span class="kp">include</span> <span class="no">Web</span><span class="o">::</span><span class="no">Action</span>
+        <span class="kp">include</span> <span class="no">Web</span><span class="o">::</span><span class="no">RequireGuest</span> <span class="c1"># prevents execution if a Member has been Signed In</span>
+        <span class="kp">include</span> <span class="no">Hanami</span><span class="o">::</span><span class="no">Action</span><span class="o">::</span><span class="no">Session</span>
+
+        <span class="n">params</span> <span class="k">do</span>
+          <span class="n">required</span><span class="p">(</span><span class="ss">:member</span><span class="p">).</span><span class="nf">schema</span> <span class="k">do</span>
+            <span class="n">required</span><span class="p">(</span><span class="ss">:name</span><span class="p">).</span><span class="nf">filled</span><span class="p">(</span><span class="ss">:str?</span><span class="p">)</span>
+            <span class="n">required</span><span class="p">(</span><span class="ss">:password</span><span class="p">).</span><span class="nf">filled</span><span class="p">(</span><span class="ss">:str?</span><span class="p">)</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+
+        <span class="c1"># rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Style/GuardClause, Metrics/LineLength</span>
+        <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+          <span class="k">if</span> <span class="n">params</span><span class="p">.</span><span class="nf">valid?</span>
+            <span class="n">member</span> <span class="o">=</span> <span class="no">UserRepository</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">find_member</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="nf">dig</span><span class="p">(</span><span class="ss">:member</span><span class="p">,</span> <span class="ss">:name</span><span class="p">))</span>
+            <span class="n">sign_in</span><span class="p">(</span><span class="n">member</span><span class="p">,</span> <span class="n">params</span><span class="p">.</span><span class="nf">dig</span><span class="p">(</span><span class="ss">:member</span><span class="p">,</span> <span class="ss">:password</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span>
+              <span class="n">result</span><span class="p">.</span><span class="nf">success</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="ss">:|</span>
+                <span class="vi">@current_user</span> <span class="o">=</span> <span class="n">user</span>
+                <span class="n">flash</span><span class="p">[</span><span class="ss">:info</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Signed in successfully'</span>
+              <span class="k">end</span>
+              <span class="n">result</span><span class="p">.</span><span class="nf">failure</span> <span class="k">do</span>
+                <span class="vi">@current_user</span> <span class="o">=</span> <span class="no">CryptIdent</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">guest_user</span>
+                <span class="n">flash</span><span class="p">[</span><span class="ss">:error</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Invalid Member Name or Password'</span>
+              <span class="k">end</span>
+            <span class="k">end</span>
+            <span class="n">session</span><span class="p">[</span><span class="ss">:current_user</span><span class="p">]</span> <span class="o">=</span> <span class="vi">@current_user</span>
+            <span class="n">redirect_to</span> <span class="no">Web</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">root_path</span>
+          <span class="k">end</span>
+        <span class="k">end</span> <span class="c1"># #call</span>
+        <span class="c1"># rubocop:enable Metrics/AbcSize, Metrics/MethodLength, Style/GuardClause, Metrics/LineLength</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The <a href="https://www.rubydoc.info/github/jdickey/crypt_ident/CryptIdent#sign_in-instance_method"><code class="language-plaintext highlighter-rouge">CryptIdent#sign_in</code></a> method is implemented using dry-monads’ <a href="https://dry-rb.org/gems/dry-monads/1.0/result/"><code class="language-plaintext highlighter-rouge">Result</code> monads</a> with dry-matcher’s <a href="https://dry-rb.org/gems/dry-matcher/result-matcher/"><code class="language-plaintext highlighter-rouge">Result</code> matcher</a>, which blew me away by how that let me structure and think clearly about my code actions. Everything* either resulted in a Success or a Failure which (optionally) conveyed specific data items along with the result, and dealing with those in a uniform way was one less thing to have to think about. The resulting code isn’t as bad as some we’ve all maintained recently, but it’s hardly clean code, as demonstrated by the number of RuboCop cops disabled for the <code class="language-plaintext highlighter-rouge">#call</code> method.</p>
+
+<h2 id="iteration-one-extracting-an-interactor">Iteration One: Extracting an Interactor</h2>
+
+<p>This really clearly lends itself to an interactor, with the non-controller-specific code extracted:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+<span class="c1"># lib/the_app/interactors/sign_in_member.rb</span>
+
+<span class="nb">require</span> <span class="s1">'hanami/interactor'</span>
+
+<span class="k">class</span> <span class="nc">SignInValidator</span>
+  <span class="kp">include</span> <span class="no">Hanami</span><span class="o">::</span><span class="no">Validations</span>
+
+  <span class="n">validations</span> <span class="k">do</span>
+    <span class="n">required</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span> <span class="p">{</span> <span class="n">filled?</span> <span class="o">&amp;</span> <span class="n">str?</span> <span class="p">}</span>
+    <span class="n">required</span><span class="p">(</span><span class="ss">:password</span><span class="p">)</span> <span class="p">{</span> <span class="n">filled?</span> <span class="o">&amp;</span> <span class="n">str?</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span> <span class="c1"># class SignInValidator</span>
+
+<span class="k">class</span> <span class="nc">SignInMember</span>
+  <span class="kp">include</span> <span class="no">Hanami</span><span class="o">::</span><span class="no">Interactor</span>
+
+  <span class="n">expose</span> <span class="ss">:current_user</span>
+
+  <span class="c1"># We extend CryptIdent at runtime, rather than including it at parse time.</span>
+  <span class="c1"># This lets Hanami's setup of everything under `lib` complete before we try to</span>
+  <span class="c1"># access a `UserRepository`. We could include CryptIdent from a CAC, because</span>
+  <span class="c1"># by the time the delivery mechanism(s) is/are loaded, the app logic (on which</span>
+  <span class="c1"># they depend) is already finalised. Depending on cross-component domain logic</span>
+  <span class="c1"># initialisation can get tricky.</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">repo: </span><span class="no">UserRepository</span><span class="p">.</span><span class="nf">new</span><span class="p">)</span>
+    <span class="vi">@repo</span> <span class="o">=</span> <span class="n">repo</span>
+    <span class="kp">extend</span> <span class="no">CryptIdent</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">sign_in</span><span class="p">(</span><span class="n">member</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="ss">:password</span><span class="p">])</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span>
+      <span class="n">result</span><span class="p">.</span><span class="nf">success</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="ss">:|</span>
+        <span class="vi">@current_user</span> <span class="o">=</span> <span class="n">user</span>
+      <span class="k">end</span>
+      <span class="n">result</span><span class="p">.</span><span class="nf">failure</span> <span class="k">do</span>
+        <span class="vi">@current_user</span> <span class="o">=</span> <span class="n">repo</span><span class="p">.</span><span class="nf">guest_user</span>
+        <span class="n">error!</span> <span class="s1">'Invalid Member Name or Password'</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="nb">attr_reader</span> <span class="ss">:member</span><span class="p">,</span> <span class="ss">:repo</span>
+
+  <span class="k">def</span> <span class="nf">find_member</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+    <span class="vi">@member</span> <span class="o">=</span> <span class="n">repo</span><span class="p">.</span><span class="nf">find_member</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:name</span><span class="p">])</span>
+    <span class="o">!</span><span class="n">member</span><span class="p">.</span><span class="nf">nil?</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">validate_params</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="no">SignInValidator</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">params</span><span class="p">).</span><span class="nf">validate</span>
+    <span class="n">result</span><span class="p">.</span><span class="nf">errors</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">attrib</span><span class="p">,</span> <span class="n">messages</span><span class="o">|</span>
+      <span class="n">messages</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">message</span><span class="o">|</span>
+        <span class="n">error</span><span class="p">([</span><span class="n">attrib</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">capitalize</span><span class="p">,</span> <span class="n">message</span><span class="p">].</span><span class="nf">join</span><span class="p">(</span><span class="s1">' '</span><span class="p">))</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="k">yield</span> <span class="n">params</span> <span class="k">if</span> <span class="n">result</span><span class="p">.</span><span class="nf">success?</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">valid?</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">validate_params</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">inner_params</span><span class="o">|</span> <span class="n">find_member</span><span class="p">(</span><span class="n">inner_params</span><span class="p">)</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>This felt good to initially get working so quickly, but it has a few rather obvious problems, particularly centering around <code class="language-plaintext highlighter-rouge">#valid?</code>. That method, and <code class="language-plaintext highlighter-rouge">#validate_params</code>, both know too much about other bits of the code. The <code class="language-plaintext highlighter-rouge">#find_member</code> method introduces an instance variable so that <code class="language-plaintext highlighter-rouge">#call</code> won’t have to re-query the persistence layer to find the user (<code class="language-plaintext highlighter-rouge">member</code>) to pass into <code class="language-plaintext highlighter-rouge">#sign_in</code> at line 32. The block nesting within <code class="language-plaintext highlighter-rouge">#valid?</code> will become unwieldy if additional validity checks are added in future (e.g., a suspended or banned user won’t be deleted from the system, but will be prevented from signing in). Adding more checks will either make for deeper nesting or introduce a maze of explicit, imperative if/then/else “tentative programming” that is <em>so</em> easy to get wrong. There’s got to be a better way.</p>
+
+<p>At least the controller code has been cleaned up a bit:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+<span class="c1"># apps/web/controllers/session/create.rb</span>
+
+<span class="k">module</span> <span class="nn">Web</span>
+  <span class="k">module</span> <span class="nn">Controllers</span>
+    <span class="k">module</span> <span class="nn">Session</span>
+      <span class="k">class</span> <span class="nc">Create</span>
+        <span class="c1"># ...</span>
+
+        <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="c1"># rubocop:disable Metrics/MethodLength</span>
+          <span class="n">result</span> <span class="o">=</span> <span class="no">SignInMember</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:member</span><span class="p">])</span>
+          <span class="k">if</span> <span class="n">result</span><span class="p">.</span><span class="nf">success?</span>
+            <span class="vi">@current_user</span> <span class="o">=</span> <span class="n">result</span><span class="p">.</span><span class="nf">current_user</span> <span class="c1"># exposed from Web::CommonAuthn</span>
+            <span class="n">flash</span><span class="p">[</span><span class="ss">:info</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Signed in successfully'</span>
+          <span class="k">else</span>
+            <span class="vi">@current_user</span> <span class="o">=</span> <span class="no">CryptIdent</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">guest_user</span>
+            <span class="n">flash</span><span class="p">[</span><span class="ss">:error</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Invalid Member Name or Password'</span>
+          <span class="k">end</span>
+          <span class="n">session</span><span class="p">[</span><span class="ss">:current_user</span><span class="p">]</span> <span class="o">=</span> <span class="vi">@current_user</span>
+          <span class="n">redirect_to</span> <span class="no">Web</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">root_path</span>
+        <span class="k">end</span> <span class="c1"># #call</span>
+
+        <span class="c1"># ...</span>
+
+      <span class="k">end</span> <span class="c1"># class Web::Controllers::Session::Create</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Everything is controller-specific handling of the result from calling the interactor: setting flash messages and session data, redirecting (and, not shown, validating incoming parameters).</p>
+
+<p>I’m happy enough with the controller code; but why does the interactor feel wrong?</p>
+
+<h2 id="interlude-doubt-dissatisfaction-discovery">Interlude: Doubt, Dissatisfaction, Discovery</h2>
+
+<p>One of the habits that I’d fallen into with (other) interactors was to encapsulate any bit of reusable domain logic in its own interactor, such as a <code class="language-plaintext highlighter-rouge">ConfirmValidPassword</code> interactor that was used both when resetting a lost password and setting a new one for a presently-signed-in user. That, in turn, led to a subtle but important change in how I thought of interactors: rather than exclusively as complete encapsulations of domain logic separate from controller actions, they were now that <em>plus</em> any assorted bits of supporting logic. My <code class="language-plaintext highlighter-rouge">lib/the_app/interactors</code> folder was on track to becoming the kind of universal junk drawer that <code class="language-plaintext highlighter-rouge">lib</code> so typically is in a Rails project. That wasn’t what I wanted; I couldn’t point someone at my <code class="language-plaintext highlighter-rouge">interactors</code> folder and have them be able to tell at a glance what were implementations of logic to serve a specific controller action, versus what were general-purpose supporting components.</p>
+
+<p>What I wanted was something more akin to Jacobson <a href="https://www.ivarjacobson.com/sites/default/files/field_iji_file/article/use-case_2_0_jan11.pdf">use cases</a>. Those “tell a story” revolving around a sequence of steps taken in response to a <em>trigger</em> event by an <em>actor</em> who initiates the action. They should obviously reuse truly common code, but it should be immediately obvious both in terms of the project layout and in terms of the use case content itself what are shared components and what are not.</p>
+
+<p>I had been on the <a href="https://gitter.im/hanami/chat"><code class="language-plaintext highlighter-rouge">hanami/chat</code></a> channel in Gitter for some time. A few days ago, I asked</p>
+
+<blockquote>
+  <p>Has anyone tried using dry-rb Result matchers (or, perhaps better, dry-transaction’s <code class="language-plaintext highlighter-rouge">step</code> sequencing) in/with Hanami interactors? How did that go? I’m thinking of this as I look at one of my own “higher-order” interactors that uses two others, calling first one and then, if that was successful, passing its result in as input to the second. What I wind up with is awfully procedural, and I’d like to clean it up a bit. I’ve used Result matchers before, and I know that Hanami and dry-rb are supposed to be more thoroughly integrated going forward, but it seems like interactors, in their current incarnation, are somewhat orthogonal to the dry-rb way of structuring things.</p>
+</blockquote>
+
+<p><a href="https://github.com/tiev">Viet (Drake) Tran</a> stepped up and pointed out that</p>
+
+<blockquote>
+  <p>Interactor and dry-rb result are two implementations of the same concept. So I think you should follow only one of them. And to use dry-rb result with more elegant syntax, do-notation is the best <a href="https://dry-rb.org/gems/dry-monads/1.0/do-notation/">https://dry-rb.org/gems/dry-monads/1.0/do-notation/</a></p>
+</blockquote>
+
+<p>He was right. Let me show you what I mean.</p>
+
+<h2 id="iteration-two-a-different-use-case-approach-and-enlightenment">Iteration Two: A Different Use-Case Approach, and Enlightenment</h2>
+
+<p>I reworked the guts of the previous interactor into this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+<span class="c1"># lib/the_app/use_cases/sign_in_member.rb</span>
+
+<span class="nb">require</span> <span class="s1">'dry/monads/result'</span>
+<span class="nb">require</span> <span class="s1">'dry/monads/do'</span>
+
+<span class="k">module</span> <span class="nn">UseCases</span>
+  <span class="c1"># Use case implementation for signing in a Member. Makes use of the CryptIdent</span>
+  <span class="c1"># authentication library, and is implemented using dry-monads' 'do notation`.</span>
+  <span class="c1"># See https://dry-rb.org/gems/dry-monads/1.0/do-notation/ for a discussion.</span>
+  <span class="k">class</span> <span class="nc">SignInMember</span>
+    <span class="kp">include</span> <span class="no">Dry</span><span class="o">::</span><span class="no">Monads</span><span class="o">::</span><span class="no">Result</span><span class="o">::</span><span class="no">Mixin</span>
+    <span class="kp">include</span> <span class="no">Dry</span><span class="o">::</span><span class="no">Monads</span><span class="o">::</span><span class="no">Do</span><span class="p">.</span><span class="nf">for</span><span class="p">(</span><span class="ss">:call</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">repo: </span><span class="no">UserRepository</span><span class="p">.</span><span class="nf">new</span><span class="p">)</span>
+      <span class="kp">extend</span> <span class="no">CryptIdent</span>
+      <span class="vi">@repo</span> <span class="o">=</span> <span class="n">repo</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+      <span class="n">values</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">validate</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:member</span><span class="p">])</span>
+      <span class="n">member</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">find_member</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+      <span class="n">current_user</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">authenticate_member</span><span class="p">(</span><span class="n">member</span><span class="p">,</span> <span class="n">values</span><span class="p">[</span><span class="ss">:password</span><span class="p">])</span>
+
+      <span class="no">Success</span><span class="p">(</span><span class="n">current_user</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="kp">private</span>
+
+    <span class="nb">attr_reader</span> <span class="ss">:repo</span>
+
+    <span class="k">def</span> <span class="nf">authenticate_member</span><span class="p">(</span><span class="n">member</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+      <span class="n">sign_in</span><span class="p">(</span><span class="n">member</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span>
+        <span class="n">result</span><span class="p">.</span><span class="nf">success</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="ss">:|</span>
+          <span class="no">Success</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+        <span class="k">end</span>
+        <span class="n">result</span><span class="p">.</span><span class="nf">failure</span> <span class="k">do</span> <span class="o">|</span><span class="n">code</span><span class="ss">:|</span>
+          <span class="no">Failure</span><span class="p">(</span><span class="ss">sign_in: </span><span class="p">[</span><span class="n">code</span><span class="p">.</span><span class="nf">to_s</span><span class="p">])</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">find_member</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+      <span class="n">member</span> <span class="o">=</span> <span class="n">repo</span><span class="p">.</span><span class="nf">find_member</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="ss">:name</span><span class="p">])</span>
+      <span class="no">Failure</span><span class="p">(</span><span class="ss">member: </span><span class="p">[</span><span class="s1">'Name or password not valid'</span><span class="p">])</span> <span class="k">unless</span> <span class="n">member</span>
+
+      <span class="no">Success</span><span class="p">(</span><span class="n">member</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="no">SignInValidator</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">params</span><span class="p">).</span><span class="nf">validate</span>
+      <span class="k">return</span> <span class="no">Failure</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="nf">errors</span><span class="p">)</span> <span class="k">if</span> <span class="n">result</span><span class="p">.</span><span class="nf">failure?</span>
+
+      <span class="no">Success</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="nf">to_h</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="k">class</span> <span class="nc">SignInValidator</span>
+      <span class="kp">include</span> <span class="no">Hanami</span><span class="o">::</span><span class="no">Validations</span>
+
+      <span class="n">validations</span> <span class="k">do</span>
+        <span class="n">required</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span> <span class="p">{</span> <span class="n">filled?</span> <span class="o">&amp;</span> <span class="n">str?</span> <span class="p">}</span>
+        <span class="n">required</span><span class="p">(</span><span class="ss">:password</span><span class="p">)</span> <span class="p">{</span> <span class="n">filled?</span> <span class="o">&amp;</span> <span class="n">str?</span> <span class="p">}</span>
+      <span class="k">end</span>
+    <span class="k">end</span> <span class="c1"># class UseCases::SignInMember::SignInValidator</span>
+  <span class="k">end</span> <span class="c1"># class UseCases::SignInMember</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Notice how each step (<code class="language-plaintext highlighter-rouge">#validate</code>, <code class="language-plaintext highlighter-rouge">#find_member</code>, and <code class="language-plaintext highlighter-rouge">#authenticate_member</code>) is self-contained; the only bit of state introduced in the entire class is a Repository assigned to in <code class="language-plaintext highlighter-rouge">#initialize</code> and read from in <code class="language-plaintext highlighter-rouge">#find_member</code>; this allows a test double to be injected rather than using the default <code class="language-plaintext highlighter-rouge">UserRepository.new</code> instance. Each of the three “step” methods, as well as <code class="language-plaintext highlighter-rouge">#call</code>, make success or failure unavoidably obvious, and the beauty of “do notation” is that a Failure reported by any method <code class="language-plaintext highlighter-rouge">yield</code>ed to from <code class="language-plaintext highlighter-rouge">#call</code> causes <code class="language-plaintext highlighter-rouge">#call</code> to return that Failure in lieu of executing any further steps.</p>
+
+<p>So what does this do to the interactor and the controller action? The code that would remain in an interactor becomes so trivial that it can safely be moved into the controller action directly:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+<span class="c1"># apps/web/controllers/session/new.rb</span>
+
+<span class="k">module</span> <span class="nn">Web</span>
+  <span class="k">module</span> <span class="nn">Controllers</span>
+    <span class="k">module</span> <span class="nn">Session</span>
+      <span class="k">class</span> <span class="nc">Create</span>
+        <span class="kp">include</span> <span class="no">Web</span><span class="o">::</span><span class="no">Action</span>
+        <span class="kp">include</span> <span class="no">Web</span><span class="o">::</span><span class="no">RequireGuest</span>
+        <span class="kp">include</span> <span class="no">Hanami</span><span class="o">::</span><span class="no">Action</span><span class="o">::</span><span class="no">Session</span>
+
+        <span class="n">params</span> <span class="k">do</span>
+          <span class="n">required</span><span class="p">(</span><span class="ss">:member</span><span class="p">).</span><span class="nf">schema</span> <span class="k">do</span>
+            <span class="n">required</span><span class="p">(</span><span class="ss">:name</span><span class="p">).</span><span class="nf">filled</span><span class="p">(</span><span class="ss">:str?</span><span class="p">)</span>
+            <span class="n">required</span><span class="p">(</span><span class="ss">:password</span><span class="p">).</span><span class="nf">filled</span><span class="p">(</span><span class="ss">:str?</span><span class="p">)</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+
+        <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+          <span class="n">result</span> <span class="o">=</span> <span class="no">SignInMember</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+          <span class="vi">@current_user</span> <span class="o">=</span> <span class="n">result</span><span class="p">.</span><span class="nf">value_or</span><span class="p">(</span><span class="no">CryptIdent</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">guest_user</span><span class="p">)</span>
+          <span class="n">session</span><span class="p">[</span><span class="ss">:current_user</span><span class="p">]</span> <span class="o">=</span> <span class="vi">@current_user</span>
+          <span class="n">flash_message_for</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+          <span class="n">redirect_to</span> <span class="no">Web</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">root_path</span>
+        <span class="k">end</span> <span class="c1"># #call</span>
+
+        <span class="kp">private</span>
+
+        <span class="k">def</span> <span class="nf">flash_message_for</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+          <span class="k">if</span> <span class="n">result</span><span class="p">.</span><span class="nf">success?</span>
+            <span class="n">flash</span><span class="p">[</span><span class="ss">:info</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Signed in successfully'</span>
+          <span class="k">else</span>
+            <span class="n">flash</span><span class="p">[</span><span class="ss">:error</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Invalid Member Name or Password'</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>There are only two bits of code here that know or even care if the result was successful or not. One, obviously, is in <code class="language-plaintext highlighter-rouge">#flash_message_for</code>; the other is at line 21, where <code class="language-plaintext highlighter-rouge">@current_user</code> is assigned the value from the successful result of <code class="language-plaintext highlighter-rouge">SignInMember</code> or, on failure, the “guest user”. That line is also the <em>only</em> line of code in the class that has any knowledge whatsoever of what a regular Member or a “guest user” <em>are</em>. Compare that to the last controller code you worked on. 😀</p>
+
+<p>Thoughts? Anything I could have done better? Disagree with my approach? Let’s have a chat about it; leave me a comment here or find me on Gitter in <a href="https://gitter.im/hanami/chat"><code class="language-plaintext highlighter-rouge">hanami/chat</code></a>.</p>
+
+<p>Thanks!</p>
+
+
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			 
+				<li><a href="/categories.html#development-ref">
+					development <span>(4)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		  
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			 
+				<li>
+					<a href="/tags.html#ruby-ref">
+					ruby <span>(13)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#clean architecture-ref">
+					clean architecture <span>(3)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#hanami-ref">
+					hanami <span>(3)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#dry-rb-ref">
+					dry-rb <span>(1)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#monads-ref">
+					monads <span>(1)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#use cases-ref">
+					use cases <span>(3)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		  
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=An Interactor or a Use Case?&via=jeff_dickey"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9" class="img-rounded author-image" />
+        <h4 class="section-title author-name">Jeff Dickey</h4>
+        <p class="author-bio">Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous"><a href="/development/practices/2018/09/28/what-gems-do-i-start-with.html" title="What Gems Do I Start With?">&larr; Previous</a></li>
+		  
+		  
+		  <li class="next"><a href="/deployment/docker/2019/07/30/the-best-thing-about-github-actions-is.html" title="The Best Thing About GitHub Actions Is...">Next &rarr;</a></li>
+		  
+		</ul>
+
+		<hr>
+	</div>
+	
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jdickeyghpages';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				&copy; 2020 Jeff Dickey with Jekyll. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+</html>
+
+
+

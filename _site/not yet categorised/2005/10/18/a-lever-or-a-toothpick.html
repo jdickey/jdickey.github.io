@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>A Lever, or a Toothpick?</title>
+	
+	<meta name="description" content="Collaboration and Communication as Prerequisites for Software Success. Originally posted on old &quot;Archimedes' Lever&;quot; blog.">
+	
+	<meta name="author" content="Jeff Dickey">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/jdickey">
+				<i class="fa fa-github"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=35" class="img-circle" />
+				Six Impossible Things Before Bundling
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">Six Impossible Things Before Bundling</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/jdickey">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/jdickey">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>A Lever, or a Toothpick? </h1>
+</div>
+	
+<article>
+
+	<div class="col-sm-10">
+	 <span class="post-date">
+	   
+	   October 
+	   18th,
+	   
+	   2005
+	 </span>
+	  <div class="article_body">
+	  <p>The following content was originally posted <a href="http://archlever.blogspot.com/2005/10/lever-that-rocks-our-world.html">on my old blog</a> on 18 October 2005. An eternity ago, as blogs go. The content is reformatted from ancient HTML, but is otherwise unchanged (including use of then-locally-appropriate English dialect). Enjoy.</p>
+
+<hr />
+
+<p>Any modern development effort which is complex enough to be commercially and/or technically interesting requires active, continuous collaboration between professionals and craftsfolk of various disciplines and specialisations. For instance, most organisations developing computer software have, in addition to the designers and coders of the software itself, several other interested <a href="http://en.wikipedia.org/wiki/Stakeholder">stakeholders</a>: quality engineers, documentation authors and editors, sales and marketing specialists, and various flavours of managers. Each of these individuals and groups have different capabilities and roles with regard to the project being developed, each of the groups have different perspectives, different needs — but one need that all share, knowingly or not, is the ability to communicate effectively and efficiently with each other. This involves the creation or acquisition of information, its refinement, analysis, discussion and use within the context of the project. The end goal, of course, is the completion and delivery of some sort of artifact that meets the needs of the organisation and delights that product’s customers, without sending the development organisation on a <a href="http://en.wikipedia.org/wiki/Death_march_%28software_development%29">death march</a> in the process.</p>
+
+<p>“But wait”, you might reasonably say, “we already <em>do</em> this. We have meetings, minutes are taken, transcribed and emailed about, lots of other emails get sent back and forth, we have documents like functional specifications and design documents and whatnot to keep ourselves organised — what do we need all this <a href="http://www.m-w.com/cgi-bin/dictionary?book=Dictionary&amp;va=gimcrackery&amp;x=0&amp;y=0">gimcrackery</a> for?” All of which is perfectly true, just as you can put harness and bit on your horse, hitch up a carriage, and travel from Kuala Lumpur to Singapore — or you could catch an airline flight instead. There are countless organisations, and a depressingly high proportion of smaller ones, who continue to solve early-21st-century problems with early-<em>20th</em>-century tools and practices. We know better. One of the points that many leading authorities, such as Steve Maguire in his excellent book <a href="http://www.amazon.com/exec/obidos/tg/detail/-/1556156502/qid=1129568948/sr=8-1/ref=sr_8_xs_ap_i1_xgl14/104-3307285-4629533?v=glance&amp;s=books&amp;n=507846"><em>Debugging the Development Process</em></a>, make is that for each hour of meetings which a knowledge worker attends, it takes at least another hour for him or her to regain the level of productivity in work product creation which would have been effected had the meeting not taken place. So, for a typical large-corporate developer who spends an hour every day in meetings <em>that could have their purpose accomplished through less intrusive means</em>, the company is taking a 25% hit in productivity for that individual. Take 1/4 of the payroll of, say, <a href="http://www.maxis.com.my">Maxis</a>, or even my own company <a href="http://www.cilix.org">Cilix</a>, and that starts to add up.</p>
+
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			 
+				<li><a href="/categories.html#not yet categorised-ref">
+					not yet categorised <span>(37)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		  
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			 
+				<li>
+					<a href="/tags.html#archlever-ref">
+					archlever <span>(4)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#collaboration-ref">
+					collaboration <span>(2)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#communication-ref">
+					communication <span>(2)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#craftsmanship-ref">
+					craftsmanship <span>(5)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#development-ref">
+					development <span>(16)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#open standards-ref">
+					open standards <span>(1)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#quality-ref">
+					quality <span>(3)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		  
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=A Lever, or a Toothpick?&via=jeff_dickey"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9" class="img-rounded author-image" />
+        <h4 class="section-title author-name">Jeff Dickey</h4>
+        <p class="author-bio">Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous disabled"><a>&larr; Previous</a></li>
+		  
+		  
+		  <li class="next"><a href="/not%20yet%20categorised/2005/10/18/the-lever-that-rocks-our-world.html" title="The Lever That Rocks Our World">Next &rarr;</a></li>
+		  
+		</ul>
+
+		<hr>
+	</div>
+	
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jdickeyghpages';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				&copy; 2020 Jeff Dickey with Jekyll. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+</html>
+
+
+

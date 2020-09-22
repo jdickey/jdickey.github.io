@@ -1,0 +1,41 @@
+<p>I <em>really</em> appreciate <a href="http://slim-lang.com">Slim</a> view templates. What I <em>don’t</em> appreciate is <a href="http://haml.info">Haml</a>-style shorthand for things like CSS class names.</p>
+
+<p>Haml (and Slim) allow you to code</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"foo bar"</span><span class="nt">&gt;</span>blah blah<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<p>as</p>
+
+<div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>span.foo.bar
+  blah blah
+</code></pre></div></div>
+
+<p>That works just fine, until you have class names (as in <a href="http://getbootstrap.com">Bootstrap</a> or <a href="http://www.getuikit.com">UIKit</a> with dashes (hyphens) in the class names.</p>
+
+<p>If you want to code</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;</span><span class="err">!==</span> <span class="na">markup</span><span class="err">...</span> <span class="na">--</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>the naive Haml-influenced stylist might write</p>
+
+<div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.col-md-8</span>
+  <span class="c">/ ...
+/ ...more markup...
+</span></code></pre></div></div>
+
+<p>which won’t work. Ruby comes along, interpreting the Haml/Slim DSL, and looks
+for variables named <code class="highlighter-rouge">col</code> and <code class="highlighter-rouge">md</code> to build the expression <code class="highlighter-rouge">col - md - 8</code>, and
+barfs when it can’t.</p>
+
+<p>The fix is to write the HTML without the angle brackets:</p>
+
+<div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>div class="col-md-8"
+  <span class="c">/ ...
+/ ...more markup...
+</span></code></pre></div></div>
+
+<p>You Have Been Warned.</p>

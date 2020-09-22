@@ -1,0 +1,15 @@
+<p>I keep running across questions on various lists along the lines of “why is agile better than waterfall, besides it not being waterfall?” The answer to that bit me once again over the weekend: agility is better because, done reasonably well, it responds to change far better (by any standard) than waterfall does.</p>
+
+<p>The straw that broke <em>another</em> camel’s back was virtualisation, more specifically on Macs; more specifically still, “which of the available VM packages for Mac (<a href="http://www.vmware.com/products/fusion">VMware Fusion</a>, <a href="http://www.parallels.com/products/desktop/">Parallels Desktop</a>, or <a href="https://www.virtualbox.org/">Oracle VirtualBox</a>) do you use, especially considering that Parallels is Mac-only?”</p>
+
+<p>Three years ago when I looked at all three with a view towards running (multiple) Linux servers for Web application development on our Macs, the choice seemed a pretty clear no-brainer: Parallels was essentially Windows-only, and since we didn’t (really) care about Windows, was irrelevant. OpenBox, being free and open source, had two big pluses going in, but made glaciers’ movement look supersonic in comparison, especially when running multiple VMs concurrently. That left VMware which, although being marketed by Big Corporate <em>for</em> Big Corporate, ran anything I could throw at it (unlike Parallels) with quite-acceptable speeds (unlike VirtualBox). We bought a license for every developer and test server we had at the time and went on to worry about other things (like shipping product).</p>
+
+<p>Three years on, <a href="https://www.getchef.com/">Chef</a> and <a href="http://puppetlabs.com/">Puppet</a> and <a href="http://www.vagrantup.com/">Vagrant</a> and especially <a href="https://www.docker.com/">Docker</a> have come along and eaten ever-more-significant chunks of the development and devops world. They each depend on virtualisation, and they each depend on VirtualBox.</p>
+
+<p><em>Don’t</em> try to install VirtualBox on a Mac that already has Fusion on it (or, presumably, vice versa). Based on our experience, you’ll have to do a bare-metal (or Recovery Mode) install from scratch to get the selected survivor up and happy again.</p>
+
+<p>Fusion is smooth, fast enough, and with enough features to handle most anything you’ll want to throw at it, from Ubuntu Breezy Badger to the latest Debian-based derivative to some bizarre OS that only you and the development team and three bloggers will ever hear of; if it runs on bare metal, it is <em>highly likely</em> to run in a Fusion VM. <strong>But…</strong></p>
+
+<p>…the dev/ops world has standardised on OpenBox, and looks set to stay that way for some time (until the <em>next</em> massively disruptive change). While both vendors may swear on a stack of manuals that you <em>should</em> be able to just uninstall one and reinstall the other, our experience indicates that you’ll be better off with a fully sterilised Mac OS X underneath.</p>
+
+<p>That’s the one part of the necessary that Docker and the rest simply can’t automate the pain out of for you.</p>

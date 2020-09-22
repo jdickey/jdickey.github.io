@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Enthusiastically Poking at Hanami</title>
+	
+	<meta name="description" content="Finally! A Ruby Web framework people can use with a straight face!">
+	
+	<meta name="author" content="Jeff Dickey">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/jdickey">
+				<i class="fa fa-github"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=35" class="img-circle" />
+				Six Impossible Things Before Bundling
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">Six Impossible Things Before Bundling</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/jdickey">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/jdickey">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>Enthusiastically Poking at Hanami </h1>
+</div>
+	
+<article>
+
+	<div class="col-sm-10">
+	 <span class="post-date">
+	   
+	   December 
+	   20th,
+	   
+	   2017
+	 </span>
+	  <div class="article_body">
+	  <p>This is indirectly a long-delayed follow-up to <a href="https://jdickey.github.io/not%20yet%20categorised/2014/06/24/lotus-a-complete-web-framework-for-ruby.html">this post</a> from <em>June, 2014</em>. It took <em>amazing</em> a while to get here, but it <em>did.</em></p>
+
+<p>If you’re an experienced OO developer, who also does Web development in Ruby and is in a use relationship with Rails, at some point you’ve beaten your head against the wall (often literally) in enraged frustration at how much effort it takes to make seemingly simple changes, and how few aids the framework really has for good architecture and design. Many megabytes have been published by more capable and patient bloggers than I regarding the walls one must power through in order to get work done with Rails. Nick Sutterer put it almost perfectly in his <a href="https://leanpub.com/trailblazer"><em>Trailblazer</em></a> book:</p>
+
+<blockquote>
+  <p>For every Rails project, there is exactly two outcomes. Either someone in the team’s an experienced architect and leads the software to an advanced design with service layer, view components, maybe forms, and so on. Or, and that’s the classic way, the project strictly follows the Rails Way and will end up as a code disaster.</p>
+</blockquote>
+
+<p>Or, to put it another way, your team will spend an allegorical <em>forty years in the wilderness</em> turning a Rails-Way megalith with no underlying structure into a compelling product that real people will pay you real money for, enabling you to hire enough developers to fix enough bugs that you can add a feature or two every quarter and not run yourselves into the ground (or out of money, or both). Someone wins the lottery almost every week, too.</p>
+
+<p>For the last three years, I’ve been keeping a hopeful eye on <a href="http://hanamirb.org/"><em>Hanami</em></a>, née <em>Lotus</em>, which appeared to tick all my oh-how-I-wish boxes for a Ruby Web framework:</p>
+
+<ul>
+  <li>clean, understandable architecture;</li>
+  <li>fluent in and encouraging of good design principles; at a minimum including <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a>);</li>
+  <li>an active, open, welcoming development group; and hope of hopes</li>
+  <li>documentation good enough that a new developer doesn’t have to spend weeks parsing source files to understand basic concepts.</li>
+</ul>
+
+<p>Hanami ticks each of those boxes with enthusiastic authority. The team discussion on <a href="https://gitter.im/hanami/chat">Gitter</a> is informative, popular, and welcoming of new developers. The <a href="http://hanamirb.org/guides/1.1/">documentation</a> is amazing. And the architecture…do I really have to rave for fifty paragraphs about how much I like the architecture? (I probably could.)</p>
+
+<p>Give it a try. Work through the introductory project, hang out in the Gitter room, and learn a few (dozen) things that will make your work much more enjoyably productive than it may well have been.</p>
+
+<hr />
+
+<h1 id="yes-but">Yes, but…</h1>
+
+<p>The above is an introduction to what follows. The rest of this post documents notes I took as I took the end product of the <code class="language-plaintext highlighter-rouge">bookshelf</code> tutorial and added the analysis tools I use on most Ruby projects to the default task in the <code class="language-plaintext highlighter-rouge">Rakefile</code>. This required some adaptation, as documented below.</p>
+
+<p>The project itself can be found as a Git repository <a href="">on GitHub</a> https://github.com/jdickey/bookshelf). Git setup and commits <em>were not</em> specified by the tutorial itself. That, too, in my opinion, is a bug in the tutorial.</p>
+
+<hr />
+<hr />
+
+<h1 id="over-analysing-the-hanami-tutorial">(Over?) Analysing the Hanami Tutorial</h1>
+
+<p>What happens when we apply popular Ruby static-analysis tools to the final product of the <a href="http://hanamirb.org/guides/1.1/">Hanami 1.1 tutorial</a>? How “clean” do the tools say our Clean Architecture code is?</p>
+
+<p>Remember that the app at this point is a <em>tiny</em> MVC app; one controller has a single action (<code class="language-plaintext highlighter-rouge">Home::Index</code>), and the other (<code class="language-plaintext highlighter-rouge">Books</code>) has a total of three (for <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">create</code>, and <code class="language-plaintext highlighter-rouge">new</code>). There are a total of 424 lines of code in <code class="language-plaintext highlighter-rouge">.rb</code> files, many of which (e.g., the 326-line <code class="language-plaintext highlighter-rouge">apps/web/application.rb</code>) are auto-generated. We’re not going to draw any broad conclusions about the quality of Hanami code here; we’re just looking for the initial reactions that a developer familiar with the tools but new to Hanami might have.</p>
+
+<p>We’ll look at several popular Gem-based tools:</p>
+
+<ul>
+  <li><a href="https://github.com/seattlerb/flog">Flog</a>;</li>
+  <li><a href="https://github.com/seattlerb/flay">Flay</a>;</li>
+  <li><a href="https://github.com/troessner/reek">Reek</a>;</li>
+  <li><a href="https://github.com/bbatsov/rubocop">RuboCop</a>.</li>
+</ul>
+
+<h1 id="lessons-and-conclusions">Lessons and Conclusions</h1>
+
+<p>Aka the <strong>tl; dr</strong> for people who aren’t already certain they want to go through the voluminous content for each of the tools mentioned, but have learned enough about <a href="http://hanamirb.org/">Hanami</a> to at least be open to learning the framework. (You won’t regret it!)</p>
+
+<p>The generated (and lightly updated) code which exists at the end of the <a href="http://hanamirb.org/guides/1.1/">Hanami 1.1 tutorial</a> tutorial makes sense; is in line with Clean Architecture as espoused by authorities such as Robert C Martin and Arkency, and lends itself to Domain-Driven Design principles. It has several near-duplicate source files (e.g., the view code); during a “real” project, these can be expected to evolve independently, making initial “maximum DRY” code an opportunity for bugs rather than a feature.</p>
+
+<p>The Hanami documentation, both the tutorial itself and the remainder of the documentation, is superb; the only Ruby code that this writer has yet seen with similar depth, breadth, and accessibility to the Hanami 1.1 documentation has been the Rails Guides, and those can often be overwhelming, even to experienced developers merely trying to brush up on a topic.</p>
+
+<p>With regard to the tooling added in the current exercise, we see a few mild to moderate pain points that developers experienced with these tools in other frameworks should be aware of.</p>
+
+<ol>
+  <li>Most significantly, the as-generated code and specs use Ruby’s “compact” module specifications (<code class="language-plaintext highlighter-rouge">module Foo::Bar::Baz</code>) rather than the preferred explicit nesting (<code class="language-plaintext highlighter-rouge">module Foo; module Bar; module Baz</code>, preferably on subsequent, iteratively indented lines). The community Ruby Style Guide has <a href="https://github.com/bbatsov/ruby-style-guide#namespace-definition">a good explanation</a> of the rationale, which links to a <a href="https://cirw.in/blog/constant-lookup.html">good discussion of constant lookup in Ruby</a> which provides further explanation and justification for the preference. This writer would have preferred that Hanami encourage this usage, e.g., by using it for generated code and specs.</li>
+  <li>The tools provide a baseline of metrics which have been shown generally useful as projects progress from the bare-minimum state exemplified by the current code, and bringing code into compliance with guidelines (such as the Style Guide) and thinking through even “obviously trivial” violations of <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a> principles <em>early</em> prevents confusion and more work later;</li>
+</ol>
+
+<p>With that in mind, a project proceeding from a generated Hanami project <strong>should</strong> utilise these tools as part of its standard pipeline (e.g., default Rake task and/or CI process). It <strong>must</strong> also open issues in its issue tracker immediately after these tools are integrated, which note the configuration overrides needed to prevent Reek and/or RuboCop from reporting violations. The practices which necessitated those overrides for generated code <strong>should</strong> be remediated with a moderate to high degree of urgency, and new or modified code <strong>must</strong> report no violations when those tools are used in their default configurations to examine the new or modified files.</p>
+
+<p>This writer must, however, re-emphasise his elation with his initial exposure to Hanami. The architecture includes many major features which his projects have been seeking to attain for several years, with frameworks/toolkits like Rails and even Roda making that discouragingly non-intuitive and clearly non-native to the underlying philosophy. Many <a href="https://www.poodr.com/">excellent</a> <a href="https://leanpub.com/growing-rails">books</a>, <a href="https://www.youtube.com/watch?v=WpkDN78P884">presentations</a>, and <a href="http://trailblazer.to/">additional framework layers</a> have been developed over the years to make Rails (in particular) more emenable to production-scale development and maintenance; finding a framework that (largely) takes those lessons to heart <em>out of the box</em> is, to put it mildly, a refreshingly vindicating experience.</p>
+
+<h1 id="the-tools">The Tools</h1>
+
+<h2 id="flog">Flog</h2>
+
+<p>First up, <a href="https://github.com/seattlerb/flog">Flog</a> says it</p>
+
+<blockquote>
+  <p>…reports the most tortured code in an easy to read pain report. The higher the score, the more pain the code is in.</p>
+</blockquote>
+
+<p>We’ve used this tool on numerous projects over the last several years. It’s easy to use, has a Rake task that does <em>almost</em> exactly what we want (and is easily customised), so what’s not to like?</p>
+
+<p>We add the line</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">gem</span> <span class="s1">'flog'</span><span class="p">,</span> <span class="s1">'4.6.1'</span>
+</code></pre></div></div>
+
+<p>to the <code class="language-plaintext highlighter-rouge">Gemfile</code> and rebundle. Then, we add to the <code class="language-plaintext highlighter-rouge">Rakefile</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'flog'</span>
+<span class="nb">require</span> <span class="s1">'flog_task'</span>
+
+<span class="k">class</span> <span class="nc">FlogTask</span> <span class="o">&lt;</span> <span class="no">Rake</span><span class="o">::</span><span class="no">TaskLib</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:methods_only</span>
+<span class="k">end</span>
+
+<span class="no">FlogTask</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">verbose</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">threshold</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># default is 200</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">methods_only</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">dirs</span> <span class="o">=</span> <span class="sx">%w(apps lib)</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>Then we run the tool as a Rake task:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bin/rake flog
+    22.8: flog total
+     4.6: flog/method average
+
+     9.8: Web::Controllers::Books::Create#call apps/web/controllers/books/create.rb:15-21
+     6.2: Web::Application::configure#production apps/web/application.rb:295-323
+$
+</code></pre></div></div>
+
+<p>On previous projects (using Rails or Roda as frameworks), we’d adopted the guidelines that any per-method score over 6.0 was a code smell, and over 8.0 was probably in need of refactoring. (Adjust those scores upwards by 1.0 for a Rails project.)</p>
+
+<p>The per-method average of 4.6 is quite low (good), but what are the two methods being called out here about?  Let’s take a look at <code class="language-plaintext highlighter-rouge">Web::Controllers::Books::Create</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">module</span> <span class="nn">Web::Controllers::Books</span>
+  <span class="k">class</span> <span class="nc">Create</span>
+    <span class="kp">include</span> <span class="no">Web</span><span class="o">::</span><span class="no">Action</span>
+
+    <span class="n">expose</span> <span class="ss">:book</span>
+
+    <span class="n">params</span> <span class="k">do</span>
+      <span class="n">required</span><span class="p">(</span><span class="ss">:book</span><span class="p">).</span><span class="nf">schema</span> <span class="k">do</span>
+        <span class="n">required</span><span class="p">(</span><span class="ss">:title</span><span class="p">).</span><span class="nf">filled</span><span class="p">(</span><span class="ss">:str?</span><span class="p">)</span>
+        <span class="n">required</span><span class="p">(</span><span class="ss">:author</span><span class="p">).</span><span class="nf">filled</span><span class="p">(</span><span class="ss">:str?</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">params</span><span class="p">.</span><span class="nf">valid?</span>
+        <span class="vi">@book</span> <span class="o">=</span> <span class="no">BookRepository</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:book</span><span class="p">])</span>
+
+        <span class="n">redirect_to</span> <span class="n">routes</span><span class="p">.</span><span class="nf">books_path</span>
+      <span class="k">else</span>
+        <span class="nb">self</span><span class="p">.</span><span class="nf">status</span> <span class="o">=</span> <span class="mi">422</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">#call</code> method is exactly what you see in controller actions in tutorials for <em>any</em> Ruby MVC framework: if it’s been fed valid parameters, it creates a new entity and redirects; if it hasn’t, it complains by setting an HTTP status code (and expects the developer to remember/easily look up that <code class="language-plaintext highlighter-rouge">422</code> represents an <a href="https://httpstatuses.com/422"><code class="language-plaintext highlighter-rouge">Unprocesseable Entity</code></a>). If you tend to follow the guidance of Ruby leaders like Avdi Grimm (<em>Confident Ruby</em>), Sandi Metz (<em>POODR</em>), or Russ Olsen (<em>Eloquent Ruby</em>), you may be tempted to refactor the <code class="language-plaintext highlighter-rouge">Create</code> class to look something like</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">module</span> <span class="nn">Web::Controllers::Books</span>
+  <span class="k">class</span> <span class="nc">Create</span>
+    <span class="kp">include</span> <span class="no">Web</span><span class="o">::</span><span class="no">Action</span>
+
+    <span class="n">expose</span> <span class="ss">:book</span>
+
+    <span class="n">params</span> <span class="k">do</span>
+      <span class="n">required</span><span class="p">(</span><span class="ss">:book</span><span class="p">).</span><span class="nf">schema</span> <span class="k">do</span>
+        <span class="n">required</span><span class="p">(</span><span class="ss">:title</span><span class="p">).</span><span class="nf">filled</span><span class="p">(</span><span class="ss">:str?</span><span class="p">)</span>
+        <span class="n">required</span><span class="p">(</span><span class="ss">:author</span><span class="p">).</span><span class="nf">filled</span><span class="p">(</span><span class="ss">:str?</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">report_unprocessable_entity</span> <span class="k">unless</span> <span class="n">params</span><span class="p">.</span><span class="nf">valid?</span>
+
+      <span class="vi">@book</span> <span class="o">=</span> <span class="no">BookRepository</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:book</span><span class="p">])</span>
+      <span class="n">redirect_to</span> <span class="n">routes</span><span class="p">.</span><span class="nf">books_path</span>
+    <span class="k">end</span>
+
+    <span class="kp">private</span>
+
+    <span class="k">def</span> <span class="nf">report_unprocessable_entity</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">status</span> <span class="o">=</span> <span class="mi">422</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>You’ve added a <a href="http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Style/GuardClause">guard clause</a> to replace the alternate-block <code class="language-plaintext highlighter-rouge">if/else</code>, and of course the specs pass (<code class="language-plaintext highlighter-rouge">bin/rake test</code> does not report errors or failures). When you run <code class="language-plaintext highlighter-rouge">bin/rake flog</code>, however, you’re a bit crestfallen:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bin/rake flog
+    23.3: flog total
+     3.9: flog/method average
+
+     9.2: Web::Controllers::Books::Create#call apps/web/controllers/books/create.rb:15-19
+     6.2: Web::Application::configure#production apps/web/application.rb:295-323
+$
+</code></pre></div></div>
+
+<p>Your 9.8 score has come down, yes; but only to 9.2. Flog thinks there’s still a lot of complexity in that method. To get a more detailed view of what it’s complaining about, you flog that one file specifically:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bin/flog -adm apps/web/controllers/books/create.rb
+    10.2: flog total
+     5.1: flog/method average
+
+     9.2: Web::Controllers::Books::Create#call apps/web/controllers/books/create.rb:15-19
+     1.4:   routes
+     1.2:   []
+     1.2:   books_path
+     1.2:   new
+     1.1:   report_unprocessable_entity
+     1.0:   redirect_to
+     1.0:   valid?
+     1.0:   assignment
+     1.0:   create
+     1.0:   branch
+
+     1.0: Web::Controllers::Books::Create#report_unprocessable_entity apps/web/controllers/books/create.rb:24-25
+     1.0:   assignment
+     0.2:   lit_fixnum
+
+$
+</code></pre></div></div>
+
+<p>It’s not complaining about <em>any one thing</em>; it’s saying that you have <em>enough</em> “things” in that method that there’s likely an <a href="http://rubyblog.pro/2017/05/solid-single-responsibility-principle-by-example">SRP</a> violation in there somewhere. Looking at the code, you say “Hang on; after the guard clause, <em>all we do is</em> invoke a method on the repository to create and persist a new entity <em>based on</em> the parameters being fed in, <em>and then</em> redirect. What’s wrong with that?!”</p>
+
+<p>As long as you’re dealing with only 2-3 lines of code from a tutorial, not much is “wrong with that”. However, given our tendency to copy-and-paste code from tutorials into production-destined code, which then grows significantly over time, what started out as a single conditional and less than a half-dozen lines of “real code” tends to grow. And mutate. And overwhelm the poor schmuck (likely you after a few months not seeing the code) sent in to make “a quick change”.</p>
+
+<p>Let’s instead refactor <code class="language-plaintext highlighter-rouge">Create</code> as follows:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">module</span> <span class="nn">Web::Controllers::Books</span>
+  <span class="k">class</span> <span class="nc">Create</span>
+    <span class="kp">include</span> <span class="no">Web</span><span class="o">::</span><span class="no">Action</span>
+
+    <span class="n">expose</span> <span class="ss">:book</span>
+
+    <span class="n">params</span> <span class="k">do</span>
+      <span class="n">required</span><span class="p">(</span><span class="ss">:book</span><span class="p">).</span><span class="nf">schema</span> <span class="k">do</span>
+        <span class="n">required</span><span class="p">(</span><span class="ss">:title</span><span class="p">).</span><span class="nf">filled</span><span class="p">(</span><span class="ss">:str?</span><span class="p">)</span>
+        <span class="n">required</span><span class="p">(</span><span class="ss">:author</span><span class="p">).</span><span class="nf">filled</span><span class="p">(</span><span class="ss">:str?</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">report_unprocessable_entity</span> <span class="k">unless</span> <span class="n">params</span><span class="p">.</span><span class="nf">valid?</span>
+
+      <span class="n">create_entity</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:book</span><span class="p">])</span>
+      <span class="n">redirect_on_success</span>
+    <span class="k">end</span>
+
+    <span class="kp">private</span>
+
+    <span class="k">def</span> <span class="nf">create_entity</span><span class="p">(</span><span class="n">book_params</span><span class="p">)</span>
+      <span class="vi">@book</span> <span class="o">=</span> <span class="no">BookRepository</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">book_params</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">redirect_on_success</span>
+      <span class="n">redirect_to</span> <span class="n">routes</span><span class="p">.</span><span class="nf">books_path</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">report_unprocessable_entity</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">status</span> <span class="o">=</span> <span class="mi">422</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>When we run <code class="language-plaintext highlighter-rouge">bin/rake flog</code>, we see a significant change:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bin/rake flog
+    25.5: flog total
+     3.2: flog/method average
+
+     6.2: Web::Application::configure#production apps/web/application.rb:295-323
+     5.4: Web::Controllers::Books::Create#call apps/web/controllers/books/create.rb:15-19
+     3.6: Web::Controllers::Books::Create#redirect_on_success apps/web/controllers/books/create.rb:28-29
+     2.4: Web::Controllers::Books::Index#call apps/web/controllers/books/index.rb:8-9
+$
+</code></pre></div></div>
+
+<p>Our <code class="language-plaintext highlighter-rouge">#call</code> method is now at a thoroughly respectable 5.4, and two of the three new methods are correctly noted as tiny. (The third is <em>so</em> tiny that it doesn’t even make the top 60% of all methods in the code being reported on, which is Flog’s default threshold.)</p>
+
+<p>Now, take another look at the original code for the <code class="language-plaintext highlighter-rouge">#call</code> method compared to what we have now, and you’ll see something important. Many writers and presenters reinforce the idea that methods should <em>either</em> call other methods <em>or</em> perform tasks, but <em>should not</em> mix the two in a single method. Following the guideline makes it easier for developers to reason about individual methods and their relationships by providing another level of useful bright-line categorisation. (For those of you saying “just be functional”, this is a step in your direction.) The final code has half again as many lines as the original, and three new methods, but I’ll buy you lunch if you can successfully defend the idea that the original code was more understandable than the final code.</p>
+
+<p><em>That’s</em> the value of a tool like <code class="language-plaintext highlighter-rouge">flog</code>, and that’s why it belongs in our default Rake task chain. Our (cleaned-up) <code class="language-plaintext highlighter-rouge">Rakefile</code> now looks like this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">require</span> <span class="s1">'rake'</span>
+<span class="nb">require</span> <span class="s1">'hanami/rake_tasks'</span>
+<span class="nb">require</span> <span class="s1">'rake/testtask'</span>
+<span class="nb">require</span> <span class="s1">'flog'</span>
+<span class="nb">require</span> <span class="s1">'flog_task'</span>
+
+<span class="k">class</span> <span class="nc">FlogTask</span> <span class="o">&lt;</span> <span class="no">Rake</span><span class="o">::</span><span class="no">TaskLib</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:methods_only</span>
+<span class="k">end</span>
+
+<span class="no">Rake</span><span class="o">::</span><span class="no">TestTask</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">pattern</span> <span class="o">=</span> <span class="s1">'spec/**/*_spec.rb'</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">libs</span>    <span class="o">&lt;&lt;</span> <span class="s1">'spec'</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">warning</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="k">end</span>
+
+<span class="no">FlogTask</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">verbose</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">threshold</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># default is 200</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">methods_only</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">dirs</span> <span class="o">=</span> <span class="sx">%w(apps lib)</span>
+<span class="k">end</span>
+
+<span class="n">task</span> <span class="ss">default: </span><span class="p">[</span><span class="ss">:test</span><span class="p">,</span> <span class="ss">:flog</span><span class="p">]</span>
+<span class="n">task</span> <span class="ss">spec: :test</span>
+</code></pre></div></div>
+
+<h3 id="hang-on-what-about">Hang On, What About…</h3>
+
+<p>Our current Flog report now has as its highest-scored (most complex) method <code class="language-plaintext highlighter-rouge">Web::Application::configure#production</code> at 6.2. This is part of the generated file <code class="language-plaintext highlighter-rouge">apps/web/application.rb</code>, which is an intensely-commented chunk of DSL. <em>Since</em> it’s an auto-generated file <em>and since</em> we haven’t touched the section/method in question, it gets a “free ride”; it’s something we’ll keep an eye on to ask why its score goes up (if in fact it later does), but for now, we have bigger fish to shoot.</p>
+
+<h2 id="flay">Flay</h2>
+
+<p>Flay is usually pretty quiet unless it detects duplicate code or other similarly “tortured” constructs.  To add Flay support, we add the Gem to our <code class="language-plaintext highlighter-rouge">Gemfile:</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">gem</span> <span class="s1">'flay'</span><span class="p">,</span> <span class="s1">'2.10.0'</span>
+</code></pre></div></div>
+
+<p>and rebundle. To add Flay to our <code class="language-plaintext highlighter-rouge">Rakefile</code>, we include two more files:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'flay'</span>
+<span class="nb">require</span> <span class="s1">'flay_task'</span>
+</code></pre></div></div>
+
+<p>and then add the task definition:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">FlayTask</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">verbose</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">dirs</span> <span class="o">=</span> <span class="sx">%w(apps lib)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Finally, we change our <code class="language-plaintext highlighter-rouge">default</code> task:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">task</span> <span class="ss">default: </span><span class="p">[</span><span class="ss">:test</span><span class="p">,</span> <span class="ss">:flog</span><span class="p">,</span> <span class="ss">:flay</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Running <code class="language-plaintext highlighter-rouge">bin/rake</code> at this point then gives us a comforting report:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bin/rake
+Run options: --seed 28320
+
+# Running:
+
+..................S
+
+Finished in 0.076855s, 247.2186 runs/s, 494.4371 assertions/s.
+
+19 runs, 38 assertions, 0 failures, 0 errors, 1 skips
+
+You have skipped tests. Run with --verbose for details.
+    25.5: flog total
+     3.2: flog/method average
+
+     6.2: Web::Application::configure#production apps/web/application.rb:295-323
+     5.4: Web::Controllers::Books::Create#call apps/web/controllers/books/create.rb:15-19
+     3.6: Web::Controllers::Books::Create#redirect_on_success apps/web/controllers/books/create.rb:28-29
+     2.4: Web::Controllers::Books::Index#call apps/web/controllers/books/index.rb:8-9
+Total score (lower is better) = 0
+$
+</code></pre></div></div>
+
+<h2 id="reek">Reek</h2>
+
+<p>Reek is easy to set up in its default state, and supports configuring or suppressing specific warnings either through use of a configuration file (for projectwide settings), or by inline comments (to disable specific warnings for individual methods). Reek is <em>comprehensive</em>; so much so that every project this writer has seen that uses Reek uses one or both of those suppression mechanisms to silence warnings the team choose not to address. (A common occurence, even in projects that acknowledge the value of Reek, is commit messages or comments that contain variations of “Shut <em>up</em>, Reek”. 😀</p>
+
+<p>Add the Gem to the <code class="language-plaintext highlighter-rouge">Gemfile</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">gem</span> <span class="s1">'reek'</span><span class="p">,</span> <span class="s1">'4.7.3'</span>
+</code></pre></div></div>
+
+<p>and rebundle. Add <code class="language-plaintext highlighter-rouge">require 'rake/reek/task'</code> to the files <code class="language-plaintext highlighter-rouge">require</code>d by our <code class="language-plaintext highlighter-rouge">Rakefile</code>, and then the task block</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Reek</span><span class="o">::</span><span class="no">Rake</span><span class="o">::</span><span class="no">Task</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">config_file</span> <span class="o">=</span> <span class="s1">'config.reek'</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">source_files</span> <span class="o">=</span> <span class="s1">'{apps,lib}/**/*.rb'</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">reek_opts</span> <span class="o">=</span> <span class="s1">'--sort-by smelliness --no-progress  -s'</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>followed by <code class="language-plaintext highlighter-rouge">touch config.reek</code> to create an empty “config” file. Run <code class="language-plaintext highlighter-rouge">bin/rake</code> to ensure that you haven’t broken anything else.</p>
+
+<p>Now for the moment of truth:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bin/rake reek
+apps/web/controllers/home/index.rb -- 2 warnings:
+  apps/web/controllers/home/index.rb:3: IrresponsibleModule: Web::Controllers::Home::Index has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  apps/web/controllers/home/index.rb:6: UnusedParameters: Web::Controllers::Home::Index#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+apps/web/controllers/books/new.rb -- 2 warnings:
+  apps/web/controllers/books/new.rb:2: IrresponsibleModule: Web::Controllers::Books::New has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  apps/web/controllers/books/new.rb:5: UnusedParameters: Web::Controllers::Books::New#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+apps/web/controllers/books/index.rb -- 2 warnings:
+  apps/web/controllers/books/index.rb:3: IrresponsibleModule: Web::Controllers::Books::Index has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  apps/web/controllers/books/index.rb:8: UnusedParameters: Web::Controllers::Books::Index#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+apps/web/views/home/index.rb -- 1 warning:
+  apps/web/views/home/index.rb:3: IrresponsibleModule: Web::Views::Home::Index has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+apps/web/views/books/new.rb -- 1 warning:
+  apps/web/views/books/new.rb:2: IrresponsibleModule: Web::Views::Books::New has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+apps/web/views/books/index.rb -- 1 warning:
+  apps/web/views/books/index.rb:2: IrresponsibleModule: Web::Views::Books::Index has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+apps/web/views/books/create.rb -- 1 warning:
+  apps/web/views/books/create.rb:3: IrresponsibleModule: Web::Views::Books::Create has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+apps/web/views/application_layout.rb -- 1 warning:
+  apps/web/views/application_layout.rb:3: IrresponsibleModule: Web::Views::ApplicationLayout has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+apps/web/application.rb -- 1 warning:
+  apps/web/application.rb:5: IrresponsibleModule: Web::Application has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+lib/bookshelf/entities/book.rb -- 1 warning:
+  lib/bookshelf/entities/book.rb:1: IrresponsibleModule: Book has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+lib/bookshelf.rb -- 1 warning:
+  lib/bookshelf.rb:1: IrresponsibleModule: Bookshelf has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+lib/bookshelf/repositories/book_repository.rb -- 1 warning:
+  lib/bookshelf/repositories/book_repository.rb:1: IrresponsibleModule: BookRepository has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+apps/web/controllers/books/create.rb -- 1 warning:
+  apps/web/controllers/books/create.rb:3: IrresponsibleModule: Web::Controllers::Books::Create has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+16 total warnings
+
+
+!!! Reek has found smells - exiting!
+</code></pre></div></div>
+
+<p>Well, that was more exciting than we expected. Lots of complaints about “<a href="https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md"><em>Irresponsible Module</em>”</a> which, on visiting the link, we see is a complaint that there is no explanatory comment at the beginning of a class or module. Fine; we should add those to new classes/modules we create, but our existing code is <em>tiny</em>; let’s shut that off.</p>
+
+<p>Edit the <code class="language-plaintext highlighter-rouge">config.reek</code> file, with the contents</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="no">IrresponsibleModule</span><span class="p">:</span>
+  <span class="ss">enabled: </span><span class="kp">false</span>
+</code></pre></div></div>
+
+<p>and try again.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bin/rake reek
+apps/web/controllers/home/index.rb -- 1 warning:
+  apps/web/controllers/home/index.rb:6: UnusedParameters: Web::Controllers::Home::Index#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+apps/web/controllers/books/new.rb -- 1 warning:
+  apps/web/controllers/books/new.rb:5: UnusedParameters: Web::Controllers::Books::New#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+apps/web/controllers/books/index.rb -- 1 warning:
+  apps/web/controllers/books/index.rb:8: UnusedParameters: Web::Controllers::Books::Index#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+3 total warnings
+
+
+!!! Reek has found smells - exiting!
+</code></pre></div></div>
+
+<p>With the noise out of the way, we see that all that remains is three occurrences of <a href="https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md">the same</a> code smell: action classes generated include a <code class="language-plaintext highlighter-rouge">#call</code> method that by convention takes a <code class="language-plaintext highlighter-rouge">params</code> parameter which would include any parameters passed to the controller action. Since those three actions <em>don’t</em> take any parameters, the generated method signature triggers a complaint.</p>
+
+<p>Let’s fix all three in the traditional Ruby manner of prepending an underscore to the name of a parameter which must be specified, but isn’t actually used. Here’s an example for <code class="language-plaintext highlighter-rouge">Web::Controllers::Home::Index</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">module</span> <span class="nn">Web::Controllers::Home</span>
+  <span class="k">class</span> <span class="nc">Index</span>
+    <span class="kp">include</span> <span class="no">Web</span><span class="o">::</span><span class="no">Action</span>
+
+    <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">_params</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>After making the changes, running <code class="language-plaintext highlighter-rouge">bin/rake reek</code> is uneventful:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bin/rake reek
+0 total warnings
+$
+</code></pre></div></div>
+
+<p>Update the <code class="language-plaintext highlighter-rouge">Rakefile</code> again so that our <code class="language-plaintext highlighter-rouge">default</code> task is defined as <code class="language-plaintext highlighter-rouge">[:test, :flog, :flay, :reek]</code> and move on.</p>
+
+<h2 id="rubocop">RuboCop</h2>
+
+<p>We’ve put off RuboCop to be the last of these tools added to our Rake setup because it’s by far the most complex and changing over time, requiring either configuration or code changes as it seeks to more fully track the (itself evolving) community <a href="https://github.com/bbatsov/ruby-style-guide"><em>Ruby Style Guide</em></a>.</p>
+
+<p>The current version of RuboCop as this is written is 0.52.0, which may well be out-of-date by the time you read this; adjust your changes accordingly.  First, we add the Gem to the <code class="language-plaintext highlighter-rouge">Gemfile</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">gem</span> <span class="s1">'rubocop'</span><span class="p">,</span> <span class="s1">'0.52.0'</span>
+</code></pre></div></div>
+
+<p>Then, as usual, we add the Rake task to the <code class="language-plaintext highlighter-rouge">Rakefile</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">RuboCop</span><span class="o">::</span><span class="no">RakeTask</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:rubocop</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">task</span><span class="o">|</span>
+  <span class="n">task</span><span class="p">.</span><span class="nf">patterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'apps/**/*.rb'</span><span class="p">,</span>
+    <span class="s1">'lib/**/*.rb'</span><span class="p">,</span>
+    <span class="s1">'spec/**/*.rb'</span>
+  <span class="p">]</span>
+  <span class="n">task</span><span class="p">.</span><span class="nf">formatters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'simple'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">]</span>
+  <span class="n">task</span><span class="p">.</span><span class="nf">fail_on_error</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="c1"># task.options &lt;&lt; '--rails'</span>
+  <span class="n">task</span><span class="p">.</span><span class="nf">options</span> <span class="o">&lt;&lt;</span> <span class="s1">'--config=.rubocop.yml'</span>
+  <span class="n">task</span><span class="p">.</span><span class="nf">options</span> <span class="o">&lt;&lt;</span> <span class="s1">'--display-cop-names'</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Remember to run <code class="language-plaintext highlighter-rouge">touch .rubocop.yml</code> to create an empty configuration file, as mentioned in the Rake task.</p>
+
+<p>And, finally, we can run Rake’s default task (to make sure nothing broke) and then the new <code class="language-plaintext highlighter-rouge">rubocop</code> task:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bin/rake
+Run options: --seed 25359
+
+# Running:
+
+.......S...........
+
+Finished in 0.194825s, 97.5234 runs/s, 195.0467 assertions/s.
+
+19 runs, 38 assertions, 0 failures, 0 errors, 1 skips
+
+You have skipped tests. Run with --verbose for details.
+    25.5: flog total
+     3.2: flog/method average
+
+     6.2: Web::Application::configure#production apps/web/application.rb:295-323
+     5.4: Web::Controllers::Books::Create#call apps/web/controllers/books/create.rb:15-19
+     3.6: Web::Controllers::Books::Create#redirect_on_success apps/web/controllers/books/create.rb:28-29
+     2.4: Web::Controllers::Books::Index#call apps/web/controllers/books/index.rb:8-9
+Total score (lower is better) = 0
+0 total warnings
+$ bin/rake rubocop
+Running RuboCop...
+== apps/web/application.rb ==
+C:  5:  3: Style/Documentation: Missing top-level class documentation comment.
+C:  6:  5: Metrics/BlockLength: Block has too many lines. [40/25]
+C: 21: 21: Style/WordArray: Use %w or %W for an array of words.
+C:236: 40: Style/PercentLiteralDelimiters: %-literals should be delimited by ( and ).
+== apps/web/config/routes.rb ==
+C:  8: 25: Style/SymbolArray: Use %i or %I for an array of symbols.
+== apps/web/controllers/books/create.rb ==
+C:  2:  8: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+C:  3:  3: Style/Documentation: Missing top-level class documentation comment.
+== apps/web/controllers/books/index.rb ==
+C:  2:  8: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+C:  3:  3: Style/Documentation: Missing top-level class documentation comment.
+== apps/web/controllers/books/new.rb ==
+C:  1:  8: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+C:  2:  3: Style/Documentation: Missing top-level class documentation comment.
+C:  5:  5: Style/EmptyMethod: Put empty method definitions on a single line.
+== apps/web/controllers/home/index.rb ==
+C:  2:  8: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+C:  3:  3: Style/Documentation: Missing top-level class documentation comment.
+C:  6:  5: Style/EmptyMethod: Put empty method definitions on a single line.
+== apps/web/views/application_layout.rb ==
+C:  3:  5: Style/Documentation: Missing top-level class documentation comment.
+== apps/web/views/books/create.rb ==
+C:  2:  8: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+C:  3:  3: Style/Documentation: Missing top-level class documentation comment.
+== apps/web/views/books/index.rb ==
+C:  1:  8: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+C:  2:  3: Style/Documentation: Missing top-level class documentation comment.
+== apps/web/views/books/new.rb ==
+C:  1:  8: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+C:  2:  3: Style/Documentation: Missing top-level class documentation comment.
+== apps/web/views/home/index.rb ==
+C:  2:  8: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+C:  3:  3: Style/Documentation: Missing top-level class documentation comment.
+== lib/bookshelf.rb ==
+C:  1:  1: Style/Documentation: Missing top-level module documentation comment.
+== spec/features_helper.rb ==
+C:  9:  7: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+== spec/web/controllers/books/create_spec.rb ==
+C:  4:  1: Metrics/BlockLength: Block has too many lines. [32/25]
+C: 13: 81: Metrics/LineLength: Line is too long. [82/80]
+== spec/web/views/application_layout_spec.rb ==
+C:  1:  9: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+C:  6: 81: Metrics/LineLength: Line is too long. [90/80]
+== spec/web/views/books/create_spec.rb ==
+C:  5: 81: Metrics/LineLength: Line is too long. [92/80]
+== spec/web/views/books/index_spec.rb ==
+C:  6: 81: Metrics/LineLength: Line is too long. [91/80]
+C: 16: 81: Metrics/LineLength: Line is too long. [81/80]
+C: 22: 81: Metrics/LineLength: Line is too long. [85/80]
+C: 32: 81: Metrics/LineLength: Line is too long. [81/80]
+== spec/web/views/books/new_spec.rb ==
+C:  5: 81: Metrics/LineLength: Line is too long. [118/80]
+C:  7: 81: Metrics/LineLength: Line is too long. [89/80]
+
+28 files inspected, 37 offenses detected
+
+Cops disabled line ranges:
+
+RuboCop failed!
+$
+</code></pre></div></div>
+
+<p>Hmmm. Let’s see what RuboCop’s “auto-correct” does to/for us:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bin/rubocop -a apps lib spec
+Inspecting 28 files
+CCCCCCCCCCCC..C...C.....CCCC
+
+Offenses:
+
+apps/web/application.rb:5:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Application &lt; Hanami::Application
+  ^^^^^
+apps/web/application.rb:6:5: C: Metrics/BlockLength: Block has too many lines. [40/25]
+    configure do ...
+    ^^^^^^^^^^^^
+apps/web/application.rb:21:21: C: [Corrected] Style/WordArray: Use %w or %W for an array of words.
+      load_paths &lt;&lt; [ ...
+                    ^
+apps/web/application.rb:22:1: C: [Corrected] Layout/IndentArray: Use 2 spaces for indentation in an array, relative to the start of the line where the left square bracket is.
+controllers 
+^^^^^^^^^^^
+apps/web/application.rb:22:12: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
+controllers 
+           ^
+apps/web/application.rb:23:1: C: [Corrected] Layout/AlignArray: Align the elements of an array literal if they span more than one line.
+views
+^^^^^
+apps/web/application.rb:23:6: C: [Corrected] Layout/MultilineArrayBraceLayout: Closing array brace must be on the line after the last array element when opening brace is on a separate line from the first array element.
+views]
+     ^
+apps/web/application.rb:24:1: C: [Corrected] Layout/IndentArray: Indent the right bracket the same as the start of the line where the left bracket is.
+]
+^
+apps/web/application.rb:236:40: C: [Corrected] Style/PercentLiteralDelimiters: %-literals should be delimited by ( and ).
+      security.content_security_policy %{ ...
+                                       ^^
+apps/web/config/routes.rb:8:25: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
+resources :books, only: [:index, :new, :create]
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+apps/web/controllers/books/create.rb:2:8: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+module Web::Controllers::Books
+       ^^^^^^^^^^^^^^^^^^^^^^^
+apps/web/controllers/books/create.rb:3:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Create
+  ^^^^^
+apps/web/controllers/books/index.rb:2:8: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+module Web::Controllers::Books
+       ^^^^^^^^^^^^^^^^^^^^^^^
+apps/web/controllers/books/index.rb:3:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Index
+  ^^^^^
+apps/web/controllers/books/new.rb:1:8: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+module Web::Controllers::Books
+       ^^^^^^^^^^^^^^^^^^^^^^^
+apps/web/controllers/books/new.rb:2:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class New
+  ^^^^^
+apps/web/controllers/books/new.rb:5:5: C: [Corrected] Style/EmptyMethod: Put empty method definitions on a single line.
+    def call(_params) ...
+    ^^^^^^^^^^^^^^^^^
+apps/web/controllers/home/index.rb:2:8: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+module Web::Controllers::Home
+       ^^^^^^^^^^^^^^^^^^^^^^
+apps/web/controllers/home/index.rb:3:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Index
+  ^^^^^
+apps/web/controllers/home/index.rb:6:5: C: [Corrected] Style/EmptyMethod: Put empty method definitions on a single line.
+    def call(_params) ...
+    ^^^^^^^^^^^^^^^^^
+apps/web/views/application_layout.rb:3:5: C: Style/Documentation: Missing top-level class documentation comment.
+    class ApplicationLayout
+    ^^^^^
+apps/web/views/books/create.rb:2:8: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+module Web::Views::Books
+       ^^^^^^^^^^^^^^^^^
+apps/web/views/books/create.rb:3:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Create
+  ^^^^^
+apps/web/views/books/index.rb:1:8: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+module Web::Views::Books
+       ^^^^^^^^^^^^^^^^^
+apps/web/views/books/index.rb:2:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Index
+  ^^^^^
+apps/web/views/books/new.rb:1:8: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+module Web::Views::Books
+       ^^^^^^^^^^^^^^^^^
+apps/web/views/books/new.rb:2:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class New
+  ^^^^^
+apps/web/views/home/index.rb:2:8: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+module Web::Views::Home
+       ^^^^^^^^^^^^^^^^
+apps/web/views/home/index.rb:3:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Index
+  ^^^^^
+lib/bookshelf.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module Bookshelf
+^^^^^^
+spec/features_helper.rb:9:7: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+class MiniTest::Spec
+      ^^^^^^^^^^^^^^
+spec/web/controllers/books/create_spec.rb:4:1: C: Metrics/BlockLength: Block has too many lines. [32/25]
+describe Web::Controllers::Books::Create do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/web/controllers/books/create_spec.rb:13:81: C: Metrics/LineLength: Line is too long. [82/80]
+    let(:params) { Hash[book: { title: 'Confident Ruby', author: 'Avdi Grimm' }] }
+                                                                                ^^
+spec/web/views/application_layout_spec.rb:1:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "spec_helper"
+        ^^^^^^^^^^^^^
+spec/web/views/application_layout_spec.rb:6:81: C: Metrics/LineLength: Line is too long. [90/80]
+  let(:template) { Hanami::View::Template.new('apps/web/templates/application.html.erb') }
+                                                                                ^^^^^^^^^^
+spec/web/views/books/create_spec.rb:5:81: C: Metrics/LineLength: Line is too long. [92/80]
+  let(:template)  { Hanami::View::Template.new('apps/web/templates/books/create.html.erb') }
+                                                                                ^^^^^^^^^^^^
+spec/web/views/books/index_spec.rb:6:81: C: Metrics/LineLength: Line is too long. [91/80]
+  let(:template)  { Hanami::View::Template.new('apps/web/templates/books/index.html.erb') }
+                                                                                ^^^^^^^^^^^
+spec/web/views/books/index_spec.rb:16:81: C: Metrics/LineLength: Line is too long. [81/80]
+      rendered.must_include('&lt;p class="placeholder"&gt;There are no books yet.&lt;/p&gt;')
+                                                                                ^
+spec/web/views/books/index_spec.rb:22:81: C: Metrics/LineLength: Line is too long. [85/80]
+    let(:book2)     { Book.new(title: 'Domain Driven Design', author: 'Eric Evans') }
+                                                                                ^^^^^
+spec/web/views/books/index_spec.rb:32:81: C: Metrics/LineLength: Line is too long. [81/80]
+      rendered.wont_include('&lt;p class="placeholder"&gt;There are no books yet.&lt;/p&gt;')
+                                                                                ^
+spec/web/views/books/new_spec.rb:5:81: C: Metrics/LineLength: Line is too long. [118/80]
+  let(:params)    { OpenStruct.new(valid?: false, error_messages: ['Title must be filled', 'Author must be filled']) }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/web/views/books/new_spec.rb:7:81: C: Metrics/LineLength: Line is too long. [89/80]
+  let(:template)  { Hanami::View::Template.new('apps/web/templates/books/new.html.erb') }
+                                                                                ^^^^^^^^^
+
+28 files inspected, 42 offenses detected, 11 offenses corrected
+$
+</code></pre></div></div>
+
+<p>11 of 42 offences were auto-corrected; not bad. Running <code class="language-plaintext highlighter-rouge">bin/rake</code> again tells us that nothing got (detectably) broken along the way.  The remaining offences fall into a limited number of categories:</p>
+
+<ul>
+  <li><a href="https://rubocop.readthedocs.io/en/latest/cops_style/#styledocumentation"><code class="language-plaintext highlighter-rouge">Style/Documentation</code></a>: a class didn’t have a “top-level module documentation comment”, just as with Reek above;</li>
+  <li><a href="https://rubocop.readthedocs.io/en/latest/cops_metrics/#metricslinelength"><code class="language-plaintext highlighter-rouge">Metrics/LineLength</code></a>: a line of code exceeded 80 character positions, and RuboCop auto-correct doesn’t support splitting those specific lines;</li>
+  <li><a href="https://rubocop.readthedocs.io/en/latest/cops_style/#stylefrozenstringliteralcomment"><code class="language-plaintext highlighter-rouge">Style/FrozenStringLiteralComment</code></a>: a file parsed by a Ruby 2.2 or later interpreter does not have a <code class="language-plaintext highlighter-rouge"># frozen_string_literal: true</code> line, instructing the MRI interpreter to interpret strings as always “frozen”, in conformance with planned Ruby 3.0 behaviour;</li>
+  <li><a href="https://rubocop.readthedocs.io/en/latest/cops_style/#styleclassandmodulechildren"><code class="language-plaintext highlighter-rouge">Style/ClassAndModuleChildren</code></a>: RuboCop flags “compact style” module/class definitions, in preference to nested module/class definitions. The Style Guide has <a href="https://github.com/bbatsov/ruby-style-guide#namespace-definition">a good explanation</a> of the rationale, which links to a <a href="https://cirw.in/blog/constant-lookup.html">good discussion of constant lookup in Ruby</a>.</li>
+</ul>
+
+<p>There is also one occurrence of <a href="https://rubocop.readthedocs.io/en/latest/cops_metrics/#metricsblocklength"><code class="language-plaintext highlighter-rouge">Metrics/BlockLength</code></a> in an auto-generated file.</p>
+
+<p>Fortunately, RuboCop supports <a href="https://rubocop.readthedocs.io/en/latest/configuration/">configuration</a> using a configuration file and/or in-line comments; this will be useful here.</p>
+
+<p>First off, we’ll use a configuration file to disable the <code class="language-plaintext highlighter-rouge">Style/Documentation</code> cop globally. This, and the equivalent configuration for Reek, should be filed as an issue on a production-destined, as-generated codebase.</p>
+
+<p>Secondly, we’ll add a directive to the configuration file to disable the <code class="language-plaintext highlighter-rouge">Metrics/BlockLength</code> cop on the auto-generated file (<code class="language-plaintext highlighter-rouge">apps/web/application.rb</code>).</p>
+
+<p>Third, we’ll disable the <code class="language-plaintext highlighter-rouge">Style/FrozenStringLiteralComment</code> cop in the configuration file, with the same documented warning as for <code class="language-plaintext highlighter-rouge">Style/Documentation</code>.</p>
+
+<p>Next, we’ll reformat the too-long lines, which are <em>exclusively</em> in specs.</p>
+
+<p>Finally, we’ll reformat the source files (and <code class="language-plaintext highlighter-rouge">spec/features_helper</code>) that use the “compact” module/class notation, ensuring that other cops (e.g., line length) are kept happy in that process.</p>
+
+<h3 id="configuration-file">Configuration File</h3>
+
+<p>Our configuration file, saved in <code class="language-plaintext highlighter-rouge">.rubocop.yml</code> in the project top-level directory, is as follows:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">AllCops</span><span class="pi">:</span>
+  <span class="na">TargetRubyVersion</span><span class="pi">:</span> <span class="m">2.4</span>
+
+<span class="c1"># This is *temporary*; when we fix it, remember to update Reek config as well.</span>
+<span class="s">Style/Documentation</span><span class="pi">:</span>
+  <span class="na">Exclude</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">apps/**/*.rb</span>
+    <span class="pi">-</span> <span class="s">lib/bookshelf.rb</span>
+    <span class="pi">-</span> <span class="s">spec/features_helper.rb</span>
+
+<span class="c1"># This is also *temporary*; Real Code&amp;trade; sources should include the comment.</span>
+<span class="s">Style/FrozenStringLiteralComment</span><span class="pi">:</span>
+  <span class="na">Enabled</span><span class="pi">:</span> <span class="no">false</span>
+
+<span class="c1"># It's likely that we'll eventually broaden this to include *all* specs.</span>
+<span class="s">Metrics/BlockLength</span><span class="pi">:</span>
+  <span class="na">Exclude</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">apps/web/application.rb</span>
+    <span class="pi">-</span> <span class="s">spec/**/*.rb</span>
+</code></pre></div></div>
+
+<h3 id="reformatting-too-long-lines-in-specs">Reformatting Too-Long Lines in Specs</h3>
+
+<p>Now, we need to edit each of the (spec) files which RuboCop marked as having too-long lines. We’ll use the current <code class="language-plaintext highlighter-rouge">spec/web/controllers/books/create_spec.rb</code> as an example, whose Line 13 currently reads:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">let</span><span class="p">(</span><span class="ss">:params</span><span class="p">)</span> <span class="p">{</span> <span class="no">Hash</span><span class="p">[</span><span class="ss">book: </span><span class="p">{</span> <span class="ss">title: </span><span class="s1">'Confident Ruby'</span><span class="p">,</span> <span class="ss">author: </span><span class="s1">'Avdi Grimm'</span> <span class="p">}]</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Changing that to</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">let</span><span class="p">(</span><span class="ss">:params</span><span class="p">)</span> <span class="k">do</span>
+      <span class="no">Hash</span><span class="p">[</span><span class="ss">book: </span><span class="p">{</span> <span class="ss">title: </span><span class="s1">'Confident Ruby'</span><span class="p">,</span> <span class="ss">author: </span><span class="s1">'Avdi Grimm'</span> <span class="p">}]</span>
+    <span class="k">end</span>
+</code></pre></div></div>
+
+<p>remedies the RuboCop offence without affecting the function of the spec file. Modify the remaining line-length violations similarly.</p>
+
+<h3 id="using-properly-nested-namespaces">Using Properly-Nested Namespaces</h3>
+
+<p>We presently have nine files (eight under <code class="language-plaintext highlighter-rouge">apps/web</code> and one as <code class="language-plaintext highlighter-rouge">spec/features_helper.rb</code>) with the “compact” module definition which, as noted earlier, is disallowed by the style guide enforced by RuboCop.</p>
+
+<p>The change required for <code class="language-plaintext highlighter-rouge">spec/features_helper.rb</code> is simple and useful as an example. The existing code reopens the <code class="language-plaintext highlighter-rouge">MiniTest::Spec</code> class like so:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MiniTest::Spec</span>
+  <span class="kp">include</span> <span class="no">Capybara</span><span class="o">::</span><span class="no">DSL</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Changing that to</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">MiniTest</span>
+  <span class="k">class</span> <span class="nc">Spec</span>
+    <span class="kp">include</span> <span class="no">Capybara</span><span class="o">::</span><span class="no">DSL</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>leaves specs running successfully, as verified by <code class="language-plaintext highlighter-rouge">bin/rake</code>, and removes the <code class="language-plaintext highlighter-rouge">spec/features_helper.rb</code> file from those complained about by <code class="language-plaintext highlighter-rouge">bin/rake rubocop</code>.</p>
+
+<p>Make similar changes to the eight remaining files, being careful not to introduce new violations such as excessive line length.</p>
+
+
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			 
+				<li><a href="/categories.html#development-ref">
+					development <span>(4)</span>
+					,
+				</a></li>
+			 
+				<li><a href="/categories.html#practices-ref">
+					practices <span>(5)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		  
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			 
+				<li>
+					<a href="/tags.html#tools-ref">
+					tools <span>(6)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#framework-ref">
+					framework <span>(2)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#web development-ref">
+					web development <span>(5)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#object oriented programming-ref">
+					object oriented programming <span>(4)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#oop-ref">
+					oop <span>(3)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#domain-driven design-ref">
+					domain-driven design <span>(1)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#clean architecture-ref">
+					clean architecture <span>(3)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#hanami-ref">
+					hanami <span>(3)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		  
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Enthusiastically Poking at Hanami&via=jeff_dickey"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9" class="img-rounded author-image" />
+        <h4 class="section-title author-name">Jeff Dickey</h4>
+        <p class="author-bio">Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous"><a href="/practices/2017/08/04/use-tools-or-solve-problems.html" title="Using Tools and/or Solving Problems">&larr; Previous</a></li>
+		  
+		  
+		  <li class="next"><a href="/development/practices/2018/09/28/what-gems-do-i-start-with.html" title="What Gems Do I Start With?">Next &rarr;</a></li>
+		  
+		</ul>
+
+		<hr>
+	</div>
+	
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jdickeyghpages';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				&copy; 2020 Jeff Dickey with Jekyll. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+</html>
+
+
+

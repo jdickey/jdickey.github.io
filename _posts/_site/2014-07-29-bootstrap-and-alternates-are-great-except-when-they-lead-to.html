@@ -1,0 +1,63 @@
+<p>…<a href="https://en.wiktionary.org/wiki/Citations:divitis">divitis</a> like this (in a <a href="http://slim-lang.com">Slim</a> template):</p>
+
+<script src="https://gist.github.com/jdickey/2f663776849e16bf2bc8.js"></script>
+
+<p>Yes, that’s <em>eleven levels of indentation</em> for the link within the <code class="highlighter-rouge">.list-group-item</code> list item. Can <em>you</em> glance at that and grok it in reasonable fullness without spending ten minutes rebuilding the DOM in your head? I can’t, and I <em>wrote</em> the sucker yesterday.</p>
+
+<p>What’s the problem? Nesting styles is the problem. Using <a href="https://gist.github.com/jdickey/2f663776849e16bf2bc8#file-show-slim-L23">line 23</a> as an example, we have, in reverse order:</p>
+
+<ul>
+  <li>an anchor link
+    <ul>
+      <li>within a list-item tag
+        <ul>
+          <li>within a loop (that arguably doesn’t count, but does kick the indentation in a level);
+            <ul>
+              <li>within an unordered list
+                <ul>
+                  <li>within a <code class="highlighter-rouge">.row</code> <code class="highlighter-rouge">div</code>;
+                    <ul>
+                      <li>within a <code class="highlighter-rouge">.col-md-10</code> <code class="highlighter-rouge">div</code>;
+                        <ul>
+                          <li>within <em>another</em> <code class="highlighter-rouge">.row</code> <code class="highlighter-rouge">div</code>;
+                            <ul>
+                              <li>within a <code class="highlighter-rouge">.col-md-12</code> <code class="highlighter-rouge">div</code>;
+                                <ul>
+                                  <li>within an outermost, containing <code class="highlighter-rouge">.row</code> <code class="highlighter-rouge">div</code>.</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Got all that? At least we’re using something like Slim and not, <code class="highlighter-rouge">$DEITY</code> forfend I’d need to use something that looked more like HTML soup, like ERB.</p>
+
+<p>Why <em>bother?</em> Because, as far as I can tell, that’s what it takes to work with nested columns in Bootstrap. Everything’s within an outermost row, in which you define columns; within any given column, you can use another row to break the <em>containing</em> column into sub-columns. Remember when, in ancientest days of the Web (circa 2001 at latest), we started telling people not to use tables for layout because it led to inscrutably crufty hairballs? They’re <em>baaaaaack!</em></p>
+
+<p>There’s <em>got</em> to be a better way. Isn’t there? <em>Isn’t there?!?!?</em></p>
+
+<h2 id="in-other-news">In other news…</h2>
+
+<p>By this time next month, after <a href="http://jdickey.blogspot.sg/2003/12/hello.html">over more than ten years</a> of blogging on Blogger.com, I expect to have the process of moving my blogs (and my <a href="http://yeoldeprogrammer.tumblr.com">Tumblr</a>, and many of my <a href="https://plus.google.com/108905645314102533472/posts">G+ posts</a> well underway, if not yet completed. (<strong>NOTE 7 Feb 2015:</strong> Delayed due to overwork. A 50 hour/week job turned into a 90 hour/week job, and then a 110+ hour/week job. Lessons learned; several of which to be blogged about In The Glorious Future™.) Why? I’d like to</p>
+
+<ol>
+  <li>Reduce my Google footprint or, more precisely, the footprint GOOG leaves on <em>me</em>;</li>
+  <li>Be able to point people to <em>one</em> place where they can see all my non-code online writing;</li>
+  <li>Use a markup language that’s less actively hostile to writing than HTML is; with Markdown and <a href="http://jekyllrb.com">Jekyll</a> on <a href="https://pages.github.com">Github Pages</a>, I get that;</li>
+  <li>Have more control over that “one place” than any of the Google-based “places” presently give me; and</li>
+  <li>Be able to embed Gists or other bits of code in my writing and have them properly formatted.</li>
+</ol>
+
+<p>It’s not for everybody. But if you’ve been using Blogger in HTML-editing (rather than WYSIWYG) mode, as I have since the beginning, you can certainly learn (and benefit from and <em>enjoy</em>) Markdown and Jekyll.</p>

@@ -3,7 +3,7 @@ layout: post
 title: "Yak Shaving Sometimes Needs Chainsaws"
 description: "After far too long in the wilderness, a project is subjected to reality"
 tags: [development, guaranteed failure, agility, deployment, language, yak shaving, effectiveness]
-categories: [Development]
+categories: [Deployment, Development, Practices]
 comments: true
 fullview: false
 

@@ -1,0 +1,73 @@
+<p>Are you a developer who views your job as primarily <em>solving problems</em> or as <em>building and using tools?</em></p>
+
+<p>Our culture has a word for when the second becomes overly separated from the first: <em>bike-shedding.</em> Yet, no matter how diligently you focus on “accomplishing the original mission” or “moving the ball down the pitch” or whatever military/sports trope you like, at some point you’ll say to yourself “hey, I’ve been doing this same 37-step process every other day for the last month; I bet I could save <em>a lot</em> of time by automating it.”</p>
+
+<figure style="padding: 4rem 0;">
+<img style="margin-left: 20%; width: 60%;" src="https://imgs.xkcd.com/comics/is_it_worth_the_time.png" alt="Is it worth the time? Probably not" />
+<figcaption style="clear: both; text-align: center;">Relevant <a href="https://xkcd.com/1205/">XKCD</a> wisdom</figcaption>
+</figure>
+
+<p>Raise your hand if you’ve <em>never</em> <strong>far</strong> overshot those limits.</p>
+
+<p><em>(deafening silence)</em></p>
+
+<p>Thought so. What brought this on, you ask? Funny you should ask.</p>
+
+<p>I’ve been a happy customer of <a href="https://m.do.co/c/e3f4d7dea0e2">Digital Ocean</a> for a while now. Their VPSes (which they call <em>Droplets</em>) come in either traditional bare-OS flavours (Ubuntu, CentOS, CoreOS, etc) and “one-click app” installations (Rails, Node.js, Docker, and so on). They have excellent <a href="https://www.digitalocean.com/community/tags/api">API documentation</a> and <a href="https://www.digitalocean.com/community/tutorials">community tutorials</a>, and are, <em>for the most part,</em> a joy to work with and on.</p>
+
+<p>One of the tools they maintain and support is <a href="https://github.com/digitalocean/doctl">doctl</a>, an open source tool with a relatively <a href="https://github.com/digitalocean/doctl/releases">mature and regular release history</a>. This lets you create and manage Droplets and other Digital Ocean resources (like <em>Floating IP</em>s, which let you, e.g., register an IP address with a domain registrar and move that IP between Droplets as you provision updates). However, the <code class="highlighter-rouge">doctl</code> tool, like the API it exercises, <em>does not</em> easily support configuring and managing the software running <em>on</em> a Droplet; for that, you’ll need <code class="highlighter-rouge">ssh</code> or a tool like <a href="https://www.ansible.com/">Ansible</a>, <a href="https://www.packer.io/">Packer</a>, <a href="https://buddy.works/">Buddy</a>, or a host of others.</p>
+
+<p><em>And that’s where the <strong>rant</strong> comes in.</em></p>
+
+<p>I’ve spent the last month, off and on, teaching myself enough Ansible to get by. I have two Droplets that I built and configured using Digital Ocean’s <a href="https://cloud.digitalocean.com/droplets">Web control panel</a> a month ago; let’s call them <code class="highlighter-rouge">server1</code> and <code class="highlighter-rouge">server2</code>. I can use <code class="highlighter-rouge">doctl</code> to manage them (power up/down, swap a Floating IP between them) as I wish; I can use <em>ad hoc</em> Ansible commands like the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ansible -m shell -a 'docker pull jdickey/an-image:dev24' server2
+server2 | SUCCESS | rc=0 &gt;&gt;
+dev24: Pulling from jdickey/an-image
+# ... ~30 lines of detailed logging...
+8c5df88fde12: Verifying Checksum
+8c5df88fde12: Download complete
+8c5df88fde12: Pull complete
+e2b2fc459b42: Pull complete
+Digest: sha256:7a4f6098e01a5211b14b63428f9cdcd9929724bf83500f37745acfb1c3655181
+Status: Downloaded newer image for jdickey/an-image:dev24
+$
+</code></pre></div></div>
+
+<p>That’s fine. Now I have two newer droplets (let’s call them <code class="highlighter-rouge">demo1</code> and <code class="highlighter-rouge">demo2</code>) <em>configured identically to the first two</em> that I created with <code class="highlighter-rouge">doctl</code>, that I can <code class="highlighter-rouge">ssh</code> into but that Ansible gets blocked from:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ssh jeff@$DEMO2_IP
+# ... banner ...
+jeff@demo2:~$ docker ps -a
+CONTAINER ID        IMAGE                    COMMAND                  CREATED             STATUS              PORTS                NAMES
+c74b5515f893        jdickey/an-image:dev24   "/bin/sh -c 'pushs..."   3 hours ago         Up 3 hours          0.0.0.0:80-&gt;80/tcp   eager_meitner
+jeff@demo2:~$ exit
+$ ansible -=m shell -a 'docker ps -a' demo2
+demo2 | UNREACHABLE! =&gt; {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Permission denied (publickey).\r\n", 
+    "unreachable": true
+}
+$
+</code></pre></div></div>
+
+<p>I’ve had people suggest “Use Packer”, “Use this other tool”, “Nuke and reinstall Ansible”.</p>
+
+<p>In other words:</p>
+
+<blockquote>
+  <p>Don’t sweat the problem; keep swapping out tools until one of them Just Works.</p>
+</blockquote>
+
+<p>Aside from that being <em>horrifically</em> bad devops practice, it doesn’t answer the real questions that urgently <em>need</em> an answer:</p>
+
+<blockquote>
+  <p>What changed in the DO Droplet provisioning between a month ago and now that broke Ansible? How do I get <em>Ansible</em> working again with new Droplets?</p>
+</blockquote>
+
+<p>Because, <em>until and unless I have answers for those,</em> I have <em>zero</em> confidence in any other tool (or any other deployment provider, for that matter). If you don’t understand why your tools broke, then simply using new random tools won’t help you prevent, or at least react effectively to, the <em>new</em> tools breaking. And the assumption you <em>must</em> make is that they <em>will</em> randomly break, until and unless experience shows you otherwise.</p>
+
+<h3 id="postscripts">Postscripts</h3>
+
+<p>I don’t mean to be casting aspersions on Digital Ocean, Ansible, Pusher, or the well-meaning but short-sighted folks telling me to “just get on with it, already”. I’ll bet that there’s some doc out there somewhere that I just happened to miss that tells me exactly what’s broken and why, and how to fix my process to deal with the change. If you know of such a thing, <strong>please</strong> comment below or ping me on <a href="https://twitter.com/jeff_dickey">Twitter</a> or Gitter.</p>
+

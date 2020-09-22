@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+# Clean out
+mkdir -p tmp/gemsets
+rm -rf Gemfile.lock .rbenv-gemsets tmp/gemsets/*
+touch tmp/gemsets/dummy
+rbenv gemset init ./tmp/gemsets
+echo ./tmp/gemsets > .rbenv-gemsets
+rbenv rehash
+# gem install pygments.rb:1.2.1
+gem install -N github-pages # jekyll-docs
+rbenv rehash
+bundle install --local --binstubs
+rbenv rehash

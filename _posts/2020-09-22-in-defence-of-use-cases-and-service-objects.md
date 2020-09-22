@@ -3,7 +3,7 @@ layout: post
 title: "In Defence of Use Cases, and the Service Objects Encapsulating Them"
 description: "Many service objects in production serve as excellent arguments against the entire concept."
 tags: [development, service objects, use cases, ruby, rails, Ruby on Rails]
-categories: [Development]
+categories: [Development, Practices]
 comments: true
 fullview: false
 
@@ -23,7 +23,7 @@ References to "we" and "our" denote usage and standards for the small startup wh
 
 ### Discussion is Served
 
-We've been using service objects in Ruby for a few years now; I've previously used them in a wide range of other languages, OO and otherwise. Given a bit of reasonable self-discipline (perhaps best supported by the [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)), they can be really effective. But I agree with your dings against the examples, to the point where they almost might be considered straw-men were it not for the fact that they are too likely in production code running somewhere. I'd like to argue for use of the concept within limits, by riffing on a few of our 
+We've been using service objects in Ruby for a few years now; I've previously used them in a wide range of other languages, OO and otherwise. Given a bit of reasonable self-discipline (perhaps best supported by the [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)), they can be really effective. But I agree with your dings against the examples, to the point where they almost might be considered straw-men were it not for the fact that they are too likely in production code running somewhere. I'd like to argue for use of the concept within limits, by riffing on a few of our
 
 **Use cases are implemented in one or more cooperating service objects.** A *use case* encapsulates an action performed by or on behalf of a user. *Register as Member*, *Publish Article*, and *Respond to Proposed Contribution* are use cases that each make use of one or more service objects (which generally, as is traditional, have a single entry point which returns a "result" object encapsulating the success/failure result of the service usage, along with appropriate entities on success or error information on failure. These are black boxes into which necessary dependencies are injected along with the per-use parameters.
 

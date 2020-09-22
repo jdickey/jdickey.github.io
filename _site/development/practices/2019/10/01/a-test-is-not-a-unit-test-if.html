@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>A Test Is Not A Unit Test If It Does Too Much</title>
+	
+	<meta name="description" content="Thoughts on an epic Tweet defining what unit tests ARE NOT">
+	
+	<meta name="author" content="Jeff Dickey">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/jdickey">
+				<i class="fa fa-github"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=35" class="img-circle" />
+				Six Impossible Things Before Bundling
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">Six Impossible Things Before Bundling</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/jdickey">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/jdickey">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>A Test Is Not A Unit Test If It Does Too Much </h1>
+</div>
+	
+<article>
+
+	<div class="col-sm-10">
+	 <span class="post-date">
+	   
+	   October 
+	   1st,
+	     
+	   2019
+	 </span>
+	  <div class="article_body">
+	  <p>That, in a nutshell, appears to be the hammer that those arguing against Dave Cheney’s excellent Tweet that <a href="https://twitter.com/davecheney/status/1178289934542655489">A test is not a unit test if:</a>. Allow me, folks, to offer some thought on why it’s so easy to mistake your head for a nail in this context.</p>
+
+<p>Taking Dave’s four points in order:</p>
+
+<ol>
+  <li><em>A test is not a unit test if it talks to the database.</em> It’s an integration test, and the differences are important. The database access can fail for reasons <em>entirely unrelated</em> to your attempted use of it; that is then duly reported as a test failure or worse (e.g., an error, exception, <code class="language-plaintext highlighter-rouge">MajorMalfunctionInstance</code>, etc). <a href="https://www.urbandictionary.com/define.php?term=Assume">Assuming</a> that databases are unfailingly reliable does not make them so. This is particularly true in production, but a depressingly regular occurence in test environments as well.</li>
+  <li><em>A test is not a unit test if it communicates across the network.</em> The network is a world-class Heisenberg accumulator for the same reasons noted for the database in the previous point. Again, wishes don’t make it otherwise.</li>
+  <li><em>A test is not a unit test if it can’t run at the same time as any of your other unit tests.</em> This is usually because either your test relies on outside events happening in a certain sequence (and is therefore an integration test) or it relies on exclusive access to an outside resource. Each of these reasons moves it firmly from would-be unit-test identity into the nebulously uncertain world of integration tests.</li>
+  <li><em>A test is not a unit test if you have to do special things to your environment to run it.</em> This is a variation on the previous observation, usually relying on <em>both</em> outside-event sequencing and exclusive resource access.</li>
+</ol>
+
+<p>“OK”, you might well be asking, “what <em>is</em> a unit test, then?”</p>
+
+<p>A unit test depends <em>solely</em> on the execution of <em>a</em> logic path through the code under test leaving observable artefacts in a predicted state. Further, these artefacts <em>should not</em> be global state, but changes of the state of the inputs to that logic and/or the value returned by that logic. Unit tests <em>don’t care</em> if you’re running the same test a thousand times in sequence, or a thousand times in parallel; each execution of the test (again, given the same inputs) will produce the same output.</p>
+
+<p>“So how do I give the logic under test the resources it needs (and would have in production)” is the next question.</p>
+
+<p>The answer is dependency injection, as included in the <a href="https://web.archive.org/web/20150905081103/http://www.objectmentor.com/resources/articles/dip.pdf">Dependency Inversion Principle</a> (the <em>D</em> in <a href="https://en.wikipedia.org/wiki/SOLID">SOLID</a>) and, more explicitly, by the <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a>. If your code under test takes its dependencies as parameter inputs (or, alternately, uses a DI container), then the code doesn’t care if those dependencies are live resources (as in production) or test doubles. This becomes almost trivially easy in dynamic languages such as Ruby (“duck typing” is a thing) and JavaScript.</p>
+
+<p>“Hm. It still doesn’t sound all that useful. What would I use it for?”</p>
+
+<p>Let me draw your attention once again to that diagram of the <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a>, and then to the sections from <em>The Dependency Rule</em> on down in that post. All your dependencies (database connections, UI mechanics, etc) are in the outer (blue) ring of the diagram, and pass control inwards. All code in the “business rules” rings receive and emit data; they don’t know or care where it comes from or where it’s going beyond the boundary layer they pull it from or send it to.</p>
+
+<p><em>Those</em> layers can be usefully TDDed (or BDDed, if you prefer) by unit tests honouring Dave Cheney’s exclusions: they don’t talk to the database or network, they don’t touch the file system, and are independent of any other <em>unit tests</em> running at the same time. The green <em>Interface Adapters</em> ring is exercised by your integration tests, and the blue <em>Frameworks and Drivers</em> ring by your system tests, since at that point you’re verifying that your understanding of how to make the database/Web framework/physical hardware interacts with the <em>already-proven</em> inner rings is accurate and sufficient for your need.</p>
+
+<p>And, in real-world applications, these inner layers contain the real value that your application delivers to users. It isn’t a great app because it uses the trendiest new Web framework and both Postgres and the NoSQL database <em>du moment</em>; it’s a great app because it <em>solves user problems in an effective, understandable, reasonable</em> way. We, as a craft community, tend to completely, gleefully lose sight of, to the point where we curse anyone who tries to drag us back to that reality.</p>
+
+<p>That used to be understandable, if not very defensible; twenty or thirty years ago, there really wasn’t the understanding of how to cleanly separate an app into layers that were easy to reason about on their own, nor was there the language or hardware support for that layering that is readily available today. I’ve seen well-architected programs written for everything from the Raspberry Pi to your preferred desktop OS/environment to containerised apps to big-iron, high-volume mainframe apps. It <em>can</em> be done and, after 40 years in this craft going from one extreme to others, it’s seemingly self-evident that “doing it” makes life (particularly during maintenance, after the superstar rock-star/ninja/quasigod consultants have cashed their cheques and left), <em>much</em> more survivable to those who want to have a life that isn’t spent 24/7/365 in front of the screen, debugging in frustration.</p>
+
+<p>There are no magic bullets. But we’ve seen, over and over again, that there are numerous supplies of more than sufficient rope to shoot yourself in the foot. Don’t let architecture-that-isn’t be one of those.</p>
+
+<p>Thoughts?</p>
+
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			 
+				<li><a href="/categories.html#Development-ref">
+					Development <span>(3)</span>
+					,
+				</a></li>
+			 
+				<li><a href="/categories.html#Practices-ref">
+					Practices <span>(3)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		  
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			 
+				<li>
+					<a href="/tags.html#architecture-ref">
+					architecture <span>(5)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#best practices-ref">
+					best practices <span>(6)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#clean architecture-ref">
+					clean architecture <span>(3)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#craft-ref">
+					craft <span>(4)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#software architecture-ref">
+					software architecture <span>(3)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#tweet-ref">
+					tweet <span>(2)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		  
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=A Test Is Not A Unit Test If It Does Too Much&via=jeff_dickey"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9" class="img-rounded author-image" />
+        <h4 class="section-title author-name">Jeff Dickey</h4>
+        <p class="author-bio">Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous"><a href="/deployment/docker/2019/07/30/the-best-thing-about-github-actions-is.html" title="The Best Thing About GitHub Actions Is...">&larr; Previous</a></li>
+		  
+		  
+		  <li class="next"><a href="/life%20despite%20tech/2020/02/01/hardworking-csrs-cant-fix-bad-policy.html" title="Hard-working CSRs Can't Fix Bad Policy">Next &rarr;</a></li>
+		  
+		</ul>
+
+		<hr>
+	</div>
+	
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jdickeyghpages';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				&copy; 2020 Jeff Dickey with Jekyll. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+</html>
+
+
+

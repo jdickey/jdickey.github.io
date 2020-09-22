@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>In Defence of Use Cases, and the Service Objects Encapsulating Them</title>
+	
+	<meta name="description" content="Many service objects in production serve as excellent arguments against the entire concept.">
+	
+	<meta name="author" content="Jeff Dickey">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/jdickey">
+				<i class="fa fa-github"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=35" class="img-circle" />
+				Six Impossible Things Before Bundling
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">Six Impossible Things Before Bundling</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/jdickey">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/jdickey">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>In Defence of Use Cases, and the Service Objects Encapsulating Them </h1>
+</div>
+	
+<article>
+
+	<div class="col-sm-10">
+	 <span class="post-date">
+	   
+	   September 
+	   22nd,
+	     
+	   2020
+	 </span>
+	  <div class="article_body">
+	  <h3 id="an-appetiser">An Appetiser</h3>
+
+<p><a href="https://www.codewithjason.com/">Code With Jason</a> is a generally <em>outstanding</em> site where Jason Swett offers courses, tutorials, and opinion (generally) related to Rails and/or Ruby in general. Almost exactly a year ago as I write this, he posted a quite well-thought-through article, <a href="https://www.codewithjason.com/rails-service-objects/"><em>Beware of service objects in Rails</em></a>. I agree with quite a lot of what he says. For example, I, too, treat class names ending in <code class="language-plaintext highlighter-rouge">-er</code> (<code class="language-plaintext highlighter-rouge">MoneyManager</code>, <code class="language-plaintext highlighter-rouge">CorrencyConverter</code>, <code class="language-plaintext highlighter-rouge">WishGranter</code>) as code smells until proven unavoidably otherwise. (I haven’t seen such an <em>unavoidable otherwise</em> counter-example in <em>decades</em>.)</p>
+
+<p>However, I’ve been on teams that have effectively used use cases (more typically for the last ~30 years, Jacobson <a href="https://en.wikipedia.org/wiki/Use_case"><em>use cases</em></a>). These have been in a variety of languages, from C and its derivatives; to OO languages like Ruby, Objective-C and Delphi; to functional languages like Scheme and Elixir (in which I’m still far closer to the novice end of the spectrum than I’d like). I say all this to give some clue as to how my (too often self-)education as a software (and, in recent decades, Web) developer has progressed. I was working with Rails from 2.1.<em>something</em> up to 4.1.0, followed by a segue into other frameworks until some recent 6.0.3.<em>x</em> work. I don’t claim to be a modern Rails expert yet (I’ve been working on <a href="https://hanamirb.org/">Hanami</a> code for the last couple of years), but I’ve done enough OO in Rails, Ruby, and elsewhere to have formed opinions. (My current touchstone is Clean Architecture, but that’s a whole other series of posts.)</p>
+
+<p>What follows was drafted in late October, 2019, as an open letter and/or rant in reaction to Jason’s <a href="https://www.codewithjason.com/organizing-rails-projects-domain-objects-good-service-objects-bad/">post</a>, with relatively minor revision and expansion in September, 2020.</p>
+
+<p>References to “we” and “our” denote usage and standards for the small startup where I serve as Chief Engineer and director of all technology-related work (development, quality engineering, dev/ops automation, etc.). Occasionally, I refer to myself individually, using a first-person pronoun.</p>
+
+<hr />
+
+<h3 id="discussion-is-served">Discussion is Served</h3>
+
+<p>We’ve been using service objects in Ruby for a few years now; I’ve previously used them in a wide range of other languages, OO and otherwise. Given a bit of reasonable self-discipline (perhaps best supported by the <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a>), they can be really effective. But I agree with your dings against the examples, to the point where they almost might be considered straw-men were it not for the fact that they are too likely in production code running somewhere. I’d like to argue for use of the concept within limits, by riffing on a few of our</p>
+
+<p><strong>Use cases are implemented in one or more cooperating service objects.</strong> A <em>use case</em> encapsulates an action performed by or on behalf of a user. <em>Register as Member</em>, <em>Publish Article</em>, and <em>Respond to Proposed Contribution</em> are use cases that each make use of one or more service objects (which generally, as is traditional, have a single entry point which returns a “result” object encapsulating the success/failure result of the service usage, along with appropriate entities on success or error information on failure. These are black boxes into which necessary dependencies are injected along with the per-use parameters.</p>
+
+<p><strong>Service objects should be <em>pure domain logic</em>.</strong> Any outer-ring (to use <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a> imagery), such as frameworks, databases, and the like, are to be either injected or wrapped around the use of the service object itself. Your TopTal <code class="language-plaintext highlighter-rouge">CurrencyExchanger</code> example is flat-out egregious, and in my opinion, at least, should never have passed anybody’s code review. You do an excellent job of damning it by visibly pulling several of your punches.</p>
+
+<p>The point of using a use-case-driven approach leveraging service objects is to minimise both the cognitive load on the developer (oberwhelmingly singular) working on that code at the moment, as well as to isolate it from the rest of the application, preventing Debugging Whac-A-Mole<sup>®</sup> as the hapless developer has to stop and think (and <code class="language-plaintext highlighter-rouge">grep</code>) to figure out why data that “has no good reason to change” <em>is</em> changing. After four decades in this craft, I have yet to meet a developer who’s shipped at least one academically or commercially interesting product who hasn’t beaten her head against <em>that</em> at least once.</p>
+
+<p>One of the defining bullet points for OOP, remember, is <em>encapsulation</em>. Good architecture, Clean or otherwise, applies that at larger scale than the individual class. That is a nearly insurmountable challenge when attempting to maintain a legacy Rails app written in the traditional Rails Way.</p>
+
+<p>Models and controllers, themselves, simply don’t have the necessary depth to fully delineate a sustainable architecture for modern applications. For a post-2010 or so product, you’re going to have to add at least one more layer in a hopefully successful attempt to keep your developers reasonably sane and your schedule-focused managers reasonably appeased. We believe that taking well-defined and -understandable concepts that have been proven in production is highly preferable to a one-off, everybody-does-it-their-own-way approach. DHH may well rail against anything that adds layers to the original NVC-style layout, but I’ll bet Basecamp uses something recognisable as service objects — even if they’re wrapped up in separately-deployable “microservices”. That just takes the service object out of the monolith and puts it on the other end of an HTTP or RPC connection that <em>can</em> fail.</p>
+
+<p>Thoughts?</p>
+
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			 
+				<li><a href="/categories.html#Development-ref">
+					Development <span>(3)</span>
+					,
+				</a></li>
+			 
+				<li><a href="/categories.html#Practices-ref">
+					Practices <span>(3)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		  
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			 
+				<li>
+					<a href="/tags.html#development-ref">
+					development <span>(16)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#service objects-ref">
+					service objects <span>(1)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#use cases-ref">
+					use cases <span>(3)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#ruby-ref">
+					ruby <span>(13)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#rails-ref">
+					rails <span>(7)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#Ruby on Rails-ref">
+					Ruby on Rails <span>(3)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		  
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=In Defence of Use Cases, and the Service Objects Encapsulating Them&via=jeff_dickey"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9" class="img-rounded author-image" />
+        <h4 class="section-title author-name">Jeff Dickey</h4>
+        <p class="author-bio">Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous"><a href="/life%20despite%20tech/2020/02/01/hardworking-csrs-cant-fix-bad-policy.html" title="Hard-working CSRs Can't Fix Bad Policy">&larr; Previous</a></li>
+		  
+		  
+		  <li class="next"><a href="/deployment/development/practices/2020/09/22/yak-shaving-sometimes-needs-chainsaws.html" title="Yak Shaving Sometimes Needs Chainsaws">Next &rarr;</a></li>
+		  
+		</ul>
+
+		<hr>
+	</div>
+	
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jdickeyghpages';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				&copy; 2020 Jeff Dickey with Jekyll. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+</html>
+
+
+

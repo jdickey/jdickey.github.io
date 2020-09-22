@@ -1,0 +1,26 @@
+<p>If you have something like</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">class</span> <span class="nc">Foo</span>
+    <span class="c1"># …</span>
+    <span class="kp">private</span>
+    <span class="c1"># …</span>
+    <span class="k">class</span> <span class="nc">Bar</span>
+      <span class="c1"># …</span>
+      <span class="k">def</span> <span class="nf">voice</span>
+        <span class="s1">'quack'</span>
+      <span class="k">end</span>
+    <span class="k">end</span> <span class="c1"># "private" class Foo::Bar</span>
+  <span class="k">end</span> <span class="c1"># ordinary class Foo</span>
+</code></pre></div></div>
+
+<p>you <em>don’t</em> have a private class. Any code that can see <code class="highlighter-rouge">Foo</code> can do something like</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] pry(main)&gt; require 'foo'
+=&gt; true
+[2] pry(main)&gt; Foo::Bar.new.voice
+=&gt; "quack"
+</code></pre></div></div>
+
+<p>You haven’t really hidden anything at all. All that you’ve done, by nesting <code class="highlighter-rouge">Bar</code> within <code class="highlighter-rouge">Foo</code> and sticking that <code class="highlighter-rouge">private</code> declaration above it, is telling the next poor soul to come read your code that <code class="highlighter-rouge">Bar</code> is <em>intended as</em> an <em>internal implementation detail</em> of <code class="highlighter-rouge">Foo</code> and should not be used directly.</p>
+
+<p>You, by going to that trouble, have given yourself the responsibility to ensure that knowledge of <code class="highlighter-rouge">Foo::Bar</code> <em>never</em> leaks out of <code class="highlighter-rouge">Foo</code> (e.g., by way of a method return value). I don’t always (often?) agree with Joel Spolsky, but <a href="http://www.joelonsoftware.com/articles/LeakyAbstractions.html"><em>The Law of Leaky Abstractions</em></a>, nearly twelve years on, is a <em>classic</em>.</p>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rails, Circular Logic and Incremental Big Bang Architecture</title>
+	
+	<meta name="author" content="Jeff Dickey">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/jdickey">
+				<i class="fa fa-github"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=35" class="img-circle" />
+				Six Impossible Things Before Bundling
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">Six Impossible Things Before Bundling</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/jdickey">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/jeff_dickey">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:jdickey@seven-sigma.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/jdickey">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>Rails, Circular Logic and Incremental Big Bang Architecture </h1>
+</div>
+	
+<article>
+
+	<div class="col-sm-10">
+	 <span class="post-date">
+	   
+	   June 
+	   7th,
+	   
+	   2014
+	 </span>
+	  <div class="article_body">
+	  <p>Rails is a <em>fantastic</em> solution to a well-understood class of problem: the CRUD-oriented (or REST-oriented) query/report/update Web application, circa 2004-2006. Its philosophy of <a href="http://gilesbowkett.blogspot.sg/2013/02/the-lie-of-convention-over-configuration.html">curation over configuration</a>, despite having been likened to the report-producing languages of old (such as <a href="https://en.wikipedia.org/wiki/IBM_RPG_II">IBM RPG II</a>, means that you really only have two things to worry about: your domain business logic and page transitions (which is another way of saying “your domain business logic, as it applies to presentation”).</p>
+
+<p>And yet, the farther your app gets from that sweet spot„ either by decoupling the UI and using a fancy JavaScript framework; by needing to support user inputs <em>other than</em> typing into form fields and clicking buttons; or even the distance imposed by being nearly ten years on from the “sweet spot” and so many tools and other bits of code have changed around it — the <em>harder</em> it gets to do what you want to do in The Rails Way. Lots of people much smarter than me, from <a href="http://blog.8thlight.com/uncle-bob/archive.html">Robert C “Uncle Bob” Martin</a> to <a href="https://duckduckgo.com/?q=Jim+Weirich">Jim Weirich</a> to <a href="http://www.sandimetz.com">Sandi Metz</a> to <a href="http://blog.mattwynne.net/tag/rails/">Matt Wynne</a> and a <em>host</em> of others, have spent many person-months thinking about, grappling with and writing about how to <em>mitigate</em> Rails, the knots it ties you into and the practices that much of the rest of our craft has built consensus on as being essential for good practice, that you <em>can’t</em> use in Rails without superhuman effort. Because the apps we’re building now, even the relatively simple ones, <em>aren’t</em> largely analogous to Basecamp (the application from which Rails was originally extracted).</p>
+
+<p>So here’s the problem I’m facing, and the problem you’ve more than likely faced if you’ve done a non-trivial app in Rails.</p>
+
+<p>If you’ve done any medium-to-large-scale development in other systems, especially in a decent OO language, one of your high priorities is going to be separating your domain logic from your “infrastructure” logic, including layering your presentational logic related to your data models separately from the data models themselves. Small is beautiful, and Ruby has some great tools to let you do that, including in particular the whole universe of <a href="http://rubygems.org">Gems</a>. Rails, however, makes it <em>bloody hard</em> to build what the rest of the craft would view as <em>modular</em> apps that follow <a href="https://en.wikipedia.org/wiki/SOLID">SOLID</a> principles. The retort to that is generally along the lines of “ <a href="http://david.heinemeierhansson.com/2012/rails-is-omakase.html">Rails is omakase</a>” — which is <em>fine</em> as long as your app is living within that circa 2004-2006 sweet spot I mentioned earlier. The clock in the upper-right corner of my display here informs me that today is Saturday 7 June <em>2014</em> as I write this. Oops.</p>
+
+<p>So we have great ideas like <a href="https://www.youtube.com/watch?v=CGN4RFkhH2M">Hexagonal</a> <a href="http://pivotallabs.com/hexagonal-rails-and-the-ludicrous-terminal-application/">Rails</a> , <a href="https://www.youtube.com/watch?v=WpkDN78P884"><em>Architecture: The Lost Years</em></a> and so on, that showed ways, with varying degrees of universality, to “get a handle on” the application/system you were developing.</p>
+
+<p>But, can you answer <a href="http://youtu.be/CGN4RFkhH2M?t=10m14s">what your application does</a>? Not “what is its data model”, “what are the different types of users and permissions”, but a pithy sentence or two that gets across the idea of what makes <em>your</em> application different than every other CRUDtastic app out there, Rails or otherwise. Because if you can’t, none of this Rails-survival lore will help you.</p>
+
+<p>And, equally importantly, as Jim Weirich points out in his Cincy.rb talk <a href="http://youtu.be/tg5RFeSfBM4"><em>Decoupling from Rails</em></a>, is the question of “has this ever been successfully done before? If so, how? If not, what’s been the stumbling block that we have to stand back and work around using something else?” Because, in all fairness to Uncle Bob, if there aren’t examples of his built-on-Rails architecture in the wild for people to poke at, projector-ware can be inspirational but not terribly practical. For instance, as Jim points out at about 10 minutes into his presentation, Uncle Bob’s architecture shows where Rails controllers and views go, but ActiveRecord “models” don’t seem to be there <em>at all</em>. Separating domain logic from persistence just happens to be one of the hardest nuts to crack in a Rails app to begin with. Hmmm.</p>
+
+<p>Is the solution more decoupling? Jim spends the rest of that talk isolating and extracting what <a href="http://collectiveidea.com/blog/archives/2012/06/28/wheres-your-business-logic/">several</a> <a href="http://devblog.orgsync.com/2014/01/23/confidently-manage-business-logic-activeinteraction/">teams</a> <a href="http://eng.joingrouper.com/blog/2014/03/03/rails-the-missing-parts-interactors">publish</a> as “interactors”, or support for what I call in my own apps “domain service objects” or DSOs. These help, a <em>lot</em>; having “skinny” controllers that don’t really know anything at all about your app beyond how to hand data off to classes that <em>do</em> lets you refactor your business rules efficiently by putting their <em>control logic</em> all in one place <em>separate</em> from Rails. Similarly, implementing façades or “decorators” with presentational logic around your models, as with <a href="https://github.com/drapergem/draper">Draper</a> and others, helps you write clean, business-logic-free view templates.</p>
+
+<p>But you’ve still got ActiveRecord to deal with in your models, and it leads you down the garden path and over the cliff with things like, oh, <em>relations</em>. When you have, say, a <code class="language-plaintext highlighter-rouge">Blog</code> model that <code class="language-plaintext highlighter-rouge">has_many :posts</code> and a <code class="language-plaintext highlighter-rouge">Post</code> model that <code class="language-plaintext highlighter-rouge">belongs_to :blog</code>, what you’ve got is a circular dependency; you can’t make changes to your <code class="language-plaintext highlighter-rouge">Posts</code> with certainty that those changes are isolated from your <code class="language-plaintext highlighter-rouge">Blog</code>, or vice versa, because each depends on the other. There have been numerous serious attempts to effect such a decoupling; perhaps the most widely known is <a href="http://rom-rb.org">Ruby Object Manager</a>, whose Version 2 has been in the works for over <em>two years now</em>. It’s led by one of the greats in the Ruby community, <a href="http://solnic.eu">Piotr Solnica</a>, but it’s a <em>Hard Problem</em>. Especially when coexisting with Rails. People even resort to uncomfortable hacks <a href="https://gist.github.com/jdickey/e2ed1bbe0c3e6ad3269d">like this</a> to Get Things Done. There <em>has</em> to be a better way, and monorail (traditional Rails all-in-one non-modular app) is <em>not</em> that way.</p>
+
+<p>And there are other, seemingly orthogonal issues to deal with. Authentication? Authorisation? Several solutions that are widely used exist for these in the “traditional” Rails “monorail” application style; how will adapting your architecture affect these, and how will you implement them?</p>
+
+<p>Anybody?</p>
+
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			 
+				<li><a href="/categories.html#not yet categorised-ref">
+					not yet categorised <span>(37)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		  
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			 
+				<li>
+					<a href="/tags.html#tumblr-ref">
+					tumblr <span>(29)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#rails-ref">
+					rails <span>(7)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#ruby on rails-ref">
+					ruby on rails <span>(3)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#architecture-ref">
+					architecture <span>(5)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#rant-ref">
+					rant <span>(10)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		  
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Rails, Circular Logic and Incremental Big Bang Architecture&via=jeff_dickey"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://www.gravatar.com/avatar/d6d968e5de074e1aeef2ed6b9cc336f9" class="img-rounded author-image" />
+        <h4 class="section-title author-name">Jeff Dickey</h4>
+        <p class="author-bio">Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous"><a href="/not%20yet%20categorised/2014/05/09/language-ux-epic-fail-laziness-and-hubris.html" title="Language, UX Epic Fail, Laziness and Hubris">&larr; Previous</a></li>
+		  
+		  
+		  <li class="next"><a href="/not%20yet%20categorised/2014/06/13/change-is-may-be-should-be-huh-good.html" title="Change &#91;is&#47;may be&#47;should be&#47;huh?&#93; good&hellip;">Next &rarr;</a></li>
+		  
+		</ul>
+
+		<hr>
+	</div>
+	
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jdickeyghpages';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				&copy; 2020 Jeff Dickey with Jekyll. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+</html>
+
+
+
