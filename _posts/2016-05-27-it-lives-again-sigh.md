@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "It Lives Again. <em>Sigh</em>"
+title: "It Lives Again. *Sigh*"
 description: "We *think* we're back on the air; let's see how long we stay there."
 tags: [blog, jekyll, github pages, github]
 categories: [blogging]

@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: Repost&#58; Welcome to Syria
+title: 'Repost: Welcome to Syria'
 updated: 2015-02-16 01:21:00 SGT
 tags: [tumblr, repost]
 categories: [not yet categorised]

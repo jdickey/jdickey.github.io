@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: Lotus &#45; A complete web framework for Ruby
+title: "Lotus: A complete web framework for Ruby"
 updated: 2015-02-20 01:38:00 SGT
 tags: [tumblr, ruby, framework, web development, object oriented programming, oop, best practices]
 categories: [not yet categorised]

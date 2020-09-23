@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: Beware the Bandersnatch&#58; What Git GUI Is Using YOU?
+title: 'Beware the Bandersnatch: What Git GUI Is Using YOU?'
 updated: 2015-02-16 02:03:00 SGT
 tags: [tumblr, git, collaboration, development, code, software, rant]
 categories: [not yet categorised]

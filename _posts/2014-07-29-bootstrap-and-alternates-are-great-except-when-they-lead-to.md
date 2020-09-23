@@ -1,4 +1,4 @@
----           
+---
 layout: post
 title: "Bootstrap and alternates are GREAT! Except when they lead to..."
 updated: 2015-02-07 09:07:00 UTC

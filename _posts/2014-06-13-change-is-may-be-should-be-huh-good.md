@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: Change &#91;is&#47;may be&#47;should be&#47;huh?&#93; good&hellip;
+title: "Change [is/may be/should be/huh?] good..."
 updated: 2015-02-20 02:06:00 SGT
 tags: [tumblr, ux, user experience, administrivia]
 categories: [not yet categorised]

@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: Documentation Is Like Sex&#59; Reposting in Agreement
+title: "Documentation Is Like Sex: Reposting in Agreement"
 updated: 2015-02-25 00:22:00 SGT
 tags: [tumblr, development, repost, documentation, analogy]
 categories: [not yet categorised]

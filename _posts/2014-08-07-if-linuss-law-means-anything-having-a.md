@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: If Linus&#39;s Law means anything, having a...
+title: "If Linus' Law means anything, having a..."
 updated: 2015-02-16 23:18:00 SGT
 tags: [tumblr, reply]
 categories: [not yet categorised]

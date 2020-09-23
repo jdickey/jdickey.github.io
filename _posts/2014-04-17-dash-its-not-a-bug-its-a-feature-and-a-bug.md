@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: Dash&#58; It&#39;s Not a Bug&#59; It&#39;s A Feature AND A Bug&#33;
+title: "Dash: It's Not a Bug; It's A Feature AND A Bug!"
 updated: 2015-02-25 00:22:00 SGT
 tags: [tumblr, repost, humour]
 categories: [not yet categorised]

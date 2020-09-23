@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: Daniel O'Connor&#58; Rails, how developers grow, and what's wrong with it.
+title: "Daniel O'Connor: Rails, how developers grow, and what's wrong with it."
 updated: 2015-02-20 03:19:00 SGT
 tags: [tumblr, repost]
 categories: [not yet categorised]

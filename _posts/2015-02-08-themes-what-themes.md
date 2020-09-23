@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Themes? <em>What</em> themes?"
+title: "Themes? WHAT themes!?"
 description: "I do not think that word means what you think it means."
 tags: [blogging, blog, Jekyll, Bootstrap, themes, rant]
 categories: [not yet categorised]

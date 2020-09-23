@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: piscine-unrelated&#58; I wonder how hard it would be...
+title: 'piscine-unrelated: I wonder how hard it would be...'
 updated: 2015-02-16 00:06:00 SGT
 tags: [tumblr, c++, python, ruby, object oriented programming]
 categories: [not yet categorised]

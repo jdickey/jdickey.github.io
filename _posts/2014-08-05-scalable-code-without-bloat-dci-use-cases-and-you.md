@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: Scalable Code Without Bloat&#58; DCI, Use Cases, and You
+title: 'Scalable Code Without Bloat: DCI, Use Cases, and You'
 updated: 2015-02-16 23:29:00 SGT
 tags: [tumblr, repost, startups, dci, use cases]
 categories: [not yet categorised]

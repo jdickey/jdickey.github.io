@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: Not eating my words, but&hellip;
+title: "Not eating my words, but..."
 updated: 2015-02-20 01:58:00 SGT
 tags: [tumblr, architecture, software architecture, oop, object oriented programming, design, solid]
 categories: [not yet categorised]

@@ -1,6 +1,6 @@
----           
+---
 layout: post
-title: The thing about programming is that if somebody can’t format their code&hellip;
+title: "The thing about programming is that if somebody can’t format their code..."
 updated: 2015-02-24 23:51:00 SGT
 tags: [tumblr, development, craftsmanship, best practices, repost, rant]
 categories: [not yet categorised]
