@@ -6,11 +6,25 @@ subtitle: Software and life. If you think software *is* life, seek professional 
 future: true # per https://jekyllrb.com/docs/upgrading/2-to-3/#all-my-posts-are-gone-whered-they-go
 paginate: 20 # pagination based on number of posts
 paginate_path: "page:num"
-exclude: ["README.md", "tmp"] # files to exclude
 highlighter: rouge
 markdown: kramdown
 disqus: jdickeyghpages
+theme: minima
 # google_analytics: dbyll
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules/
+  - tmp/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
 
 defaults:
   -
@@ -22,13 +36,14 @@ defaults:
 description: Nothing can possibly go wrong. Nothing can possi... *snap*
 author:
   name: Jeff Dickey
-  email: jdickey@seven-sigma.com
+  # email: jdickey@seven-sigma.com
+  email: jeff_dickey@hotmail.com
   github: jdickey
   twitter: jeff_dickey
   # pinterest: asd123
   linkedin: jdickey
   bio: Software and Web developer. Tamer of deadlines. Enchanter of stakeholders.
-  email_md5: d6d968e5de074e1aeef2ed6b9cc336f9
+  # email_md5: d6d968e5de074e1aeef2ed6b9cc336f9
 
 rss_path: feed.xml
 categories_path: categories.html
@@ -43,4 +58,5 @@ gems:
   - jekyll-paginate
 
 plugins:
+  - jekyll-feed
   - jemoji
