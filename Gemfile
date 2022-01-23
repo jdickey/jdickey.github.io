@@ -30,3 +30,7 @@ end
 
 
 gem "webrick", "~> 1.7"
+
+gem "jekyll-compose", "~> 0.12.0"
+
+gem "jemoji", "~> 0.12.0"
