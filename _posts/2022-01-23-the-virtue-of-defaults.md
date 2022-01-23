@@ -11,7 +11,7 @@ fullview: false
 
 I started writing this as a response to one of [Jason Knight](https://link.medium.com/zTvV1qeOYmb)'s posts on Medium, titled "[Let’s Document The “Non-Tailwind Starter Kit Rewrite” 2 of 2: CSS](https://medium.com/codex/lets-document-the-non-tailwind-starter-kit-rewrite-2-of-2-css-5d600e9ede24)". I'd been eagerly following his posts for some time; read his post and this one, in whatever order suits you, to understand why I no longer do.
 
-----
+## How I Got Here
 
 I’ve been writing code for well over 40 years now. For most of that time, my career philosophy was
 
@@ -40,4 +40,12 @@ I used to denigrate frameworks that tried to be everything an app or developer w
 
 Like an ex-smoker being less tolerant than others of second-hand smoke, I've now become far less tolerant of those who celebrate not seeing the value of conceptual compression, making juvenile potshots at things that don't fit into or, worse, competently refute the need for the gate they keep with fanatic zeal. I know; I used to be one of those folks, but I'm working hard to make a little progress away from that every day.
 
-That sounds like something that a 12-step programme might be able to help with. Deprogramming programmers. What a craft community. What a world.
+----
+
+## Hi, I'm Jeff, and&hellip;
+
+> Me: Hi, I'm Jeff, and I used to work *way* too hard at the details
+>
+> Crowd: [thunderously] **Hi, Jeff!** 
+
+All that sounds like something that a 12-step programme might be able to help with. Deprogramming programmers. What a craft community. What a world.

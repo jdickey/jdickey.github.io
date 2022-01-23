@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>It's ALIVE!</title>
+	<title>I REALLY want to like TailwindCSS</title>
+	
+	<meta name="description" content="Tailwind blows my mind and lets me see CSS in whole new ways. But...">
 	
 	<meta name="author" content="Jeff Dickey">
 
@@ -149,7 +151,7 @@
 
 	<div class="col-sm-9 col-sm-offset-3">
 		<div class="page-header">
-  <h1>It's ALIVE! </h1>
+  <h1>I REALLY want to like TailwindCSS </h1>
 </div>
 	
 <article>
@@ -157,19 +159,53 @@
 	<div class="col-sm-10">
 	 <span class="post-date">
 	   
-	   July 
-	   23rd,
-	     
-	   2014
+	   December 
+	   5th,
+	   
+	   2021
 	 </span>
 	  <div class="article_body">
-	  <p>We’re up on <a href="http://jekyllrb.com/">Jekyll</a>! I believe the appropriate technical term at this point is</p>
+	  <p><a href="https://tailwindcss.com/">Tailwind</a> is a <a href="https://xenox.dev/tailwind-css-utility-first-css-framework/">utility-first</a> CSS framework that’s grabbing developer mind-share, and use in production, extremely quickly. A quick search-engine session will find many testimonials for the framework. Tailwind by default eschews external custom CSS/SCSS files in favour of specifying styles using the <code class="language-plaintext highlighter-rouge">class</code> attribute of whatever element you’re working with.</p>
 
-<blockquote>
-  <p>Woohoo!!!</p>
-</blockquote>
+<p>CSS frameworks such as Bootstrap, Semantic UI, and most others, give you a collection of “components” such as Card, Navbar, etc. This makes it really fast and easy to whip together a Web page or site – <em>assuming</em> you don’t need to customise anything beyond what is provided for in the framework’s components. One problem common to pages using such frameworks is that it’s relatively easy for a developer to look at them and (usually) correctly guess which framework was used, whereas to the user, they “all look the same”. If your client is looking for a site that “doesn’t look like all the others”, this can be A Problem.</p>
 
-<p>Plan #74,169 for <em>Improved Productivity in Communication</em> is underway. Watch this space!</p>
+<p>Another problem for the developer (and especially maintainer) is <a href="https://csscreator.com/divitis">“divitis”</a>; the tendency for components and sub-components to be coded using a seemingly endless series of <code class="language-plaintext highlighter-rouge">div</code> elements differentiated only by their classes – which often requires flipping back and forth between the code and the framework documentation. Tailwind isn’t <em>entirely</em> free from divitis, but its classes are sufficiently granular and mnemonic that the developer quickly commits the most commonly-used ones in her project to memory, or makes use of the excellent <a href="https://nerdcave.com/tailwind-cheat-sheet">Tailwind Cheat Sheet</a>.</p>
+
+<p>Once you have things looking the way you (and/or your client) want, it’s then very straightforward to extract commonly-reused sets of styles (e.g., for button styles) into a separate CSS file with more mnemonic class names. This makes the HTML less “cluttered”, while still preserving the granularity and ease of modification of the styles used.</p>
+
+<p>So what’s not to love?</p>
+
+<p>If you’re using ERB (and possibly HAML) for your HTML templates (with or without partials), not much. Whichever mainstream editor you’re using likely has extensions/packages available to suggest/auto-complete Tailwind style names as you work. Easy-peasy, and also quite useful in that you can see what your options are.</p>
+
+<p>If you’re using <a href="http://slim-lang.com">Slim</a>, however, you lose that suggest/auto-complete goodness (<strong>please</strong> show me how I can be wrong on this). The hack I have resorted to using is along the lines of:</p>
+
+<ol>
+  <li>I want to add an <code class="language-plaintext highlighter-rouge">h1</code> element with several Tailwind classes in my Slim template;</li>
+  <li>I code a raw HTML <code class="language-plaintext highlighter-rouge">&lt;h1 class="..."&gt;</code> with the Tailwind classes I want inside the <code class="language-plaintext highlighter-rouge">class</code> attribute. Auto-correct and auto-suggest work as expected if I have the basic Tailwind extensions loaded in my editor (VS Code);</li>
+  <li>I translate the complete <code class="language-plaintext highlighter-rouge">h1</code> tag markup into Slim, using periods to separate class names. (Modern Slim is fine with hyphens in class names);</li>
+  <li>Remove the raw HTML.</li>
+</ol>
+
+<p>For example:</p>
+
+<p>Step 1: intent only; no code yet;
+Step 2: code <code class="language-plaintext highlighter-rouge">&lt;h1 class="font-bold px-4 py-4 text-2xl"&gt;Title text&lt;/h1&gt;</code>;
+Step 3: code <code class="language-plaintext highlighter-rouge">h1.font-bold.px-4.py-4 text-2xl Title text</code>;
+Step 4: delete the code from Step 2.</p>
+
+<p>(Why specify both <code class="language-plaintext highlighter-rouge">px-4</code> and <code class="language-plaintext highlighter-rouge">py-4</code>, you ask? Because I might want to experiment with different padding settings on the <em>x-</em> and <em>y-</em>axes as I’m coding this up. I can always refactor later.)</p>
+
+<p>This. Is. A. Pain.</p>
+
+<p>If anyone can point me towards a better workflow, probably with VS Code extensions in support, I’d be greatly appreciative. After 6-7 years and 50+ Ruby (with or without Rails) projects, I’m extremely loath to leave Slim, <em>especially</em> for ERB.</p>
+
+<p>Comments here or on <a href="https://twitter.com/jeff_dickey">Twitter</a> more than welcome.</p>
+
+<h2 id="and-one-more-thing">And One More Thing…</h2>
+
+<p>I’ve been AWOL for almost exactly a year, and I’ve <em>missed</em> blogging. I’d chalk it up to A Series of Unfortunate Events, mostly family-related and/or health-related. In the absence of further such Events, I can see where blogging at least once a week will make me feel much better about myself and several issues.</p>
+
+<p>Thanks for your patience and well-wishes.</p>
 
 	  </div>
 
@@ -179,8 +215,13 @@
 		  
 		  
 			 
-				<li><a href="/categories.html#not yet categorised-ref">
-					not yet categorised <span>(37)</span>
+				<li><a href="/categories.html#development-ref">
+					development <span>(6)</span>
+					,
+				</a></li>
+			 
+				<li><a href="/categories.html#practices-ref">
+					practices <span>(7)</span>
 					
 				</a></li>
 			
@@ -195,78 +236,43 @@
 		  
 			 
 				<li>
-					<a href="/tags.html#archlever-ref">
-					archlever <span>(4)</span>
+					<a href="/tags.html#tailwind-ref">
+					tailwind <span>(1)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="/tags.html#Web development-ref">
-					Web development <span>(2)</span>
+					<a href="/tags.html#tailwindcss-ref">
+					tailwindcss <span>(1)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="/tags.html#Ruby on Rails-ref">
-					Ruby on Rails <span>(3)</span>
+					<a href="/tags.html#css-ref">
+					css <span>(2)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="/tags.html#deprecation-ref">
-					deprecation <span>(2)</span>
+					<a href="/tags.html#workflow-ref">
+					workflow <span>(1)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="/tags.html#Bootstrap-ref">
-					Bootstrap <span>(4)</span>
+					<a href="/tags.html#disruption-ref">
+					disruption <span>(1)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="/tags.html#blogging-ref">
-					blogging <span>(4)</span>
-					,
-					</a>
-				</li>
-			 
-				<li>
-					<a href="/tags.html#markup-ref">
-					markup <span>(4)</span>
-					,
-					</a>
-				</li>
-			 
-				<li>
-					<a href="/tags.html#rails-ref">
-					rails <span>(8)</span>
-					,
-					</a>
-				</li>
-			 
-				<li>
-					<a href="/tags.html#blog-ref">
-					blog <span>(6)</span>
-					,
-					</a>
-				</li>
-			 
-				<li>
-					<a href="/tags.html#Ruby-ref">
-					Ruby <span>(2)</span>
-					,
-					</a>
-				</li>
-			 
-				<li>
-					<a href="/tags.html#HTML-ref">
-					HTML <span>(3)</span>
+					<a href="/tags.html#possibilities-ref">
+					possibilities <span>(1)</span>
 					
 					</a>
 				</li>
@@ -281,7 +287,7 @@
 		<div>
       <section class="share col-sm-6">
         <h4 class="section-title">Share Post</h4>
-        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=It's ALIVE!&via=jeff_dickey"
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=I REALLY want to like TailwindCSS&via=jeff_dickey"
            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
           <i class="fa fa-twitter fa-lg"></i>
           Twitter
@@ -299,10 +305,10 @@
 
 		<ul class="pager">
 		  
-		  <li class="previous"><a href="/not%20yet%20categorised/2014/07/17/more-likely-to-be-an-old-school-php-guy-than-a.html" title="More likely to be an old-school PHP guy than a Rubyist.">&larr; Previous</a></li>
+		  <li class="previous"><a href="/deployment/development/practices/2020/09/22/yak-shaving-sometimes-needs-chainsaws.html" title="Yak Shaving Sometimes Needs Chainsaws">&larr; Previous</a></li>
 		  
 		  
-		  <li class="next"><a href="/not%20yet%20categorised/2014/07/29/bootstrap-and-alternates-are-great-except-when-they-lead-to.html" title="Bootstrap and alternates are GREAT! Except when they lead to...">Next &rarr;</a></li>
+		  <li class="next"><a href="/development/practices/2022/01/21/the-virtue-of-defaults.html" title="The Virtue of Defaults">Next &rarr;</a></li>
 		  
 		</ul>
 

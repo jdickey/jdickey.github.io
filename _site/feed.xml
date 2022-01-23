@@ -1,10 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Six Impossible Things Before Bundling</title>
+		<title>Two Foos Walked into a Bar...</title>
 		<description>Nothing can possibly go wrong. Nothing can possi... *snap*</description>
 		<link>/</link>
 		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>The Virtue of Defaults</title>
+				<description>&lt;p&gt;I started writing this as a response to one of &lt;a href=&quot;https://link.medium.com/zTvV1qeOYmb&quot;&gt;Jason Knight&lt;/a&gt;’s posts on Medium, titled “&lt;a href=&quot;https://medium.com/codex/lets-document-the-non-tailwind-starter-kit-rewrite-2-of-2-css-5d600e9ede24&quot;&gt;Let’s Document The “Non-Tailwind Starter Kit Rewrite” 2 of 2: CSS&lt;/a&gt;”. I’d been eagerly following his posts for some time; read his post and this one, in whatever order suits you, to understand why I no longer do.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-i-got-here&quot;&gt;How I Got Here&lt;/h2&gt;
+
+&lt;p&gt;I’ve been writing code for well over 40 years now. For most of that time, my career philosophy was&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Learn as much as I could about&lt;/li&gt;
+  &lt;li&gt;As much as I could, so that I could&lt;/li&gt;
+  &lt;li&gt;Be ready to go when the market for a skill exploded, while working to&lt;/li&gt;
+  &lt;li&gt;Maintain top-level skill credibility in two or at most three apparent longer-term stable areas as a fallback for when I guessed wrong.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;As you might expect, I wasn’t a fan of what’s now called “conceptual compression”; as an early colleague described my fetish for the most minute detail,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It’s not that you don’t always see the forest for the trees; you spend an amazing amount of effort polishing the knots on the roots.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The advent of modern search engines and developer knowledge bases cemented that even further so that, by the time I found Mr Knight’s writing on Medium a year or two ago, I was an instant disciple.&lt;/p&gt;
+
+&lt;p&gt;Riding my most recent startup all the way down to its (in hindsight, blindingly obvious-well-in-advance) controlled hypersonic flight into terrain after nearly a decade of insane work schedules was the final reminder needed that change was a prerequisite for physical and mental survival. (&lt;em&gt;Note to self:&lt;/em&gt; when approached by an obviously inexperienced, apparently wantrapreneurial CEO, &lt;em&gt;run far, far away!&lt;/em&gt;) Finding &lt;a href=&quot;https://youtu.be/zKyv-IGvgGE&quot;&gt;this RailsConf keynote&lt;/a&gt; rubbed my nose in how I’d been Doing It Very Wrong for at least the last decade and a half.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;drill-down-not-up&quot;&gt;Drill Down, Not Up&lt;/h2&gt;
+
+&lt;p&gt;Tools should above all be &lt;em&gt;useful&lt;/em&gt;. That usefulness is in direct proportion to the amount of detailed, numbing, repetitive scut work they free you from, so that you can focus on what makes your current project valuable, instead of the low-level details that make it like thousands of other projects.&lt;/p&gt;
+
+&lt;p&gt;Frameworks that achieve wide-scale use solve the &lt;a href=&quot;https://en.wikipedia.org/wiki/Pareto_principle&quot;&gt;80-20 problem&lt;/a&gt; for their users, if not going well beyond that. They don’t guarantee that you’ll &lt;em&gt;never&lt;/em&gt; interact directly with “&lt;a href=&quot;https://youtu.be/YWyCCJ6B2WE&quot;&gt;the man behind the curtain&lt;/a&gt;”, but they work at making such interaction a specialist endeavour embarked upon only rarely, if at all.&lt;/p&gt;
+
+&lt;p&gt;I used to denigrate frameworks that tried to be everything an app or developer would need. “Sure, that’ll work just fine, until you try to draw outside the lines.” It took me a further decade to get through my nearly solid-&lt;a href=&quot;https://memory-alpha.fandom.com/wiki/Duranium&quot;&gt;duranium&lt;/a&gt; head that essentially all developers stayed well within the “lines” drawn by a reasonably mature framework essentially all the time. Special cases will regularly come up; good frameworks understand and accommodate that. They also understand and accommodate you experimenting with replacing tools with other similarly functioning tools. Again, defaults exist but, in the end, you own your project.&lt;/p&gt;
+
+&lt;p&gt;Like an ex-smoker being less tolerant than others of second-hand smoke, I’ve now become far less tolerant of those who celebrate not seeing the value of conceptual compression, making juvenile potshots at things that don’t fit into or, worse, competently refute the need for the gate they keep with fanatic zeal. I know; I used to be one of those folks, but I’m working hard to make a little progress away from that every day.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;hi-im-jeff-and&quot;&gt;Hi, I’m Jeff, and…&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Me: Hi, I’m Jeff, and I used to work &lt;em&gt;way&lt;/em&gt; too hard at the details&lt;/p&gt;
+
+  &lt;p&gt;Crowd: [thunderously] &lt;strong&gt;Hi, Jeff!&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;All that sounds like something that a 12-step programme might be able to help with. Deprogramming programmers. What a craft community. What a world.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 21 Jan 2022 12:55:00 +0800</pubDate>
+				<link>/development/practices/2022/01/21/the-virtue-of-defaults.html</link>
+				<guid isPermaLink="true">/development/practices/2022/01/21/the-virtue-of-defaults.html</guid>
+			</item>
+		
+			<item>
+				<title>I REALLY want to like TailwindCSS</title>
+				<description>&lt;p&gt;&lt;a href=&quot;https://tailwindcss.com/&quot;&gt;Tailwind&lt;/a&gt; is a &lt;a href=&quot;https://xenox.dev/tailwind-css-utility-first-css-framework/&quot;&gt;utility-first&lt;/a&gt; CSS framework that’s grabbing developer mind-share, and use in production, extremely quickly. A quick search-engine session will find many testimonials for the framework. Tailwind by default eschews external custom CSS/SCSS files in favour of specifying styles using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt; attribute of whatever element you’re working with.&lt;/p&gt;
+
+&lt;p&gt;CSS frameworks such as Bootstrap, Semantic UI, and most others, give you a collection of “components” such as Card, Navbar, etc. This makes it really fast and easy to whip together a Web page or site – &lt;em&gt;assuming&lt;/em&gt; you don’t need to customise anything beyond what is provided for in the framework’s components. One problem common to pages using such frameworks is that it’s relatively easy for a developer to look at them and (usually) correctly guess which framework was used, whereas to the user, they “all look the same”. If your client is looking for a site that “doesn’t look like all the others”, this can be A Problem.&lt;/p&gt;
+
+&lt;p&gt;Another problem for the developer (and especially maintainer) is &lt;a href=&quot;https://csscreator.com/divitis&quot;&gt;“divitis”&lt;/a&gt;; the tendency for components and sub-components to be coded using a seemingly endless series of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;div&lt;/code&gt; elements differentiated only by their classes – which often requires flipping back and forth between the code and the framework documentation. Tailwind isn’t &lt;em&gt;entirely&lt;/em&gt; free from divitis, but its classes are sufficiently granular and mnemonic that the developer quickly commits the most commonly-used ones in her project to memory, or makes use of the excellent &lt;a href=&quot;https://nerdcave.com/tailwind-cheat-sheet&quot;&gt;Tailwind Cheat Sheet&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once you have things looking the way you (and/or your client) want, it’s then very straightforward to extract commonly-reused sets of styles (e.g., for button styles) into a separate CSS file with more mnemonic class names. This makes the HTML less “cluttered”, while still preserving the granularity and ease of modification of the styles used.&lt;/p&gt;
+
+&lt;p&gt;So what’s not to love?&lt;/p&gt;
+
+&lt;p&gt;If you’re using ERB (and possibly HAML) for your HTML templates (with or without partials), not much. Whichever mainstream editor you’re using likely has extensions/packages available to suggest/auto-complete Tailwind style names as you work. Easy-peasy, and also quite useful in that you can see what your options are.&lt;/p&gt;
+
+&lt;p&gt;If you’re using &lt;a href=&quot;http://slim-lang.com&quot;&gt;Slim&lt;/a&gt;, however, you lose that suggest/auto-complete goodness (&lt;strong&gt;please&lt;/strong&gt; show me how I can be wrong on this). The hack I have resorted to using is along the lines of:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;I want to add an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h1&lt;/code&gt; element with several Tailwind classes in my Slim template;&lt;/li&gt;
+  &lt;li&gt;I code a raw HTML &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h1 class=&quot;...&quot;&amp;gt;&lt;/code&gt; with the Tailwind classes I want inside the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt; attribute. Auto-correct and auto-suggest work as expected if I have the basic Tailwind extensions loaded in my editor (VS Code);&lt;/li&gt;
+  &lt;li&gt;I translate the complete &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h1&lt;/code&gt; tag markup into Slim, using periods to separate class names. (Modern Slim is fine with hyphens in class names);&lt;/li&gt;
+  &lt;li&gt;Remove the raw HTML.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;p&gt;Step 1: intent only; no code yet;
+Step 2: code &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h1 class=&quot;font-bold px-4 py-4 text-2xl&quot;&amp;gt;Title text&amp;lt;/h1&amp;gt;&lt;/code&gt;;
+Step 3: code &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h1.font-bold.px-4.py-4 text-2xl Title text&lt;/code&gt;;
+Step 4: delete the code from Step 2.&lt;/p&gt;
+
+&lt;p&gt;(Why specify both &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;px-4&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;py-4&lt;/code&gt;, you ask? Because I might want to experiment with different padding settings on the &lt;em&gt;x-&lt;/em&gt; and &lt;em&gt;y-&lt;/em&gt;axes as I’m coding this up. I can always refactor later.)&lt;/p&gt;
+
+&lt;p&gt;This. Is. A. Pain.&lt;/p&gt;
+
+&lt;p&gt;If anyone can point me towards a better workflow, probably with VS Code extensions in support, I’d be greatly appreciative. After 6-7 years and 50+ Ruby (with or without Rails) projects, I’m extremely loath to leave Slim, &lt;em&gt;especially&lt;/em&gt; for ERB.&lt;/p&gt;
+
+&lt;p&gt;Comments here or on &lt;a href=&quot;https://twitter.com/jeff_dickey&quot;&gt;Twitter&lt;/a&gt; more than welcome.&lt;/p&gt;
+
+&lt;h2 id=&quot;and-one-more-thing&quot;&gt;And One More Thing…&lt;/h2&gt;
+
+&lt;p&gt;I’ve been AWOL for almost exactly a year, and I’ve &lt;em&gt;missed&lt;/em&gt; blogging. I’d chalk it up to A Series of Unfortunate Events, mostly family-related and/or health-related. In the absence of further such Events, I can see where blogging at least once a week will make me feel much better about myself and several issues.&lt;/p&gt;
+
+&lt;p&gt;Thanks for your patience and well-wishes.&lt;/p&gt;
+</description>
+				<pubDate>Sun, 05 Dec 2021 00:00:00 +0800</pubDate>
+				<link>/development/practices/2021/12/05/i-really-want-to-like-tailwind.html</link>
+				<guid isPermaLink="true">/development/practices/2021/12/05/i-really-want-to-like-tailwind.html</guid>
+			</item>
 		
 			<item>
 				<title>Yak Shaving Sometimes Needs Chainsaws</title>
@@ -327,11 +430,11 @@
             &lt;span class=&quot;n&quot;&gt;sign_in&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;member&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:member&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
               &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;success&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:|&lt;/span&gt;
                 &lt;span class=&quot;vi&quot;&gt;@current_user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Signed in successfully'&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Signed in successfully&apos;&lt;/span&gt;
               &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
               &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;failure&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
                 &lt;span class=&quot;vi&quot;&gt;@current_user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CryptIdent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;guest_user&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Invalid Member Name or Password'&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Invalid Member Name or Password&apos;&lt;/span&gt;
               &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
             &lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:current_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@current_user&lt;/span&gt;
@@ -354,7 +457,7 @@
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# frozen_string_literal: true&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;# lib/the_app/interactors/sign_in_member.rb&lt;/span&gt;
 
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hanami/interactor'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;hanami/interactor&apos;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SignInValidator&lt;/span&gt;
   &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Hanami&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Validations&lt;/span&gt;
@@ -371,7 +474,7 @@
   &lt;span class=&quot;n&quot;&gt;expose&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:current_user&lt;/span&gt;
 
   &lt;span class=&quot;c1&quot;&gt;# We extend CryptIdent at runtime, rather than including it at parse time.&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# This lets Hanami's setup of everything under `lib` complete before we try to&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# This lets Hanami&apos;s setup of everything under `lib` complete before we try to&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# access a `UserRepository`. We could include CryptIdent from a CAC, because&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# by the time the delivery mechanism(s) is/are loaded, the app logic (on which&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# they depend) is already finalised. Depending on cross-component domain logic&lt;/span&gt;
@@ -388,7 +491,7 @@
       &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;failure&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
         &lt;span class=&quot;vi&quot;&gt;@current_user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;repo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;guest_user&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;error!&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Invalid Member Name or Password'&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;error!&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Invalid Member Name or Password&apos;&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
@@ -406,7 +509,7 @@
     &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;SignInValidator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;validate&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attrib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;messages&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;messages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attrib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;capitalize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attrib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;capitalize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos; &apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;success?&lt;/span&gt;
@@ -435,10 +538,10 @@
           &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;SignInMember&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:member&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
           &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;success?&lt;/span&gt;
             &lt;span class=&quot;vi&quot;&gt;@current_user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;current_user&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# exposed from Web::CommonAuthn&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Signed in successfully'&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Signed in successfully&apos;&lt;/span&gt;
           &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
             &lt;span class=&quot;vi&quot;&gt;@current_user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CryptIdent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;guest_user&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Invalid Member Name or Password'&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Invalid Member Name or Password&apos;&lt;/span&gt;
           &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
           &lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:current_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@current_user&lt;/span&gt;
           &lt;span class=&quot;n&quot;&gt;redirect_to&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Web&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;routes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;root_path&lt;/span&gt;
@@ -483,12 +586,12 @@
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# frozen_string_literal: true&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;# lib/the_app/use_cases/sign_in_member.rb&lt;/span&gt;
 
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'dry/monads/result'&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'dry/monads/do'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;dry/monads/result&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;dry/monads/do&apos;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;UseCases&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# Use case implementation for signing in a Member. Makes use of the CryptIdent&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# authentication library, and is implemented using dry-monads' 'do notation`.&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# authentication library, and is implemented using dry-monads&apos; &apos;do notation`.&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# See https://dry-rb.org/gems/dry-monads/1.0/do-notation/ for a discussion.&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SignInMember&lt;/span&gt;
     &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Dry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Monads&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Mixin&lt;/span&gt;
@@ -524,7 +627,7 @@
 
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;find_member&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;member&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;repo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;find_member&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-      &lt;span class=&quot;no&quot;&gt;Failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;member: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Name or password not valid'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;member&lt;/span&gt;
+      &lt;span class=&quot;no&quot;&gt;Failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;member: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Name or password not valid&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;member&lt;/span&gt;
 
       &lt;span class=&quot;no&quot;&gt;Success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;member&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
@@ -582,9 +685,9 @@
 
         &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;flash_message_for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
           &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;success?&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Signed in successfully'&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Signed in successfully&apos;&lt;/span&gt;
           &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Invalid Member Name or Password'&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Invalid Member Name or Password&apos;&lt;/span&gt;
           &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
@@ -646,12 +749,12 @@
 
 &lt;p&gt;Feeling like if you see another &lt;em&gt;John Doe&lt;/em&gt; username in tests, you’ll break something expensive? You need &lt;a href=&quot;https://github.com/ffaker/ffaker&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ffaker&lt;/code&gt;&lt;/a&gt;, ffriend; this will generate whatever &lt;a href=&quot;https://github.com/ffaker/ffaker/tree/master/lib/ffaker&quot;&gt;type of data value&lt;/a&gt; you need. Korean &lt;em&gt;Lorem Ipsum&lt;/em&gt;? People’s names, using either default Western conventions or any of a couple of dozen localisations? Got you covered.&lt;/p&gt;
 
-&lt;p&gt;That comes in handy when you get tired of developing and maintaining fixtures and seed data to populate your models during tests. Use [&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fabrication](https://www.fabricationgem.org/) (or its better-marketed if less feature-rich analogue, [&lt;/code&gt;factory_bot&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;](https://github.com/thoughtbot/factory_bot)) will help. Define the attributes of a model, and you can create an instance based on your template (with or without saving the instance to your database), or simply get a &lt;/code&gt;Hash&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; with the attribute values.  For example, here's a simple &lt;/code&gt;fabrication` User Fabricator from one of my projects:&lt;/p&gt;
+&lt;p&gt;That comes in handy when you get tired of developing and maintaining fixtures and seed data to populate your models during tests. Use [&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fabrication](https://www.fabricationgem.org/) (or its better-marketed if less feature-rich analogue, [&lt;/code&gt;factory_bot&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;](https://github.com/thoughtbot/factory_bot)) will help. Define the attributes of a model, and you can create an instance based on your template (with or without saving the instance to your database), or simply get a &lt;/code&gt;Hash&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; with the attribute values.  For example, here&apos;s a simple &lt;/code&gt;fabrication` User Fabricator from one of my projects:&lt;/p&gt;
 
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# frozen_string_literal: true&lt;/span&gt;
 
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'securerandom'&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'timerizer'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;securerandom&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;timerizer&apos;&lt;/span&gt;
 
 &lt;span class=&quot;no&quot;&gt;Fabricator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;FFaker&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;html_safe_name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -801,13 +904,13 @@
 
 &lt;p&gt;We add the line&lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'flog'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'4.6.1'&lt;/span&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;flog&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;4.6.1&apos;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; and rebundle. Then, we add to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rakefile&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'flog'&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'flog_task'&lt;/span&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;flog&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;flog_task&apos;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FlogTask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Rake&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TaskLib&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;attr_accessor&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:methods_only&lt;/span&gt;
@@ -996,19 +1099,19 @@ $
 &lt;p&gt;&lt;em&gt;That’s&lt;/em&gt; the value of a tool like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flog&lt;/code&gt;, and that’s why it belongs in our default Rake task chain. Our (cleaned-up) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rakefile&lt;/code&gt; now looks like this:&lt;/p&gt;
 
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'rake'&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hanami/rake_tasks'&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'rake/testtask'&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'flog'&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'flog_task'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;rake&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;hanami/rake_tasks&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;rake/testtask&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;flog&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;flog_task&apos;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FlogTask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Rake&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TaskLib&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;attr_accessor&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:methods_only&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 
 &lt;span class=&quot;no&quot;&gt;Rake&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TestTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pattern&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'spec/**/*_spec.rb'&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;libs&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'spec'&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pattern&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;spec/**/*_spec.rb&apos;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;libs&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;spec&apos;&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;warning&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 
@@ -1031,13 +1134,13 @@ $
 
 &lt;p&gt;Flay is usually pretty quiet unless it detects duplicate code or other similarly “tortured” constructs.  To add Flay support, we add the Gem to our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile:&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'flay'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'2.10.0'&lt;/span&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;flay&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;2.10.0&apos;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;and rebundle. To add Flay to our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rakefile&lt;/code&gt;, we include two more files:&lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'flay'&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'flay_task'&lt;/span&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;flay&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;flay_task&apos;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;and then add the task definition:&lt;/p&gt;
@@ -1084,15 +1187,15 @@ $
 
 &lt;p&gt;Add the Gem to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'reek'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'4.7.3'&lt;/span&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;reek&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;4.7.3&apos;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;and rebundle. Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;require 'rake/reek/task'&lt;/code&gt; to the files &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;require&lt;/code&gt;d by our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rakefile&lt;/code&gt;, and then the task block&lt;/p&gt;
+&lt;p&gt;and rebundle. Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;require &apos;rake/reek/task&apos;&lt;/code&gt; to the files &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;require&lt;/code&gt;d by our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rakefile&lt;/code&gt;, and then the task block&lt;/p&gt;
 
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Reek&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Rake&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;config_file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'config.reek'&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;source_files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{apps,lib}/**/*.rb'&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reek_opts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'--sort-by smelliness --no-progress  -s'&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;config_file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;config.reek&apos;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;source_files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;{apps,lib}/**/*.rb&apos;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reek_opts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;--sort-by smelliness --no-progress  -s&apos;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -1103,13 +1206,13 @@ $
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ bin/rake reek
 apps/web/controllers/home/index.rb -- 2 warnings:
   apps/web/controllers/home/index.rb:3: IrresponsibleModule: Web::Controllers::Home::Index has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
-  apps/web/controllers/home/index.rb:6: UnusedParameters: Web::Controllers::Home::Index#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+  apps/web/controllers/home/index.rb:6: UnusedParameters: Web::Controllers::Home::Index#call has unused parameter &apos;params&apos; [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
 apps/web/controllers/books/new.rb -- 2 warnings:
   apps/web/controllers/books/new.rb:2: IrresponsibleModule: Web::Controllers::Books::New has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
-  apps/web/controllers/books/new.rb:5: UnusedParameters: Web::Controllers::Books::New#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+  apps/web/controllers/books/new.rb:5: UnusedParameters: Web::Controllers::Books::New#call has unused parameter &apos;params&apos; [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
 apps/web/controllers/books/index.rb -- 2 warnings:
   apps/web/controllers/books/index.rb:3: IrresponsibleModule: Web::Controllers::Books::Index has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
-  apps/web/controllers/books/index.rb:8: UnusedParameters: Web::Controllers::Books::Index#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+  apps/web/controllers/books/index.rb:8: UnusedParameters: Web::Controllers::Books::Index#call has unused parameter &apos;params&apos; [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
 apps/web/views/home/index.rb -- 1 warning:
   apps/web/views/home/index.rb:3: IrresponsibleModule: Web::Views::Home::Index has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
 apps/web/views/books/new.rb -- 1 warning:
@@ -1149,11 +1252,11 @@ apps/web/controllers/books/create.rb -- 1 warning:
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ bin/rake reek
 apps/web/controllers/home/index.rb -- 1 warning:
-  apps/web/controllers/home/index.rb:6: UnusedParameters: Web::Controllers::Home::Index#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+  apps/web/controllers/home/index.rb:6: UnusedParameters: Web::Controllers::Home::Index#call has unused parameter &apos;params&apos; [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
 apps/web/controllers/books/new.rb -- 1 warning:
-  apps/web/controllers/books/new.rb:5: UnusedParameters: Web::Controllers::Books::New#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+  apps/web/controllers/books/new.rb:5: UnusedParameters: Web::Controllers::Books::New#call has unused parameter &apos;params&apos; [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
 apps/web/controllers/books/index.rb -- 1 warning:
-  apps/web/controllers/books/index.rb:8: UnusedParameters: Web::Controllers::Books::Index#call has unused parameter 'params' [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
+  apps/web/controllers/books/index.rb:8: UnusedParameters: Web::Controllers::Books::Index#call has unused parameter &apos;params&apos; [https://github.com/troessner/reek/blob/master/docs/Unused-Parameters.md]
 3 total warnings
 
 
@@ -1190,22 +1293,22 @@ $
 
 &lt;p&gt;The current version of RuboCop as this is written is 0.52.0, which may well be out-of-date by the time you read this; adjust your changes accordingly.  First, we add the Gem to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'rubocop'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'0.52.0'&lt;/span&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;rubocop&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;0.52.0&apos;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, as usual, we add the Rake task to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rakefile&lt;/code&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;RuboCop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;RakeTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rubocop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;patterns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;'apps/**/*.rb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;'lib/**/*.rb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;'spec/**/*.rb'&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&apos;apps/**/*.rb&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&apos;lib/**/*.rb&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&apos;spec/**/*.rb&apos;&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'simple'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'d'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;simple&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;d&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fail_on_error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# task.options &amp;lt;&amp;lt; '--rails'&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'--config=.rubocop.yml'&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'--display-cop-names'&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# task.options &amp;lt;&amp;lt; &apos;--rails&apos;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;--config=.rubocop.yml&apos;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;--display-cop-names&apos;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -1279,7 +1382,7 @@ C:  9:  7: Style/ClassAndModuleChildren: Use nested module/class definitions ins
 C:  4:  1: Metrics/BlockLength: Block has too many lines. [32/25]
 C: 13: 81: Metrics/LineLength: Line is too long. [82/80]
 == spec/web/views/application_layout_spec.rb ==
-C:  1:  9: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+C:  1:  9: Style/StringLiterals: Prefer single-quoted strings when you don&apos;t need string interpolation or special symbols.
 C:  6: 81: Metrics/LineLength: Line is too long. [90/80]
 == spec/web/views/books/create_spec.rb ==
 C:  5: 81: Metrics/LineLength: Line is too long. [92/80]
@@ -1405,34 +1508,34 @@ spec/web/controllers/books/create_spec.rb:4:1: C: Metrics/BlockLength: Block has
 describe Web::Controllers::Books::Create do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/web/controllers/books/create_spec.rb:13:81: C: Metrics/LineLength: Line is too long. [82/80]
-    let(:params) { Hash[book: { title: 'Confident Ruby', author: 'Avdi Grimm' }] }
+    let(:params) { Hash[book: { title: &apos;Confident Ruby&apos;, author: &apos;Avdi Grimm&apos; }] }
                                                                                 ^^
-spec/web/views/application_layout_spec.rb:1:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/web/views/application_layout_spec.rb:1:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don&apos;t need string interpolation or special symbols.
 require &quot;spec_helper&quot;
         ^^^^^^^^^^^^^
 spec/web/views/application_layout_spec.rb:6:81: C: Metrics/LineLength: Line is too long. [90/80]
-  let(:template) { Hanami::View::Template.new('apps/web/templates/application.html.erb') }
+  let(:template) { Hanami::View::Template.new(&apos;apps/web/templates/application.html.erb&apos;) }
                                                                                 ^^^^^^^^^^
 spec/web/views/books/create_spec.rb:5:81: C: Metrics/LineLength: Line is too long. [92/80]
-  let(:template)  { Hanami::View::Template.new('apps/web/templates/books/create.html.erb') }
+  let(:template)  { Hanami::View::Template.new(&apos;apps/web/templates/books/create.html.erb&apos;) }
                                                                                 ^^^^^^^^^^^^
 spec/web/views/books/index_spec.rb:6:81: C: Metrics/LineLength: Line is too long. [91/80]
-  let(:template)  { Hanami::View::Template.new('apps/web/templates/books/index.html.erb') }
+  let(:template)  { Hanami::View::Template.new(&apos;apps/web/templates/books/index.html.erb&apos;) }
                                                                                 ^^^^^^^^^^^
 spec/web/views/books/index_spec.rb:16:81: C: Metrics/LineLength: Line is too long. [81/80]
-      rendered.must_include('&amp;lt;p class=&quot;placeholder&quot;&amp;gt;There are no books yet.&amp;lt;/p&amp;gt;')
+      rendered.must_include(&apos;&amp;lt;p class=&quot;placeholder&quot;&amp;gt;There are no books yet.&amp;lt;/p&amp;gt;&apos;)
                                                                                 ^
 spec/web/views/books/index_spec.rb:22:81: C: Metrics/LineLength: Line is too long. [85/80]
-    let(:book2)     { Book.new(title: 'Domain Driven Design', author: 'Eric Evans') }
+    let(:book2)     { Book.new(title: &apos;Domain Driven Design&apos;, author: &apos;Eric Evans&apos;) }
                                                                                 ^^^^^
 spec/web/views/books/index_spec.rb:32:81: C: Metrics/LineLength: Line is too long. [81/80]
-      rendered.wont_include('&amp;lt;p class=&quot;placeholder&quot;&amp;gt;There are no books yet.&amp;lt;/p&amp;gt;')
+      rendered.wont_include(&apos;&amp;lt;p class=&quot;placeholder&quot;&amp;gt;There are no books yet.&amp;lt;/p&amp;gt;&apos;)
                                                                                 ^
 spec/web/views/books/new_spec.rb:5:81: C: Metrics/LineLength: Line is too long. [118/80]
-  let(:params)    { OpenStruct.new(valid?: false, error_messages: ['Title must be filled', 'Author must be filled']) }
+  let(:params)    { OpenStruct.new(valid?: false, error_messages: [&apos;Title must be filled&apos;, &apos;Author must be filled&apos;]) }
                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/web/views/books/new_spec.rb:7:81: C: Metrics/LineLength: Line is too long. [89/80]
-  let(:template)  { Hanami::View::Template.new('apps/web/templates/books/new.html.erb') }
+  let(:template)  { Hanami::View::Template.new(&apos;apps/web/templates/books/new.html.erb&apos;) }
                                                                                 ^^^^^^^^^
 
 28 files inspected, 42 offenses detected, 11 offenses corrected
@@ -1471,18 +1574,18 @@ $
   &lt;span class=&quot;na&quot;&gt;TargetRubyVersion&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2.4&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;# This is *temporary*; when we fix it, remember to update Reek config as well.&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Style/Documentation&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Style/Documentation&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;Exclude&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;apps/**/*.rb&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;lib/bookshelf.rb&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;spec/features_helper.rb&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;# This is also *temporary*; Real Code&amp;amp;trade; sources should include the comment.&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Style/FrozenStringLiteralComment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Style/FrozenStringLiteralComment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;Enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;# It's likely that we'll eventually broaden this to include *all* specs.&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Metrics/BlockLength&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# It&apos;s likely that we&apos;ll eventually broaden this to include *all* specs.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Metrics/BlockLength&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;Exclude&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;apps/web/application.rb&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;spec/**/*.rb&lt;/span&gt;
@@ -1492,13 +1595,13 @@ $
 
 &lt;p&gt;Now, we need to edit each of the (spec) files which RuboCop marked as having too-long lines. We’ll use the current &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;spec/web/controllers/books/create_spec.rb&lt;/code&gt; as an example, whose Line 13 currently reads:&lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;book: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;title: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Confident Ruby'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;author: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Avdi Grimm'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;book: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;title: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Confident Ruby&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;author: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Avdi Grimm&apos;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Changing that to&lt;/p&gt;
 
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-      &lt;span class=&quot;no&quot;&gt;Hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;book: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;title: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Confident Ruby'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;author: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Avdi Grimm'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
+      &lt;span class=&quot;no&quot;&gt;Hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;book: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;title: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Confident Ruby&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;author: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Avdi Grimm&apos;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -1532,138 +1635,6 @@ $
 				<pubDate>Wed, 20 Dec 2017 00:00:00 +0800</pubDate>
 				<link>/development/practices/2017/12/20/enthusiastically-poking-at-hanami.html</link>
 				<guid isPermaLink="true">/development/practices/2017/12/20/enthusiastically-poking-at-hanami.html</guid>
-			</item>
-		
-			<item>
-				<title>Using Tools and/or Solving Problems</title>
-				<description>&lt;p&gt;Are you a developer who views your job as primarily &lt;em&gt;solving problems&lt;/em&gt; or as &lt;em&gt;building and using tools?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Our culture has a word for when the second becomes overly separated from the first: &lt;em&gt;bike-shedding.&lt;/em&gt; Yet, no matter how diligently you focus on “accomplishing the original mission” or “moving the ball down the pitch” or whatever military/sports trope you like, at some point you’ll say to yourself “hey, I’ve been doing this same 37-step process every other day for the last month; I bet I could save &lt;em&gt;a lot&lt;/em&gt; of time by automating it.”&lt;/p&gt;
-
-&lt;figure style=&quot;padding: 4rem 0;&quot;&gt;
-&lt;img style=&quot;margin-left: 20%; width: 60%;&quot; src=&quot;https://imgs.xkcd.com/comics/is_it_worth_the_time.png&quot; alt=&quot;Is it worth the time? Probably not&quot; /&gt;
-&lt;figcaption style=&quot;clear: both; text-align: center;&quot;&gt;Relevant &lt;a href=&quot;https://xkcd.com/1205/&quot;&gt;XKCD&lt;/a&gt; wisdom&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Raise your hand if you’ve &lt;em&gt;never&lt;/em&gt; &lt;strong&gt;far&lt;/strong&gt; overshot those limits.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;(deafening silence)&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Thought so. What brought this on, you ask? Funny you should ask.&lt;/p&gt;
-
-&lt;p&gt;I’ve been a happy customer of &lt;a href=&quot;https://m.do.co/c/e3f4d7dea0e2&quot;&gt;Digital Ocean&lt;/a&gt; for a while now. Their VPSes (which they call &lt;em&gt;Droplets&lt;/em&gt;) come in either traditional bare-OS flavours (Ubuntu, CentOS, CoreOS, etc) and “one-click app” installations (Rails, Node.js, Docker, and so on). They have excellent &lt;a href=&quot;https://www.digitalocean.com/community/tags/api&quot;&gt;API documentation&lt;/a&gt; and &lt;a href=&quot;https://www.digitalocean.com/community/tutorials&quot;&gt;community tutorials&lt;/a&gt;, and are, &lt;em&gt;for the most part,&lt;/em&gt; a joy to work with and on.&lt;/p&gt;
-
-&lt;p&gt;One of the tools they maintain and support is &lt;a href=&quot;https://github.com/digitalocean/doctl&quot;&gt;doctl&lt;/a&gt;, an open source tool with a relatively &lt;a href=&quot;https://github.com/digitalocean/doctl/releases&quot;&gt;mature and regular release history&lt;/a&gt;. This lets you create and manage Droplets and other Digital Ocean resources (like &lt;em&gt;Floating IP&lt;/em&gt;s, which let you, e.g., register an IP address with a domain registrar and move that IP between Droplets as you provision updates). However, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;doctl&lt;/code&gt; tool, like the API it exercises, &lt;em&gt;does not&lt;/em&gt; easily support configuring and managing the software running &lt;em&gt;on&lt;/em&gt; a Droplet; for that, you’ll need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt; or a tool like &lt;a href=&quot;https://www.ansible.com/&quot;&gt;Ansible&lt;/a&gt;, &lt;a href=&quot;https://www.packer.io/&quot;&gt;Packer&lt;/a&gt;, &lt;a href=&quot;https://buddy.works/&quot;&gt;Buddy&lt;/a&gt;, or a host of others.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;And that’s where the &lt;strong&gt;rant&lt;/strong&gt; comes in.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I’ve spent the last month, off and on, teaching myself enough Ansible to get by. I have two Droplets that I built and configured using Digital Ocean’s &lt;a href=&quot;https://cloud.digitalocean.com/droplets&quot;&gt;Web control panel&lt;/a&gt; a month ago; let’s call them &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;server1&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;server2&lt;/code&gt;. I can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;doctl&lt;/code&gt; to manage them (power up/down, swap a Floating IP between them) as I wish; I can use &lt;em&gt;ad hoc&lt;/em&gt; Ansible commands like the following:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ansible -m shell -a 'docker pull jdickey/an-image:dev24' server2
-server2 | SUCCESS | rc=0 &amp;gt;&amp;gt;
-dev24: Pulling from jdickey/an-image
-# ... ~30 lines of detailed logging...
-8c5df88fde12: Verifying Checksum
-8c5df88fde12: Download complete
-8c5df88fde12: Pull complete
-e2b2fc459b42: Pull complete
-Digest: sha256:7a4f6098e01a5211b14b63428f9cdcd9929724bf83500f37745acfb1c3655181
-Status: Downloaded newer image for jdickey/an-image:dev24
-$
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;That’s fine. Now I have two newer droplets (let’s call them &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;demo1&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;demo2&lt;/code&gt;) &lt;em&gt;configured identically to the first two&lt;/em&gt; that I created with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;doctl&lt;/code&gt;, that I can &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt; into but that Ansible gets blocked from:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ssh jeff@$DEMO2_IP
-# ... banner ...
-jeff@demo2:~$ docker ps -a
-CONTAINER ID        IMAGE                    COMMAND                  CREATED             STATUS              PORTS                NAMES
-c74b5515f893        jdickey/an-image:dev24   &quot;/bin/sh -c 'pushs...&quot;   3 hours ago         Up 3 hours          0.0.0.0:80-&amp;gt;80/tcp   eager_meitner
-jeff@demo2:~$ exit
-$ ansible -=m shell -a 'docker ps -a' demo2
-demo2 | UNREACHABLE! =&amp;gt; {
-    &quot;changed&quot;: false, 
-    &quot;msg&quot;: &quot;Failed to connect to the host via ssh: Permission denied (publickey).\r\n&quot;, 
-    &quot;unreachable&quot;: true
-}
-$
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I’ve had people suggest “Use Packer”, “Use this other tool”, “Nuke and reinstall Ansible”.&lt;/p&gt;
-
-&lt;p&gt;In other words:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Don’t sweat the problem; keep swapping out tools until one of them Just Works.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Aside from that being &lt;em&gt;horrifically&lt;/em&gt; bad devops practice, it doesn’t answer the real questions that urgently &lt;em&gt;need&lt;/em&gt; an answer:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;What changed in the DO Droplet provisioning between a month ago and now that broke Ansible? How do I get &lt;em&gt;Ansible&lt;/em&gt; working again with new Droplets?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Because, &lt;em&gt;until and unless I have answers for those,&lt;/em&gt; I have &lt;em&gt;zero&lt;/em&gt; confidence in any other tool (or any other deployment provider, for that matter). If you don’t understand why your tools broke, then simply using new random tools won’t help you prevent, or at least react effectively to, the &lt;em&gt;new&lt;/em&gt; tools breaking. And the assumption you &lt;em&gt;must&lt;/em&gt; make is that they &lt;em&gt;will&lt;/em&gt; randomly break, until and unless experience shows you otherwise.&lt;/p&gt;
-
-&lt;h3 id=&quot;postscripts&quot;&gt;Postscripts&lt;/h3&gt;
-
-&lt;p&gt;I don’t mean to be casting aspersions on Digital Ocean, Ansible, Pusher, or the well-meaning but short-sighted folks telling me to “just get on with it, already”. I’ll bet that there’s some doc out there somewhere that I just happened to miss that tells me exactly what’s broken and why, and how to fix my process to deal with the change. If you know of such a thing, &lt;strong&gt;please&lt;/strong&gt; comment below or ping me on &lt;a href=&quot;https://twitter.com/jeff_dickey&quot;&gt;Twitter&lt;/a&gt; or Gitter.&lt;/p&gt;
-
-</description>
-				<pubDate>Fri, 04 Aug 2017 00:00:00 +0800</pubDate>
-				<link>/practices/2017/08/04/use-tools-or-solve-problems.html</link>
-				<guid isPermaLink="true">/practices/2017/08/04/use-tools-or-solve-problems.html</guid>
-			</item>
-		
-			<item>
-				<title>Developers Get Split Personalities</title>
-				<description>&lt;p&gt;How many times have you trudged through brownfield code, say, from three months ago, and said to yourself “This is &lt;em&gt;manure;&lt;/em&gt; I can’t &lt;em&gt;believe&lt;/em&gt; [anyone] wrote this”, only to be told (by others or your memory) “we just needed to get it done and get on to the real work”?&lt;/p&gt;
-
-&lt;p&gt;How many times have you discussed &lt;a href=&quot;https://blog.codinghorror.com/paying-down-your-technical-debt/&quot;&gt;technical debt&lt;/a&gt; with colleagues, or even read about it? How many times have you experienced, directly or vicariously, the phenomenon where technical debt, once accrued, too rarely gets paid down until/unless a Greek-finance-class crisis forces the team to stop “the real work” and do the &lt;em&gt;hard&lt;/em&gt; work of turning the house of cards you were trying to build “just sixteen more stories” onto into a steadfast, coherent foundation that you can (with proper discipline and respect) build &lt;em&gt;hundreds&lt;/em&gt; more stories on?&lt;/p&gt;
-
-&lt;p&gt;How often has that exercise in austere self-discipline broken down, and you’ve agreed “screw this; we’ll write it again from scratch”, only to be back in the &lt;em&gt;exact same place&lt;/em&gt; a year or two down the “new” raod?&lt;/p&gt;
-
-&lt;p&gt;Yeah, those are embarrassing numbers for me, too. I presently live in a society (Singapore) that is &lt;em&gt;existentially&lt;/em&gt; hostile to admission of even the most innocuous of failures, and is thus so risk-averse that we &lt;em&gt;suck&lt;/em&gt; at anything requiring creativity, teamwork, and/or original thought. (How many Singapore companies has the outside world heard of since Creative Labs, more than 30 years ago? How’s our national football team doing this year? Oh, yeah; we just got thrashed &lt;strong&gt;7-0&lt;/strong&gt; by Australia, whom we’ve never beaten.) And yet,&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;There is no innovation and creativity without failure. Period. — Brené Brown&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;We can’t be perfect. We can’t make anything perfect; certainly not within our (imperfect) understanding of the limitations imposed on us by our (imperfect) economnic and social self-imposed realities. We &lt;em&gt;can&lt;/em&gt; be “good enough”. We &lt;em&gt;can&lt;/em&gt; “make things a bit better than they were before”. We &lt;em&gt;can&lt;/em&gt; follow the &lt;a href=&quot;http://www.informit.com/articles/article.aspx?p=1235624&amp;amp;seqNum=6&quot;&gt;Boy Scout Rule&lt;/a&gt; and “leave the campground” (our code) “cleaner than we found it”.&lt;/p&gt;
-
-&lt;p&gt;We have some great tools to help us do that. If, for example, you work with Ruby code, you should be familiar with &lt;a href=&quot;https://rubocop.readthedocs.io/en/latest/&quot;&gt;RuboCop&lt;/a&gt;, &lt;a href=&quot;https://github.com/seattlerb/flog/&quot;&gt;Flog&lt;/a&gt;, &lt;a href=&quot;https://github.com/troessner/reek&quot;&gt;Reek&lt;/a&gt;, and &lt;a href=&quot;https://github.com/rrrene/inch&quot;&gt;Inch&lt;/a&gt;. They &lt;em&gt;can&lt;/em&gt; help you ship better code, faster — or they can help you launch yourself into an endless cycle of &lt;a href=&quot;https://en.wikipedia.org/wiki/Law_of_triviality&quot;&gt;bike-shedding&lt;/a&gt; and navel-gazing that is usually broken only by a terminal event.&lt;/p&gt;
-
-&lt;p&gt;That cycle &lt;em&gt;can,&lt;/em&gt; however, be broken by determined self-discipline. One of the more reliable ways to encourage that determination is to use at least some variant of &lt;a href=&quot;http://wiki.c2.com/?PairProgramming&quot;&gt;pair programming&lt;/a&gt;. Many of the foundational principles of modern development presume pairing; for example, in Sandi Metz’ classic &lt;a href=&quot;https://www.youtube.com/watch?v=npOGOmkxuio&amp;amp;feature=youtu.be&quot;&gt;Five Rules for Developers&lt;/a&gt; talk, at about &lt;a href=&quot;https://www.youtube.com/watch?v=npOGOmkxuio&amp;amp;feature=youtu.be&amp;amp;t=9m51s&quot;&gt;9:51&lt;/a&gt; she defines “Rule #6”, &lt;em&gt;Dispensation,&lt;/em&gt; as “Convince your pair!”.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;You can break any rule you want, as long as you can talk someone into believing that it’s a good idea.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Pragmatism for the win? Often. What the “rules” encourage, and the tools I mentioned above (among many others) encourage, is the creation of numerous small, granular objects without non-transient state. This makes a lot of sense in Web development that revolves around the request-response cycle. It also apparently nails Robert C. “Uncle Bob” Martin’s &lt;a href=&quot;http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd&quot;&gt;Three Rules of TDD&lt;/a&gt;; if you’re writing the smallest new code that can make the smallest new tests that can possibly fail, pass, then you &lt;em&gt;should&lt;/em&gt; wind up with a collection of small, granular objects without much individual state.&lt;/p&gt;
-
-&lt;p&gt;When you’re pairing, it’s a lot easier to maintain that discipline, after agreeing on what “smallest possible change” means. A feature? An object? A method? “It depends?” Whatever your convention, your pair is there to keep you out of the bike-shed and moving forward.&lt;/p&gt;
-
-&lt;p&gt;When you’re not pairing, you &lt;em&gt;will&lt;/em&gt; spend a lot of time in the bikeshed, &lt;em&gt;especially&lt;/em&gt; if you have static analysis tools like RuboCop and Flog that you run in conjunction with or as &lt;em&gt;part of&lt;/em&gt; your commit and CI workflows. You start out being gently nudged by, say, Reek pointing out a &lt;a href=&quot;https://github.com/troessner/reek/blob/master/docs/Utility-Function.md&quot;&gt;Utility Function&lt;/a&gt; here and &lt;a href=&quot;https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md&quot;&gt;Feature Envy&lt;/a&gt; there, and pretty soon you’re just…&lt;/p&gt;
-
-&lt;p&gt;&lt;img style=&quot;width:60%; margin-left:20%&quot; src=&quot;https://media.makeameme.org/created/shut-up-wesley.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Alternatively, you hunker down. You take your ten-method, hundred-line class that &lt;em&gt;worked&lt;/em&gt; and gave you a green bar with 100% test coverage, but also gave you a Flog score of 30+ on each of three methods and you had sixteen comments disabling Reek and five disabling RuboCop checks, and you turn it into twelve classes totalling 450 lines with no method longer than five lines or Flogging higher than a 7.0. You’re pleased with that, except for being faintly annoyed/guilty that it took you &lt;em&gt;three days&lt;/em&gt; to get there.&lt;/p&gt;
-
-&lt;p&gt;Don’t let this happen to &lt;em&gt;you!&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The tools aren’t giving you “bogus results”; you’re simply misusing them and/or the “agile” process you set out to use. On the one fork in the road, you spent three days (likely a couple thousand dollars’ worth of your time to your employer) fixing something that &lt;em&gt;already worked and was proven to work&lt;/em&gt; instead of moving on. “B-but, Reek and Flog and RuboCop said I had bad code,” you whimper. No, they didn’t; they said your code had some code smells (where bugs are &lt;em&gt;more likely&lt;/em&gt; but &lt;em&gt;not proven&lt;/em&gt; to be), and that it didn’t comply with some common-sense style standards that an open community discussion had agreed were &lt;em&gt;usually&lt;/em&gt; Good Ideas. But, again, “you can break any rule you want, as long as you can talk someone into believing that it’s a good idea”. The one thing you &lt;em&gt;can’t&lt;/em&gt; break as an agile developer is test coverage yielding a green bar; any code (statements, branches, conditionals) not covered by passing tests &lt;strong&gt;must&lt;/strong&gt; be presumed to be defective until and unless proven otherwise. (This is part of what makes writing tests first a Good Thing.) If you have solid, trustworthy tests, then the style guidelines and analysis metrics are just that — guidelines and metrics. When you find bugs that your tests didn’t catch, look to your guideline violations or egregious metric scores to help you narrow down likely places to look to figure out where the bug, or contributing factors to it, are hiding. Then write (passing) integration and unit tests (in that order) that exercise the bug; i.e., a green bar proves that the bug exists and that your understanding of it is correct (not necessarily &lt;em&gt;complete,&lt;/em&gt; but you can get there). Make that unit test fail and see if the integration test also fails. (If not, then killing the bug is going to take more work.) Finally, replace them with tests that prove that (that aspect of) the bug has been fixed, up to and including your integration testing. &lt;em&gt;These&lt;/em&gt; are the times that your static-analysis tools will help you  rather than distract you.&lt;/p&gt;
-
-&lt;p&gt;“But aren’t high tool (Reek, Flog, disable-Rubocop-rule-comment count) scores indicative of technical debt,” you ask. Yes, they &lt;em&gt;indicate&lt;/em&gt; where you have code that likely could be improved, when it makes sense to do so taking resource constraints into consideration. You might want to keep a “technical debt” Trello card list or GitHub issue label, and write up cards and/or issues for each such instance. But no matter which flavour of agile development you use, &lt;em&gt;well-written tests&lt;/em&gt; are the primary artefact proving that you have working code. Remember the Golden Rule of Development. “He that has the gold, makes the rules?” No, the &lt;em&gt;practical&lt;/em&gt; Golden Rule,&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The real problem is that programmers have spent far too much time worrying about efficiency in the wrong places and at the wrong times; premature optimization is the root of all evil (or at least most of it) in programming.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Donald Knuth said that, in his &lt;em&gt;1974&lt;/em&gt; Turing Award lecture, &lt;a href=&quot;http://www.paulgraham.com/knuth.html&quot;&gt;&lt;em&gt;Computer Programming as an Art&lt;/em&gt;&lt;/a&gt; (CACM 17(12) p. 671). Forty-three years ago. Before the birth date of my average technical colleague over the last 15 years or so. If you came into the craft from a &lt;a href=&quot;https://www.joelonsoftware.com/2005/12/29/the-perils-of-javaschools-2/&quot;&gt;JavaSchool&lt;/a&gt; or a “bootcamp”, you’ve probably never read him. That’s a bug, not a feature.&lt;/p&gt;
-</description>
-				<pubDate>Sun, 23 Jul 2017 00:00:00 +0800</pubDate>
-				<link>/practices/2017/07/23/developers-get-split-personalities.html</link>
-				<guid isPermaLink="true">/practices/2017/07/23/developers-get-split-personalities.html</guid>
 			</item>
 		
 	</channel>
